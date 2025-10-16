@@ -1,0 +1,329 @@
+Marlin 2.0.9.3 (Ender 3) | Online: 115200
+Compiled: Jun  5 2025
+echo: Last Updated: Jun  5 2025 | Author: (YourName)
+echo: Free Memory: 1234  PlannerBufferBytes: 1234
+echo: Hardcoded Default Settings Loaded
+
+<--- Firmware startup done --->
+
+ok
+echo:SD init fail
+echo:SD init fail
+
+>>> G21
+ok
+>>> G90
+ok
+>>> M115
+FIRMWARE_NAME:Marlin 2.0.9.3 (Ender 3) PROTOCOL_VERSION:1.0 MACHINE_TYPE:Ender-3 EXTRUDER_COUNT:1
+ok
+>>> M105
+ok T:25.3 /0.0 B:25.0 /0.0 @:0 B@:0
+>>> M114
+X:0.00 Y:0.00 Z:0.00 E:0.00 Count X:0 Y:0 Z:0
+ok
+>>> G28
+echo:busy: processing
+ok
+>>> M119
+Reporting endstops
+x_min: TRIGGERED
+y_min: TRIGGERED
+z_min: TRIGGERED
+>>> G1 Z15.0 F9000
+ok
+>>> G92 E0
+ok
+>>> G1 F140 E30
+ok
+>>> G92 E0
+ok
+>>> G1 F9000
+ok
+>>> G1 X50 Y50 Z0.3 F1500
+ok
+>>> G1 X100 Y50 E15 F1000
+ok
+>>> G1 X150 Y50 E30
+ok
+>>> G1 X200 Y50 E45
+ok
+>>> G1 X250 Y50 E60
+ok
+>>> G1 X300 Y50 E75
+ok
+>>> G1 X350 Y50 E90
+ok
+>>> G1 X400 Y50 E105
+ok
+>>> G1 X450 Y50 E120
+ok
+>>> G1 X500 Y50 E135
+ok
+>>> G1 X550 Y50 E150
+ok
+>>> G1 X600 Y50 E165
+ok
+>>> G1 X650 Y50 E180
+ok
+>>> G1 X700 Y50 E195
+ok
+>>> G1 X750 Y50 E210
+ok
+>>> G1 X800 Y50 E225
+ok
+>>> G1 X850 Y50 E240
+ok
+>>> G1 X900 Y50 E255
+ok
+>>> G1 X950 Y50 E270
+ok
+>>> G1 X1000 Y50 E285
+ok
+>>> G1 X1050 Y50 E300
+ok
+>>> G1 X1100 Y50 E315
+ok
+>>> G1 X1150 Y50 E330
+ok
+>>> G1 X1200 Y50 E345
+ok
+>>> G1 X1250 Y50 E360
+ok
+>>> G1 X1300 Y50 E375
+ok
+>>> G1 X1350 Y50 E390
+ok
+>>> G1 X1400 Y50 E405
+ok
+>>> G1 X1450 Y50 E420
+ok
+>>> G1 X1500 Y50 E435
+ok
+>>> G1 X1550 Y50 E450
+ok
+>>> G1 X1600 Y50 E465
+ok
+>>> G1 X1650 Y50 E480
+ok
+>>> G1 X1700 Y50 E495
+ok
+>>> G1 X1750 Y50 E510
+ok
+>>> G1 X1800 Y50 E525
+ok
+>>> G1 X1850 Y50 E540
+ok
+>>> G1 X1900 Y50 E555
+ok
+>>> G1 X1950 Y50 E570
+ok
+>>> G1 X2000 Y50 E585
+ok
+>>> G1 X2050 Y50 E600
+ok
+>>> G1 X2100 Y50 E615
+ok
+>>> G1 X2150 Y50 E630
+ok
+>>> G1 X2200 Y50 E645
+ok
+>>> G1 X2250 Y50 E660
+ok
+>>> G1 X2300 Y50 E675
+ok
+>>> G1 X2350 Y50 E690
+ok
+>>> G1 X2400 Y50 E705
+ok
+>>> G1 X2450 Y50 E720
+ok
+>>> G1 X2500 Y50 E735
+ok
+>>> G1 X2550 Y50 E750
+ok
+>>> G1 X2600 Y50 E765
+ok
+>>> G1 X2650 Y50 E780
+ok
+>>> G1 X2700 Y50 E795
+ok
+>>> G1 X2750 Y50 E810
+ok
+>>> G1 X2800 Y50 E825
+ok
+>>> G1 X2850 Y50 E840
+ok
+>>> G1 X2900 Y50 E855
+ok
+>>> G1 X2950 Y50 E870
+ok
+>>> G1 X3000 Y50 E885
+ok
+>>> G1 X3050 Y50 E900
+ok
+>>> G1 X3100 Y50 E915
+ok
+>>> G1 X3150 Y50 E930
+ok
+>>> G1 X3200 Y50 E945
+ok
+>>> G1 X3250 Y50 E960
+ok
+>>> G1 X3300 Y50 E975
+ok
+>>> G1 X3350 Y50 E990
+ok
+>>> G1 X3400 Y50 E1005
+ok
+>>> G1 X3450 Y50 E1020
+ok
+>>> G1 X3500 Y50 E1035
+ok
+>>> G1 X3550 Y50 E1050
+ok
+>>> G1 X3600 Y50 E1065
+ok
+>>> G1 X3650 Y50 E1080
+ok
+>>> G1 X3700 Y50 E1095
+ok
+>>> G1 X3750 Y50 E1110
+ok
+>>> G1 X3800 Y50 E1125
+ok
+>>> G1 X3850 Y50 E1140
+ok
+>>> G1 X3900 Y50 E1155
+ok
+>>> G1 X3950 Y50 E1170
+ok
+>>> G1 X4000 Y50 E1185
+ok
+>>> G1 X4050 Y50 E1200
+ok
+>>> G1 X4100 Y50 E1215
+ok
+>>> G1 X4150 Y50 E1230
+ok
+>>> G1 X4200 Y50 E1245
+ok
+>>> G1 X4250 Y50 E1260
+ok
+>>> G1 X4300 Y50 E1275
+ok
+>>> G1 X4350 Y50 E1290
+ok
+>>> G1 X4400 Y50 E1305
+ok
+>>> G1 X4450 Y50 E1320
+ok
+>>> G1 X4500 Y50 E1335
+ok
+>>> G1 X4550 Y50 E1350
+ok
+>>> G1 X4600 Y50 E1365
+ok
+>>> G1 X4650 Y50 E1380
+ok
+>>> G1 X4700 Y50 E1395
+ok
+>>> G1 X4750 Y50 E1410
+ok
+>>> G1 X4800 Y50 E1425
+ok
+>>> G1 X4850 Y50 E1440
+ok
+>>> G1 X4900 Y50 E1455
+ok
+>>> G1 X4950 Y50 E1470
+ok
+>>> G1 X5000 Y50 E1485
+ok
+>>> G1 X5050 Y50 E1500
+ok
+>>> G1 X5100 Y50 E1515
+ok
+>>> G1 X5150 Y50 E1530
+ok
+>>> G1 X5200 Y50 E1545
+ok
+>>> G1 X5250 Y50 E1560
+ok
+>>> G1 X5300 Y50 E1575
+ok
+>>> G1 X5350 Y50 E1590
+ok
+>>> G1 X5400 Y50 E1605
+ok
+>>> G1 X5450 Y50 E1620
+ok
+>>> G1 X5500 Y50 E1635
+ok
+>>> G1 X5550 Y50 E1650
+ok
+>>> G1 X5600 Y50 E1665
+ok
+>>> G1 X5650 Y50 E1680
+ok
+>>> G1 X5700 Y50 E1695
+ok
+>>> G1 X5750 Y50 E1710
+ok
+>>> G1 X5800 Y50 E1725
+ok
+>>> G1 X5850 Y50 E1740
+ok
+>>> G1 X5900 Y50 E1755
+ok
+>>> G1 X5950 Y50 E1770
+ok
+>>> G1 X6000 Y50 E1785
+ok
+>>> G1 X6050 Y50 E1800
+ok
+>>> G1 X6100 Y50 E1815
+ok
+>>> G1 X6150 Y50 E1830
+ok
+>>> G1 X6200 Y50 E1845
+ok
+>>> G1 X6250 Y50 E1860
+ok
+>>> G1 X6300 Y50 E1875
+ok
+>>> G1 X6350 Y50 E1890
+ok
+>>> G1 X6400 Y50 E1905
+ok
+>>> G1 X6450 Y50 E1920
+ok
+>>> G1 X6500 Y50 E1935
+ok
+>>> G1 X6550 Y50 E1950
+ok
+>>> G1 X6600 Y50 E1965
+ok
+>>> G1 X6650 Y50 E1980
+ok
+>>> G1 X6700 Y50 E1995
+ok
+>>> G1 X6750 Y50 E2010
+ok
+>>> G1 X6800 Y50 E2025
+ok
+>>> G1 X6850 Y50 E2040
+ok
+>>> G1 X6900 Y50 E2055
+ok
+>>> G1 X6950 Y50 E2070
+ok
+>>> G1 X7000 Y50 E2085
+ok
+>>> G1 X7050 Y50 E2100
+ok
+>>> G1 X7100 Y50 E2115
+ok
+>>> G1
+::contentReference[oaicite:0]{index=0}
+ 
