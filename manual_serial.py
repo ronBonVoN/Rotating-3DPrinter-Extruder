@@ -3,7 +3,8 @@ import time
 
 com = "COM12"
 baud_rate = 9600
-file_name = "serial_example.txt"
+file_name = "serial_example_short.txt"
+
 
 try: 
     with open(file_name, "r") as f:
@@ -22,6 +23,7 @@ for line in lines:
 
 ser.close()
 print("done!")
+
 
 
 

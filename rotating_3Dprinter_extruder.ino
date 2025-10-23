@@ -3,14 +3,13 @@
 #define PUL 2
 #define DIR 4
 
-//extern const char serial_example[]; 
 int rotation_steps = 400; 
-int rotation_limit = 1*rotation_steps; 
+float pulley_ratio = 1.6; //32:20
+int rotation_limit = round(1*pulley_ratio*rotation_steps); 
 int steps_count = 0; 
 
-bool start = 0; 
 String cmd; 
-int x1, y1; 
+int x1 = 0, y1=0;
 int x2, y2; 
 float angle1 = 0; 
 float angle2; 
@@ -22,26 +21,23 @@ void setup() {
   Serial.begin(9600);
 }
 
-void loop() {
+void loop() { 
+ /* Serial.print("angle: "); 
+  Serial.println(angle2); 
+  Serial.print("path: ";)
+  Serial.println(path);
+  Serial.print("steps count: "); 
+  Serial.println(steps_count); */
   
-  if (!start && Serial.available()) {
-    cmd = Serial.readStringUntil('\n');
-    x1 = get_pos('X'); 
-    y1 = get_pos('Y'); 
-    if (cmd.indexOf("G1") != -1 && x1 != -1 && y1 != -1) {
-      start = 1; 
-    }
-  }
-  
-  if (start && Serial.available()) {
+  if (Serial.available()) {
     cmd = Serial.readStringUntil('\n');
     x2 = get_pos('X'); 
     y2 = get_pos('Y'); 
     if (cmd.indexOf("G1") != -1 && x2 != -1 && y2 != -1) {
-    rotate(y2); 
+      //if (x2-x1 == 0) angle2 = 0; 
       angle2 = atan2(y2-y1, x2-x1); 
       if (angle2 < 0) angle2 += 2*PI; 
-      path = round((angle2 - angle1)*rotation_steps/(2*PI));
+      path = round((angle2 - angle1)*rotation_steps/(2*PI)*pulley_ratio);
       rotate(path); 
       x1 = x2; 
       y1 = y2; 
@@ -52,22 +48,8 @@ void loop() {
 
   if (abs(steps_count) >= rotation_limit) {
     rotate(-steps_count); 
+    steps_count=0; 
   }
-  /*
-  -get previous pos
-  -get old angle 
-  -get currrent pos
-  -calc new angle 
-    - arctan of change in pos
-    - rad%step
-  -calc rotation path
-    -set direction
-      -if (new angle - old angle > 0) ccw
-      -if (new andle - old angle < 0) cw
-      -if (new angle = old angle) do nothing
-    -set rotation path
-      -move abs(new angle - old angle)
-  */
 }
 
 void rotate(int steps) {
@@ -91,6 +73,12 @@ int get_pos(char cor) {
     return cmd.substring(start_idx + 1, end_idx).toInt(); 
   }
 }
+
+int optimal_path(int angle2, int angle1) {
+  if (angle2 == angle1) return 0; 
+  
+}
+
 
 
 
