@@ -5,7 +5,6 @@ com = "COM12"
 baud_rate = 9600
 file_name = "serial_example_short.txt"
 
-
 try: 
     with open(file_name, "r") as f:
         lines = f.readlines()
@@ -17,6 +16,11 @@ ser = serial.Serial(com, baud_rate, timeout=1)
 time.sleep(2)
 
 for line in lines: 
+    try:
+        response = ser.readline().strip()
+        print(response)
+    except:
+        print("no serial")
     input(f"press enter to send: {line.strip()}")
     ser.write((line.strip() + '\n').encode())
     time.sleep(0.1)
