@@ -1,0 +1,2 @@
+angle: 4.43 path: 54 steps count: -189
+G1 X143.181 Y168.698 E.02185

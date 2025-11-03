@@ -5,7 +5,7 @@
 
 int rotation_steps = 400; //steps for 2PI rotation
 float pulley_ratio = 1.6; //32:20
-int rotation_limit = round(1*pulley_ratio*rotation_steps); //limit of rotation in single direction
+int rotation_limit = round(4*pulley_ratio*rotation_steps); //limit of rotation in single direction
 int steps_count = 0; //steps tracking
 
 String cmd;             //3D printer command 
@@ -16,6 +16,10 @@ float angle2;           //new angle
 int path = 0;           //steps to take from prev angle to new angle
 bool pre_heater = 1;
 
+void rotate(int steps); 
+float get_pos(char cor);
+float optimal_path_angle(float angle1, float angle2, bool switching=0); 
+
 void setup() {
   pinMode(PUL, OUTPUT);
   pinMode(DIR, OUTPUT); 
@@ -23,8 +27,8 @@ void setup() {
 }
 
 void loop() { 
-  Serial.print("angle: "); //state tracking
-  Serial.print(angle1); 
+  Serial.print("angle: ");
+  Serial.print(angle1); //state tracking
   Serial.print(" path: ");
   Serial.print(path);
   Serial.print(" steps count: "); 
@@ -34,6 +38,7 @@ void loop() {
     cmd = Serial.readStringUntil('\n');
     x2 = get_pos('X'); 
     y2 = get_pos('Y'); 
+    
     if (cmd.indexOf("G1") != -1 && x2 != -1 && y2 != -1) {
       angle2 = atan2(y2-y1, x2-x1); //rangle -PI to PI
       if (angle2 < 0) angle2 += 2*PI; //range 0 to 2PI
@@ -101,8 +106,6 @@ float optimal_path_angle(float angle1, float angle2, bool switching=0) {
   
   if (abs(angle2-angle1) <= abs(angle1-angle2)) return angle2-angle1; 
   else return angle1-angle2; 
-
-
 }
 
 
