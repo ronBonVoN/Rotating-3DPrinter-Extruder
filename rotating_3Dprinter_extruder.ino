@@ -5,41 +5,38 @@
 
 int rotation_steps = 400; //steps for 2PI rotation
 float pulley_ratio = 1.6; //32:20
-int rotation_limit = round(4*pulley_ratio*rotation_steps); //limit of rotation in single direction
-int steps_count = 0; //steps tracking
+                          //limit of rotation in single direction
+int rotation_limit = round(1.5*pulley_ratio*rotation_steps);
+int steps_count = 0;      //steps tracking
 
-String cmd;             //3D printer command 
-float x1 = 0.0, y1=0.0; //previous coordinates
-float x2, y2;           //new coordinates
-float angle1 = 0.0;     //previous angle
-float angle2;           //new angle
-int path = 0;           //steps to take from prev angle to new angle
+String cmd;               //3D printer command 
+float x1 = 0.0, y1=0.0;   //previous coordinates
+float x2, y2;             //new coordinates
+float angle1 = 0.0;       //previous angle
+float angle2;             //new angle
+int path = 0;             //steps to take from prev angle to new angle
 bool pre_heater = 1;
 
 void rotate(int steps); 
 float get_pos(char cor);
 float optimal_path_angle(float angle1, float angle2, bool switching=0); 
+void print_status(); 
 
 void setup() {
   pinMode(PUL, OUTPUT);
   pinMode(DIR, OUTPUT); 
-  Serial.begin(9600);
+  Serial.begin(115200);
+  print_status();
 }
 
 void loop() { 
-  Serial.print("angle: ");
-  Serial.print(angle1); //state tracking
-  Serial.print(" path: ");
-  Serial.print(path);
-  Serial.print(" steps count: "); 
-  Serial.println(steps_count); 
   
   if (Serial.available()) {
     cmd = Serial.readStringUntil('\n');
     x2 = get_pos('X'); 
     y2 = get_pos('Y'); 
     
-    if (cmd.indexOf("G1") != -1 && x2 != -1 && y2 != -1) {
+    if (x2 != -1.0 && y2 != -1.0) {
       angle2 = atan2(y2-y1, x2-x1); //rangle -PI to PI
       if (angle2 < 0) angle2 += 2*PI; //range 0 to 2PI
       path = round((optimal_path_angle(angle1, angle2))*rotation_steps/(2*PI)*pulley_ratio);
@@ -48,12 +45,14 @@ void loop() {
       y1 = y2; 
       angle1 = angle2; 
       steps_count += path; 
+      print_status();
     }
   }
 
   if (abs(steps_count) >= rotation_limit) {
     rotate(-steps_count); 
     steps_count=0; 
+    print_status();
   }
 }
 
@@ -69,10 +68,10 @@ void rotate(int steps) {
 }
 
 float get_pos(char cor) {
-  int start_idx = cmd.indexOf(cor);
+  int start_idx = cmd.indexOf(cor) + 1;
   int end_idx = cmd.indexOf(' ', start_idx); 
   if (start_idx == -1 || end_idx == -1) {
-    return -1; 
+    return -1.0; 
   }
   else {
     return cmd.substring(start_idx + 1, end_idx).toFloat();
@@ -106,6 +105,15 @@ float optimal_path_angle(float angle1, float angle2, bool switching=0) {
   
   if (abs(angle2-angle1) <= abs(angle1-angle2)) return angle2-angle1; 
   else return angle1-angle2; 
+}
+
+void print_status() {
+  Serial.print("angle: ");
+  Serial.print(angle1); //state tracking
+  Serial.print(" path: ");
+  Serial.print(path);
+  Serial.print(" steps count: "); 
+  Serial.println(steps_count); 
 }
 
 
