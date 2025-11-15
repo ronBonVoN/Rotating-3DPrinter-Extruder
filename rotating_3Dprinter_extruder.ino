@@ -68,9 +68,9 @@ void rotate(int steps) {
 }
 
 float get_pos(char cor) {
-  int start_idx = cmd.indexOf(cor) + 1;
+  int start_idx = cmd.indexOf(cor);
   int end_idx = cmd.indexOf(' ', start_idx); 
-  if (start_idx == -1 || end_idx == -1) {
+  if (start_idx <= -1 || end_idx <= -1) {
     return -1.0; 
   }
   else {

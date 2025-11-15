@@ -20,31 +20,35 @@ ax.set_aspect('equal', adjustable='box')
 x_data = []
 y_data = []
 rad_data = []
+x0 = 0
+y0 = 0
 r = 30
 
 line_plot, = ax.plot([], [], '-', color='blue')
 
-for i in range(len(lines) - 1):
-    line_text = lines[i].strip()
-    next_line = lines[i + 1].strip()
+for line in lines:
 
-    if "X" in line_text and "Y" in line_text and "angle: " in next_line:
-        print(line_text)
-        input(next_line)
+    if "X" in line and "Y" in line:
+        input(line.strip())
         
-        x_data.append(float(re.search(r"X:(\d+\.?\d*)", line_text).group(1)))
-        y_data.append(float(re.search(r"Y:(\d+\.?\d*)", line_text).group(1)))
-        rad_data.append(float(re.search(r"angle: (\d+\.?\d*)", next_line).group(1)))
+        x_data.append(float(re.search(r"X(\d+\.?\d*)", line).group(1)))
+        y_data.append(float(re.search(r"Y(\d+\.?\d*)", line).group(1)))
 
-        x0, y0, rad = x_data[-1], y_data[-1], rad_data[-1]
+        x0, y0 = x_data[-1], y_data[-1]
+        line_plot.set_data(x_data, y_data)
+
+    if "angle: " in line:
+        input(line.strip())
+        
+        rad_data.append(float(re.search(r"angle: (\d+\.?\d*)", line).group(1)))
+        
+        rad = rad_data[-1]
         x1 = x0 + r * np.cos(rad)
         y1 = y0 + r * np.sin(rad)
-
-        line_plot.set_data(x_data, y_data)
         ax.plot([x0, x1], [y0, y1], 'r-', linewidth=2)
 
-        plt.draw()
-        plt.pause(0.2)
+    plt.draw()
+    plt.pause(0.2)
 
 print("program done")
 plt.ioff()
