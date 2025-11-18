@@ -1,7 +1,7 @@
 #include <math.h>
 
 #define PUL 2 //step pin
-#define DIR 4 //direction pin
+#define DIR 8 //direction pin
 
 int rotation_steps = 400; //steps for 2PI rotation
 float pulley_ratio = 1.6; //32:20
@@ -58,7 +58,7 @@ void loop() {
 
 void rotate(int steps) {
   if (steps==0) return; 
-  digitalWrite(DIR, steps > 0 ? HIGH : LOW);
+  digitalWrite(DIR, steps > 0 ? LOW : HIGH);
   for (int i=0; i<abs(steps); i++) {
     digitalWrite(PUL, HIGH); 
     delay(2);

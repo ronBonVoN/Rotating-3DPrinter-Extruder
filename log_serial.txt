@@ -1,40 +1,192 @@
-angle: 0.00 path: 0 steps count: 0
 G90
 ok
 G21
+angle: 0.00 path: 0 steps count: 0
 ok
 G28
 ok
-G1 Z40 F300
+G1 Z40 F3000
 ok
-G1 X25 Y25 F600
+G1 X120.000 Y100.000 F1200
+ok
+M400
+angle: 0.69 path: 71 steps count: 71
+ok
+G1 X119.696 Y103.472 F1200
 ok
 M400
 ok
-angle: 0.79 path: 80 steps count: 80
-G1 X65 Y25 F600
+G1 X118.788 Y106.840 F1200
+ok
+M400
+angle: 1.66 path: 98 steps count: 169
+angle: 1.83 path: 18 steps count: 187
+ok
+G1 X117.320 Y110.000 F1200
+ok
+M400
+angle: 2.01 path: 17 steps count: 204
+ok
+G1 X115.321 Y112.856 F1200
+ok
+M400
+angle: 2.18 path: 18 steps count: 222
+ok
+G1 X112.856 Y115.321 F1200
+ok
+M400
+angle: 2.36 path: 18 steps count: 240
+ok
+G1 X110.000 Y117.320 F1200
+ok
+M400
+angle: 2.53 path: 18 steps count: 258
+ok
+G1 X106.840 Y118.788 F1200
+ok
+M400
+angle: 2.71 path: 18 steps count: 276
+ok
+G1 X103.472 Y119.696 F1200
+ok
+M400
+angle: 2.88 path: 17 steps count: 293
+ok
+G1 X100.000 Y120.000 F1200
+ok
+M400
+angle: 3.05 path: 18 steps count: 311
+ok
+G1 X96.528 Y119.696 F1200
+ok
+M400
+angle: 3.23 path: 18 steps count: 329
+ok
+G1 X93.160 Y118.788 F1200
+ok
+M400
+angle: 3.40 path: 18 steps count: 347
+ok
+G1 X90.000 Y117.320 F1200
+ok
+M400
+angle: 3.58 path: 17 steps count: 364
+ok
+G1 X87.144 Y115.321 F1200
+ok
+M400
+angle: 3.75 path: 18 steps count: 382
+ok
+G1 X84.679 Y112.856 F1200
+ok
+M400
+angle: 3.93 path: 18 steps count: 400
+ok
+G1 X82.680 Y110.000 F1200
+ok
+M400
+angle: 4.10 path: 18 steps count: 418
+ok
+G1 X81.212 Y106.840 F1200
+ok
+M400
+angle: 4.28 path: 18 steps count: 436
+ok
+G1 X80.304 Y103.472 F1200
+ok
+M400
+angle: 4.45 path: 17 steps count: 453
+ok
+G1 X80.000 Y100.000 F1200
+ok
+M400
+angle: 4.63 path: 18 steps count: 471
+ok
+G1 X80.304 Y96.528 F1200
+ok
+M400
+angle: 4.80 path: 18 steps count: 489
+ok
+G1 X81.212 Y93.160 F1200
+ok
+M400
+angle: 4.98 path: 18 steps count: 507
+ok
+G1 X82.680 Y90.000 F1200
+ok
+M400
+angle: 5.15 path: 17 steps count: 524
+ok
+G1 X84.679 Y87.144 F1200
+ok
+M400
+angle: 5.32 path: 18 steps count: 542
+ok
+G1 X87.144 Y84.679 F1200
+ok
+M400
+angle: 5.50 path: 18 steps count: 560
+ok
+G1 X90.000 Y82.680 F1200
+ok
+M400
+angle: 5.67 path: 18 steps count: 578
+ok
+G1 X93.160 Y81.212 F1200
+ok
+M400
+angle: 5.85 path: 18 steps count: 596
+ok
+G1 X96.528 Y80.304 F1200
+ok
+M400
+angle: 6.02 path: 17 steps count: 613
+ok
+G1 X100.000 Y80.000 F1200
+ok
+M400
+angle: 6.20 path: 18 steps count: 631
+ok
+G1 X103.472 Y80.304 F1200
 ok
 M400
 ok
-angle: 0.00 path: -80 steps count: 0
-G1 X65 Y65 F600
+G1 X106.840 Y81.212 F1200
 ok
 M400
 ok
-angle: 1.57 path: 160 steps count: 160
-G1 X25 Y65 F600
+G1 X110.000 Y82.680 F1200
 ok
 M400
 ok
-angle: 3.14 path: 160 steps count: 320
-G1 X25 Y25 F600
+G1 X112.856 Y84.679 F1200
 ok
 M400
 ok
-angle: 4.71 path: 160 steps count: 480
-G1 Z10 F300
+G1 X115.321 Y87.144 F1200
 ok
 M400
+ok
+G1 X117.320 Y90.000 F1200
+ok
+M400
+ok
+G1 X118.788 Y93.160 F1200
+ok
+M400
+ok
+G1 X119.696 Y96.528 F1200
+ok
+M400
+ok
+G1 Z100 F3000
+ok
+M400
+angle: 0.09 path: -622 steps count: 9
+angle: 0.26 path: 18 steps count: 27
+angle: 0.43 path: 17 steps count: 44
+ok
+G28 X0 Y0
 ok
 M84
 ok

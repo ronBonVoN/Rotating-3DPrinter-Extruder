@@ -25,6 +25,7 @@ y0 = 0
 r = 30
 
 line_plot, = ax.plot([], [], '-', color='blue')
+pos_waiting = False
 
 for line in lines:
 
@@ -34,8 +35,17 @@ for line in lines:
         x_data.append(float(re.search(r"X(\d+\.?\d*)", line).group(1)))
         y_data.append(float(re.search(r"Y(\d+\.?\d*)", line).group(1)))
 
+    if "M400" in line:
+        input(line.strip())
+        pos_waiting = True
+        
+    if "ok" in line and pos_waiting == True:
+        input(line.strip())
+        
         x0, y0 = x_data[-1], y_data[-1]
         line_plot.set_data(x_data, y_data)
+        
+        pos_waiting = False
 
     if "angle: " in line:
         input(line.strip())
