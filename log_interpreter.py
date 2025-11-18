@@ -17,8 +17,8 @@ ax.set_xlim(0, 250)
 ax.set_ylim(0, 250)
 ax.set_aspect('equal', adjustable='box')
 
-x_data = []
-y_data = []
+x_data = [0]
+y_data = [0]
 rad_data = []
 x0 = 0
 y0 = 0
