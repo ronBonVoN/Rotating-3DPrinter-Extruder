@@ -2,6 +2,10 @@ import re
 import math
 import sys
 
+FILE_NAME = "CE3E3V2_triangle.gcode"
+WIDTH = 8 # mm 
+DEG_TOLERANCE = math.radians(2)
+
 def read_file(file_name):
     try: 
         with open(file_name, "r") as f:
@@ -24,61 +28,41 @@ def get_xy(gcode_line):
         return x, y 
     else:
         return None, None
-
-def fillet_corners(gcode, width):   
-    lines_to_read = len(gcode)
-    edited_gcode = gcode
     
-    for i in range(lines_to_read):
-        
-        x1, y1 = get_xy(gcode[i])
-        if None in (x1, y1): 
-            continue
-        
-        for j in range(i + 1, lines_to_read):
-            x2, y2 = get_xy(gcode[j])
-            if x2 != None and y2 != None:
-                break
-        
-        for k in range(j + 1, lines_to_read):
-            x3, y3 = get_xy(gcode[k])
-            if x3 != None and y3 != None: 
-                break
-        
-        if k + 1 == lines_to_read: 
-            break
+def fillet_corners(gcode, width, deg_tolerance):   
+    edited_gcode = gcode.copy()
+    
+    point_idx = []
+    points = []
+    for i in range(len(gcode)): 
+        x, y = get_xy(gcode[i])
+        if None not in (x, y): 
+            point_idx.append(i)
+            points.append((x, y))
+    
+    points_to_read = len(points) - 2
+    for p in range(points_to_read):
+        x1, y1 = points[p]
+        x2, y2 = points[p+1]
+        x3, y3 = points[p+2]
             
         length1 = math.hypot(x2 - x1, y2 - y1)
         length2 = math.hypot(x3 - x2, y3 - y2)
 
-        eps = 1e-9
-        if length1 <= eps or length2 <= eps:
+        if length1 <= width or length2 <= width:
             continue
 
-        ux, uy = x1 - x2, y1 - y2
-        vx, vy = x3 - x2, y3 - y2
-
-        dot = ux*vx + uy*vy
-        cross = ux*vy - uy*vx
-
+        dot = (x2 - x1)*(x3 - x2) + (y2 - y1)*(y3 - y2)
+        cross = (x2 - x1)*(y3 - y2) - (y2 - y1)*(x3 - x2)
         corner_angle = abs(math.atan2(cross, dot))
 
-        if corner_angle <= eps:
-            continue
-
-        min_angle = math.radians(1)  
-        if corner_angle < min_angle:
-            continue
-
-        start_dist = width / math.tan(corner_angle / 2)
-
-        if length1 <= start_dist or length2 <= start_dist:
+        if corner_angle < deg_tolerance or abs(corner_angle - math.pi) < deg_tolerance:
             continue
         
-        cmd = f" ;FILLET L{length1:.3f} L'{length2:.3f} D{start_dist:.3f} R{width:.3f} A{corner_angle:.3f}\n"
-        edited_gcode[i] = edited_gcode[i].replace("\n", cmd)
+        cmd = f" ;L{length1:.3f} L'{length2:.3f} A{corner_angle:.3f}\n"
+        edited_gcode[point_idx[p+1]] = edited_gcode[point_idx[p+1]].replace("\n", cmd)
 
-        sys.stdout.write(f"\r{i+1} out of {lines_to_read} lines read...")
+        sys.stdout.write(f"\r{p+1} out of {points_to_read} lines read...")
         sys.stdout.flush()
     
     return edited_gcode
@@ -88,13 +72,13 @@ def create_new_file(file_name, edited_gcode):
     with open(new_file_name, "w") as f:
         f.writelines(edited_gcode)
 
-file_name = "CE3E3V2_flat block.gcode"
-gcode = read_file(file_name)
-edited_gcode = fillet_corners(gcode, 8)
-create_new_file(file_name, edited_gcode)
+def main(): 
+    gcode = read_file(FILE_NAME)
+    edited_gcode = fillet_corners(gcode, 8, DEG_TOLERANCE)
+    create_new_file(FILE_NAME, edited_gcode)
 
-
-
+if __name__ == "__main__":
+    main()
     
 
     
