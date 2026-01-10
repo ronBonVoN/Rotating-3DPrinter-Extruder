@@ -34,11 +34,14 @@ def fillet_corners(gcode, width, deg_tolerance):
     
     point_idx = []
     points = []
+    lines_to_read = len(gcode)
     for i in range(len(gcode)): 
         x, y = get_xy(gcode[i])
         if None not in (x, y): 
             point_idx.append(i)
             points.append((x, y))
+        sys.stdout.write(f"\r{i+1} out of {lines_to_read} lines to read...")
+        sys.stdout.flush()
     
     points_to_read = len(points) - 2
     for p in range(points_to_read):
@@ -59,10 +62,11 @@ def fillet_corners(gcode, width, deg_tolerance):
         if corner_angle < deg_tolerance or abs(corner_angle - math.pi) < deg_tolerance:
             continue
         
-        cmd = f" ;L{length1:.3f} L'{length2:.3f} A{corner_angle:.3f}\n"
+        start_dist = width / math.tan(corner_angle / 2)
+        cmd = f" ;L{length1:.3f} A{corner_angle:.3f} D{start_dist}\n FILLET"
         edited_gcode[point_idx[p+1]] = edited_gcode[point_idx[p+1]].replace("\n", cmd)
 
-        sys.stdout.write(f"\r{p+1} out of {points_to_read} lines read...")
+        sys.stdout.write(f"\r{p+1} out of {points_to_read} points to analyze...")
         sys.stdout.flush()
     
     return edited_gcode
