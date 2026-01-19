@@ -3,12 +3,12 @@ import time
 import threading
 import queue
 
-ARDUINO_COM = "COM12"
+ARDUINO_COM = "COM14"
 ENDER_COM = "COM13"
 ARDUINO_BAUD = 115200
 ENDER_BAUD = 115200
 
-gcode_file_name = "air_circle.gcode"
+gcode_file_name = "air_square_2x edited.gcode"
 log_file = "log_serial.txt"
 
 arduino = serial.Serial(ARDUINO_COM, ARDUINO_BAUD, timeout=0.1)
@@ -36,7 +36,9 @@ def send_gcode():
         
         print(command)
         log_queue.put(command + "\n")
-
+       # stop_event.wait(3)
+       # print("ok")
+        log_queue.put("ok\n")
         while not stop_event.is_set():
             if ender.in_waiting > 0:
                 if "ok" in ender.readline().decode('utf-8', errors='ignore').strip():

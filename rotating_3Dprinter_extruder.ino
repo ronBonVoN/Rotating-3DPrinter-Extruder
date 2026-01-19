@@ -50,18 +50,20 @@ void loop() {
     fD = get_pos('D'); 
     fA = get_pos('A'); 
     fC = get_pos('C'); 
-  
-    start = millis(); 
     
     if (x2 != -1.0 && y2 != -1.0) {
+      start = millis(); 
       angle2 = atan2(y2-y1, x2-x1);
       rotate_optimal_path(angle1, angle2); 
+      print_status(); 
       x1 = x2; 
       y1 = y2; 
     }
 
     if (v != -1.0 && fL != -1.0 && fD != -1.0 && fA != -1.0) {
+      Serial.println("FILLET DETECTED");
       while (v*(millis() - start) < fL - fD); 
+      Serial.println("FILLET STARTING");
       angle0 = angle1; 
       start = millis(); 
       while (v*(millis() - start) < fD) {
@@ -71,6 +73,8 @@ void loop() {
         if (fC > 0) angle2 += angle0; 
         if (fC < 0) angle2 = angle0 - angle2; 
         rotate_optimal_path(angle1, angle2); 
+        Serial.print("FILLET ");
+        print_status(); 
       }
     }
   }
@@ -121,8 +125,7 @@ void rotate_optimal_path(float angle1, float angle2) {
   rotate(path); 
 
   angle1 = angle2; 
-  steps_count += path; 
-  print_status(); 
+  steps_count += path;
 }
 
 void print_status() {

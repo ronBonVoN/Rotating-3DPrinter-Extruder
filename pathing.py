@@ -2,7 +2,7 @@ import re
 import math
 import sys
 
-FILE_NAME = "CE3E3V2_triangle.gcode"
+FILE_NAME = "air_square_2x.gcode"
 WIDTH = 8 # mm 
 DEG_TOLERANCE = math.radians(2)
 
@@ -23,7 +23,7 @@ def get_xy(gcode_line):
     y_match = re.search(r'Y(-?\d+\.?\d*)', gcode_line)
 
     if x_match and y_match: 
-        x = float(x_match.group(1)) 
+        x = float(x_match.group(1))
         y = float(y_match.group(1))
         return x, y 
     else:
@@ -59,11 +59,16 @@ def fillet_corners(gcode, width, deg_tolerance):
         cross = (x2 - x1)*(y3 - y2) - (y2 - y1)*(x3 - x2)
         corner_angle = abs(math.atan2(cross, dot))
 
+
         if corner_angle < deg_tolerance or abs(corner_angle - math.pi) < deg_tolerance:
             continue
         
         start_dist = width / math.tan(corner_angle / 2)
-        cmd = f" ;L{length1:.3f} A{corner_angle:.3f} D{start_dist}\n FILLET"
+
+        # if start_dist > width + deg_tolerance: 
+        #     continue 
+
+        cmd = f" ;L{length1:.3f} D{start_dist:.3f} R{width:.3f} A{corner_angle:.3f} C{cross} FILLET CORNER\n"
         edited_gcode[point_idx[p+1]] = edited_gcode[point_idx[p+1]].replace("\n", cmd)
 
         sys.stdout.write(f"\r{p+1} out of {points_to_read} points to analyze...")
