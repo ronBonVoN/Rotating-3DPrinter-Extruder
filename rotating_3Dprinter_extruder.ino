@@ -27,7 +27,7 @@ unsigned long start; //start time (for tracking time)
 
 void rotate(int steps); 
 float get_pos(char cor);
-void rotate_optimal_path(float angle1, float angle2); 
+void rotate_optimal_path(float &angle1, float angle2); 
 void print_status(); 
 
 void setup() {
@@ -39,50 +39,42 @@ void setup() {
 
 void loop() { 
   
-  if (Serial.available()) {
-    cmd = Serial.readStringUntil('\n');
+  if (Serial.available()) cmd = Serial.readStringUntil('\n');
+  else return; 
     
-    x2 = get_pos('X'); 
-    y2 = get_pos('Y'); 
+  x2 = get_pos('X'); y2 = get_pos('Y'); 
     
-    v = get_pos('F');
-    fL = get_pos('L'); 
-    fD = get_pos('D'); 
-    fA = get_pos('A'); 
-    fC = get_pos('C'); 
-    
-    if (x2 != -1.0 && y2 != -1.0) {
-      start = millis(); 
-      angle2 = atan2(y2-y1, x2-x1);
-      rotate_optimal_path(angle1, angle2); 
-      print_status(); 
-      x1 = x2; 
-      y1 = y2; 
-    }
-
-    if (v != -1.0 && fL != -1.0 && fD != -1.0 && fA != -1.0) {
-      Serial.println("FILLET DETECTED");
-      while (v*(millis() - start) < fL - fD); 
-      Serial.println("FILLET STARTING");
-      angle0 = angle1; 
-      start = millis(); 
-      while (v*(millis() - start) < fD) {
-        d = v*(millis() - start);
-        if (fR == d) break; 
-        angle2 = atan(d/sqrt(fR*fR - d*d)) + PI/2;
-        if (fC > 0) angle2 += angle0; 
-        if (fC < 0) angle2 = angle0 - angle2; 
-        rotate_optimal_path(angle1, angle2); 
-        Serial.print("FILLET ");
-        print_status(); 
-      }
-    }
+  if (x2 != -1.0 && y2 != -1.0) {
+    start = millis(); 
+    angle2 = atan2(y2-y1, x2-x1);
+    rotate_optimal_path(angle1, angle2); 
+    x1 = x2; 
+    y1 = y2; 
   }
 
-  if (abs(steps_count) >= rotation_limit) {
-    rotate(-steps_count); 
-    steps_count=0; 
-    print_status();
+  v = get_pos('F'); fL = get_pos('L'); fD = get_pos('D'); 
+  fR = get_pos('R');fA = get_pos('A'); fC = get_pos('C'); 
+
+  if (v != -1.0 && fL != -1.0 && fD != -1.0 && fR != -1.0 && fA != -1.0) {
+    Serial.println("FILLET DETECTED");
+    while (v*(millis() - start)/1000.0/60.0 < fL - fD); 
+    Serial.println("FILLET STARTING");
+    angle0 = angle1; 
+    if (fC < 0) angle0 *= -1; 
+    start = millis(); 
+    while (1) {
+      d = v*(millis() - start)/1000.0/60.0; 
+      Serial.println(d); 
+      if (fR == d) break; 
+      if (d >= fD) break; 
+      angle2 = atan(d/sqrt(fR*fR - d*d));
+      Serial.println(angle2);
+      if (angle2 >= fA) break; 
+      angle2 = abs(angle0 + angle2);
+      Serial.println("FILLET"); 
+      rotate_optimal_path(angle1, angle2); 
+    }
+    rotate_optimal_path(angle1, abs(angle0 + fA));
   }
 }
 
@@ -91,9 +83,9 @@ void rotate(int steps) {
   digitalWrite(DIR, steps > 0 ? LOW : HIGH);
   for (int i=0; i<abs(steps); i++) {
     digitalWrite(PUL, HIGH); 
-    delay(2);
+    delay(1);
     digitalWrite(PUL, LOW); 
-    delay(2); 
+    delay(1); 
   }
 }
 
@@ -108,13 +100,12 @@ float get_pos(char cor) {
   }
 }
 
-void rotate_optimal_path(float angle1, float angle2) {
+void rotate_optimal_path(float &angle1, float angle2) {
   float dtheta; 
   
   if (angle2 > 2*PI) angle2 -= 2*PI; 
   if (angle2 < 0) angle2 += 2*PI;
   
-  if (angle2 == angle1) return 0; 
   if (angle1 > PI && angle2 == 0) angle2 = 2*PI; 
   if (angle2 > PI && angle1 == 0) angle1 = 2*PI; 
   
@@ -126,6 +117,17 @@ void rotate_optimal_path(float angle1, float angle2) {
 
   angle1 = angle2; 
   steps_count += path;
+
+  print_status(); 
+  check_rotation_limit(); 
+}
+
+void check_rotation_limit() {
+  if (abs(steps_count) >= rotation_limit) {
+  rotate(-steps_count); 
+  steps_count=0; 
+  print_status();
+  }
 }
 
 void print_status() {
