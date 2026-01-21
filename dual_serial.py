@@ -4,7 +4,7 @@ import threading
 import queue
 
 ARDUINO_COM = "COM14"
-ENDER_COM = "COM13"
+ENDER_COM = "COM15"
 ARDUINO_BAUD = 115200
 ENDER_BAUD = 115200
 
@@ -23,6 +23,8 @@ except FileNotFoundError:
     print(f"{gcode_file_name} not found")
     exit(1)
 
+open(log_file, "w").close()
+
 stop_event = threading.Event()
 log_queue = queue.Queue()
 
@@ -32,7 +34,9 @@ def send_gcode():
             continue
         
         ender.write((command + "\n").encode())
-        arduino.write((command + "\n").encode())
+        
+        if 'X' and 'Y' in command: 
+            arduino.write((command + "\n").encode())
         
         print(command)
         log_queue.put(command + "\n")
