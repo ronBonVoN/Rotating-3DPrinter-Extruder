@@ -1,9 +1,9 @@
 G90
 ok
+STARTUP angle: 0.00 path: 0 steps count: 0
 ok
 G21
 ok
-angle: 0.00 path: 0 steps count: 0
 ok
 G28
 ok
@@ -16,79 +16,63 @@ ok
 ok
 M400
 ok
-angle: 0.79 path: 80 steps count: 80
-angle: 0.79 path: 80 steps count: 80
+CORNER angle: 0.79 path: 80 steps count: 80
 ok
-G1 X65 Y25 F600 ;L40.000 D8.000 R8.000 A1.571 C1600.0 FILLET CORNER
-ok
-ok
-M400
-ok
-angle: 0.00 path: -80 steps count: 0
-angle: 0.00 path: -80 steps count: 0
-FILLET DETECTED
-angle: 1.57 path: 160 steps count: 160
-ok
-G1 X65 Y65 F600 ;L40.000 D8.000 R8.000 A1.571 C1600.0 FILLET CORNER
+G1 X65 Y25 F600 ;T32.000 R8.000 A1.571 C1600.0 FILLET CORNER
 ok
 ok
 M400
 ok
-angle: 1.57 path: 0 steps count: 160
-FILLET DETECTED
-angle: 3.14 path: 160 steps count: 320
+CORNER angle: 0.00 path: -80 steps count: 0
+FILLET angle: 1.57 path: 160 steps count: 160
 ok
-G1 X25 Y65 F600 ;L40.000 D8.000 R8.000 A1.571 C1600.0 FILLET CORNER
-ok
-angle: 3.14 path: 0 steps count: 320
-ok
-M400
-ok
-FILLET DETECTED
-angle: 4.71 path: 160 steps count: 480
-ok
-G1 X25 Y25 F600 ;L40.000 D8.000 R8.000 A1.571 C1600.0 FILLET CORNER
+G1 X65 Y65 F600 ;T32.000 R8.000 A1.571 C1600.0 FILLET CORNER
 ok
 ok
 M400
 ok
-angle: 4.71 path: 0 steps count: 480
-FILLET DETECTED
+FILLET angle: 3.14 path: 160 steps count: 320
 ok
-G1 X65 Y25 F600 ;L40.000 D8.000 R8.000 A1.571 C1600.0 FILLET CORNER
-ok
-ok
-M400
-ok
-angle: 0.00 path: -480 steps count: 0
-angle: 0.00 path: 0 steps count: 0
-FILLET DETECTED
-ok
-G1 X65 Y65 F600 ;L40.000 D8.000 R8.000 A1.571 C1600.0 FILLET CORNER
+G1 X25 Y65 F600 ;T32.000 R8.000 A1.571 C1600.0 FILLET CORNER
 ok
 ok
 M400
 ok
-angle: 1.57 path: 160 steps count: 160
-angle: 1.57 path: 0 steps count: 160
-FILLET DETECTED
+FILLET angle: 4.71 path: 160 steps count: 480
 ok
-G1 X25 Y65 F600 ;L40.000 D8.000 R8.000 A1.571 C1600.0 FILLET CORNER
+G1 X25 Y25 F600 ;T32.000 R8.000 A1.571 C1600.0 FILLET CORNER
 ok
 ok
 M400
 ok
-angle: 3.14 path: 160 steps count: 320
-angle: 3.14 path: 0 steps count: 320
-FILLET DETECTED
+ok
+G1 X65 Y25 F600 ;T32.000 R8.000 A1.571 C1600.0 FILLET CORNER
+ok
+ok
+M400
+ok
+FILLET angle: 0.00 path: -480 steps count: 0
+FILLET angle: 1.57 path: 160 steps count: 160
+ok
+G1 X65 Y65 F600 ;T32.000 R8.000 A1.571 C1600.0 FILLET CORNER
+ok
+ok
+M400
+ok
+FILLET angle: 3.14 path: 160 steps count: 320
+ok
+G1 X25 Y65 F600 ;T32.000 R8.000 A1.571 C1600.0 FILLET CORNER
+ok
+ok
+M400
+ok
+FILLET angle: 4.71 path: 160 steps count: 480
 ok
 G1 X25 Y25 F600
 ok
 ok
 M400
 ok
-angle: 4.71 path: 160 steps count: 480
-angle: 4.71 path: 0 steps count: 480
 ok
 G1 Z10 F300
 ok

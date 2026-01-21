@@ -40,8 +40,6 @@ def send_gcode():
         
         print(command)
         log_queue.put(command + "\n")
-       # stop_event.wait(3)
-       # print("ok")
         log_queue.put("ok\n")
         while not stop_event.is_set():
             if ender.in_waiting > 0:

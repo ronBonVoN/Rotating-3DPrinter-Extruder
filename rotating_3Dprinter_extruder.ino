@@ -17,26 +17,23 @@ float angle2;             //new angle
 int path = 0;             //steps to take from prev angle to new angle
 
 float v;  //nozzel velocity
-float fL; //line length without fillet
-float fD; //distance covered during fillet
+float fT; //travel distance before fillet
 float fR; //fillet radius
 float fA; //fillet sweep (angle)
 float fC; //fillet direction (cross product)
-float d;  //distance nozel has gone
-float angle0; 
 unsigned long start; //start time (for tracking time)
 
 void rotate(int steps, float step_period);
 float get_pos(char cor);
 void rotate_optimal_path(float &angle1, float angle2); 
 void check_rotation_limit(); 
-void print_status(); 
+void print_status(String status_type); 
 
 void setup() {
   pinMode(PUL, OUTPUT);
   pinMode(DIR, OUTPUT); 
   Serial.begin(115200);
-  print_status();
+  print_status("STARTUP");
 }
 
 void loop() { 
@@ -49,20 +46,18 @@ void loop() {
   else {
     start = millis(); 
     angle2 = atan2(y2-y1, x2-x1);
-    rotate_optimal_path(angle1, angle2, MIN_STEP_PERIOD); 
-    print_status();
+    rotate_optimal_path(angle1, angle2, MIN_STEP_PERIOD, "CORNER"); 
     x1 = x2; 
     y1 = y2; 
   }
 
-  v = get_pos('F'); fL = get_pos('L'); fD = get_pos('D'); fR = get_pos('R');fA = get_pos('A'); fC = get_pos('C'); 
-  if (isnan(v) && isnan(fL) && isnan(fD) && isnan(fR) && isnan(fA)) return; 
+  v = get_pos('F'); fT = get_pos('T'); fR = get_pos('R'); fA = get_pos('A'); fC = get_pos('C'); 
+  if (isnan(v) && isnan(fT) && isnan(fR) && isnan(fA) && isnan(fC)) return; 
   else {
-    Serial.println("FILLET DETECTED"); 
     if (fC < 0) angle2 = angle1 - fA; 
     else angle2 = angle1 + fA; 
-    while (v*(millis() - start)/1000.0/60.0 < fL - fD); 
-    rotate_optimal_path(angle1, angle2, fR/v/60.0*1000.0); 
+    while (v*(millis() - start)/1000.0/60.0 < fT); 
+    rotate_optimal_path(angle1, angle2, fR/v/60.0*1000.0, "FILLET"); 
   }
 }
 
@@ -88,7 +83,7 @@ float get_pos(char cor) {
   }
 }
 
-void rotate_optimal_path(float &angle1, float angle2, float step_period) {
+void rotate_optimal_path(float &angle1, float angle2, float step_period, String status_type) {
   float dtheta; 
   
   if (angle2 > 2*PI) angle2 -= 2*PI; 
@@ -106,7 +101,7 @@ void rotate_optimal_path(float &angle1, float angle2, float step_period) {
     angle1 = angle2; 
     rotate(path, step_period); 
     steps_count += path;
-    print_status(); 
+    print_status(status_type); 
     check_rotation_limit(); 
   }
 }
@@ -115,12 +110,13 @@ void check_rotation_limit() {
   if (abs(steps_count) >= rotation_limit) {
   rotate(-steps_count, MIN_STEP_PERIOD); 
   steps_count=0; 
-  print_status();
+  print_status("UNCOIL");
   }
 }
 
-void print_status() {
-  Serial.print("angle: ");
+void print_status(String status_type) {
+  Serial.print(status_type); 
+  Serial.print(" angle: ");
   Serial.print(angle1); //state tracking
   Serial.print(" path: ");
   Serial.print(path);

@@ -35,7 +35,8 @@ def fillet_corners(gcode, width, deg_tolerance):
     point_idx = []
     points = []
     lines_to_read = len(gcode)
-    for i in range(len(gcode)): 
+   
+    for i in range(lines_to_read): 
         x, y = get_xy(gcode[i])
         if None not in (x, y): 
             point_idx.append(i)
@@ -64,13 +65,11 @@ def fillet_corners(gcode, width, deg_tolerance):
             continue
         
         start_dist = width / math.tan(corner_angle / 2)
+        travel_before_fillet = length1 - start_dist 
 
-        # if start_dist > width + deg_tolerance: 
-        #     continue 
-
-        cmd = f" ;L{length1:.3f} D{start_dist:.3f} R{width:.3f} A{corner_angle:.3f} C{cross} FILLET CORNER\n"
+        cmd = f" ;T{travel_before_fillet:.3f} R{width:.3f} A{corner_angle:.3f} C{cross} FILLET CORNER\n"
         edited_gcode[point_idx[p+1]] = edited_gcode[point_idx[p+1]].replace("\n", cmd)
-
+        
         sys.stdout.write(f"\r{p+1} out of {points_to_read} points to analyze...")
         sys.stdout.flush()
     
