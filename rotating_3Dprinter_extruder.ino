@@ -2,7 +2,7 @@
 
 #define PUL 2 //step pin
 #define DIR 8 //direction pin
-#define MIN_STEP_PERIOD 2.0 //ms 
+#define MIN_STEP_PERIOD 2.0 //ms float
 #define ROTATION_STEPS 400 //steps for 2PI rotation
 #define PULLEY_RATIO 1.6 //32:20
 
