@@ -6,7 +6,7 @@
 #define ROTATION_STEPS 400 //steps for 2PI rotation
 #define PULLEY_RATIO 1.6 //32:20
 
-int rotation_limit = round(1.5*PULLEY_RATIO*ROTATION_STEPS); //limit of rotation in single direction
+int rotation_limit = round(1.25*PULLEY_RATIO*ROTATION_STEPS); //limit of rotation in single direction
 int steps_count = 0;      //steps tracking
 
 String cmd;               //3D printer command 

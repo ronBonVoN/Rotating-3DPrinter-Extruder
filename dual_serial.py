@@ -9,7 +9,7 @@ ENDER_COM = "COM15"
 ARDUINO_BAUD = 115200
 ENDER_BAUD = 115200
 
-gcode_file_name = "air_square_2x edited.gcode"
+gcode_file_name = "CE3E3V2_print_test0_polygons edited.gcode"
 log_file = "log_serial.txt"
 
 stop_event = threading.Event()
@@ -49,7 +49,6 @@ def send_gcode(ender, arduino, gcode):
             time.sleep(0.01)
 
     stop_event.set()
-
 
 def read_arduino(arduino):
     while not stop_event.is_set():

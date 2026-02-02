@@ -2,7 +2,7 @@ import re
 import math
 import sys
 
-FILE_NAME = "air_square_2x.gcode"
+FILE_NAME = "CE3E3V2_print_test0_polygons.gcode"
 WIDTH = 8 # mm 
 DEG_TOLERANCE = math.radians(2)
 
@@ -14,6 +14,14 @@ def read_file(file_name):
     except: 
         print(f"error finding {file_name}")
         exit(1)
+
+def add_M400s(gcode): 
+    edited_gcode = []
+    for line in gcode:
+        edited_gcode.append(line)
+        if line.strip().startswith(("G0", "G1")):
+            edited_gcode.append("M400\n")
+    return edited_gcode
 
 def get_xy(gcode_line):
     if ";" in gcode_line:
@@ -28,7 +36,7 @@ def get_xy(gcode_line):
         return x, y 
     else:
         return None, None
-    
+
 def fillet_corners(gcode, width, deg_tolerance):   
     edited_gcode = gcode.copy()
     
@@ -67,7 +75,7 @@ def fillet_corners(gcode, width, deg_tolerance):
         start_dist = width / math.tan(corner_angle / 2)
         travel_before_fillet = length1 - start_dist 
 
-        cmd = f" ;T{travel_before_fillet:.3f} R{width:.3f} A{corner_angle:.3f} C{cross} FILLET CORNER\n"
+        cmd = f" ;T{travel_before_fillet:.3f} R{width:.3f} A{corner_angle:.3f} C{cross:.3f} FILLET CORNER\n"
         edited_gcode[point_idx[p+1]] = edited_gcode[point_idx[p+1]].replace("\n", cmd)
         
         sys.stdout.write(f"\r{p+1} out of {points_to_read} points to analyze...")
@@ -82,7 +90,8 @@ def create_new_file(file_name, edited_gcode):
 
 def main(): 
     gcode = read_file(FILE_NAME)
-    edited_gcode = fillet_corners(gcode, 8, DEG_TOLERANCE)
+    edited_gcode = add_M400s(gcode)
+  #  edited_gcode = fillet_corners(edited_gcode, 8, DEG_TOLERANCE)
     create_new_file(FILE_NAME, edited_gcode)
 
 if __name__ == "__main__":
