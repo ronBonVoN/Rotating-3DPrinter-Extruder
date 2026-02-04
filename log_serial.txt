@@ -1,373 +1,249 @@
 M140 S65
 ok
-STARTUP angle: 0.00 path: 0 steps count: 0
-ok
 M105
-ok
+STARTUP angle: 0.00 path: 0 steps count: 0
 ok
 M190 S65
 ok
-ok
 M104 S205
-ok
 ok
 M105
 ok
-ok
 M109 S205
-ok
 ok
 M82 ;absolute extrusion mode
 ok
-ok
 G92 E0 ; Reset Extruder
-ok
 ok
 G28 ; Home all axes
 ok
-ok
 G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed
 ok
-ok
 M400
-ok
 ok
 G1 X0.1 Y20 Z0.3 F5000.0 ; Move to start position
 ok
-CORNER angle: 1.57 path: 159 steps count: 159
-ok
 M400
-ok
 ok
 G1 X0.1 Y200.0 Z0.3 F1500.0 E15 ; Draw the first line
 ok
-CORNER angle: 1.57 path: 1 steps count: 160
-ok
 M400
-ok
+CORNER angle: 1.57 path: 320 steps count: 320
 ok
 G1 X0.4 Y200.0 Z0.3 F5000.0 ; Move to side a little
 ok
-CORNER angle: 0.00 path: -160 steps count: 0
-ok
 M400
-ok
 ok
 G1 X0.4 Y20 Z0.3 F1500.0 E30 ; Draw the second line
 ok
-ok
 M400
-ok
+CORNER angle: 0.00 path: 320 steps count: 640
 ok
 G92 E0 ; Reset Extruder
 ok
-CORNER angle: 4.71 path: -160 steps count: -160
-ok
 G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed
 ok
-ok
 M400
-ok
 ok
 G1 X5 Y20 Z0.3 F5000.0 ; Move over to prevent blob squish
 ok
-CORNER angle: 6.28 path: 160 steps count: 0
-ok
 M400
 ok
-ok
 G92 E0
 ok
-ok
 G92 E0
-ok
 ok
 M107
 ok
-ok
 G0 F6000 X77.7 Y157.3 Z0.2
 ok
-ok
 M400
-ok
 ok
 G1 F1200 X157.3 Y157.3 E2.64751
 ok
-CORNER angle: 1.08 path: -530 steps count: -530
-CORNER angle: 0.00 path: -110 steps count: -640
-ok
 M400
-ok
 ok
 G1 X157.3 Y77.7 E5.29501
 ok
-CORNER angle: 4.71 path: -160 steps count: -800
-UNCOIL angle: 4.71 path: -160 steps count: 0
-ok
 M400
-ok
+CORNER angle: -1.57 path: 320 steps count: 960
 ok
 G1 X77.7 Y77.7 E7.94252
 ok
-CORNER angle: 3.14 path: -160 steps count: -160
-ok
 M400
-ok
+UNCOIL angle: -1.57 path: 320 steps count: 0
 ok
 G1 X77.7 Y157.3 E10.59003
 ok
-CORNER angle: 1.57 path: -160 steps count: -320
-ok
 M400
-ok
+CORNER angle: 2.36 path: 320 steps count: 320
 ok
 G0 F6000 X77.3 Y157.7
 ok
-ok
 M400
-ok
 ok
 G1 F1200 X77.3 Y77.3 E13.26414
 ok
-ok
 M400
-ok
 ok
 G1 X157.7 Y77.3 E15.93826
 ok
-CORNER angle: 0.00 path: -160 steps count: -480
-ok
 M400
-ok
+CORNER angle: 0.00 path: 320 steps count: 640
 ok
 G1 X157.7 Y157.7 E18.61237
 ok
-CORNER angle: 1.57 path: 160 steps count: -320
-ok
 M400
-ok
+CORNER angle: 1.57 path: 320 steps count: 960
 ok
 G1 X77.3 Y157.7 E21.28649
 ok
-CORNER angle: 3.14 path: 160 steps count: -160
-ok
 M400
-ok
+UNCOIL angle: 1.57 path: 320 steps count: 0
 ok
 G0 F6000 X98.621 Y150.2
 ok
-ok
 M400
-ok
 ok
 G1 F1200 X79.741 Y117.5 E22.54236
 ok
-ok
 M400
-ok
 ok
 G1 X98.621 Y84.8 E23.79823
 ok
-CORNER angle: 5.24 path: 213 steps count: 53
-ok
 M400
-ok
+CORNER angle: -1.05 path: 320 steps count: 320
 ok
 G1 X136.379 Y84.8 E25.05406
 ok
-CORNER angle: 6.28 path: 107 steps count: 160
-ok
 M400
-ok
 ok
 G1 X155.259 Y117.5 E26.30993
 ok
-CORNER angle: 1.05 path: -533 steps count: -373
-ok
 M400
-ok
+CORNER angle: 1.05 path: 320 steps count: 640
 ok
 G1 X136.379 Y150.2 E27.5658
 ok
-CORNER angle: 2.09 path: 107 steps count: -266
-ok
 M400
-ok
 ok
 G1 X98.621 Y150.2 E28.82164
 ok
-CORNER angle: 3.14 path: 107 steps count: -159
-ok
 M400
-ok
+CORNER angle: 3.14 path: 320 steps count: 960
 ok
 G0 F6000 X98.852 Y149.8
 ok
-ok
 M400
-ok
 ok
 G1 F1200 X136.148 Y149.8 E30.06211
 ok
-ok
 M400
-ok
 ok
 G1 X154.797 Y117.5 E31.30262
 ok
-CORNER angle: 5.24 path: 213 steps count: 54
-ok
 M400
-ok
+UNCOIL angle: 3.14 path: 320 steps count: 0
 ok
 G1 X136.148 Y85.2 E32.54313
 ok
-CORNER angle: 4.19 path: -107 steps count: -53
-ok
 M400
-ok
+CORNER angle: -1.05 path: 320 steps count: 320
 ok
 G1 X98.852 Y85.2 E33.7836
 ok
-CORNER angle: 3.14 path: -107 steps count: -160
-ok
 M400
-ok
+CORNER angle: 3.14 path: 320 steps count: 640
 ok
 G1 X80.203 Y117.5 E35.0241
 ok
-CORNER angle: 2.09 path: -107 steps count: -267
-ok
 M400
-ok
 ok
 G1 X98.852 Y149.8 E36.26461
 ok
-CORNER angle: 1.05 path: -107 steps count: -374
-ok
 M400
-ok
+CORNER angle: 1.05 path: 320 steps count: 960
 ok
 G0 F6000 X99.233 Y149.141
 ok
-ok
 M400
-ok
 ok
 G0 X116.925 Y148.233
 ok
-ok
 M400
-ok
 ok
 G0 X117.5 Y147.9
 ok
-ok
 M400
-ok
 ok
 G1 F1200 X91.173 Y102.3 E38.0159
 ok
-ok
 M400
-ok
+UNCOIL angle: 1.05 path: 320 steps count: 0
 ok
 G1 X143.827 Y102.3 E39.76718
 ok
-CORNER angle: 0.00 path: -107 steps count: -481
-ok
 M400
-ok
+CORNER angle: -0.81 path: 320 steps count: 320
 ok
 G1 X117.5 Y147.9 E41.51846
 ok
-CORNER angle: 2.09 path: 213 steps count: -268
-ok
 M400
-ok
+CORNER angle: 2.09 path: 320 steps count: 640
 ok
 G0 F6000 X117.5 Y147.1
 ok
-ok
 M400
-ok
 ok
 G1 F1200 X143.134 Y102.7 E43.22366
 ok
-ok
 M400
-ok
 ok
 G1 X91.866 Y102.7 E44.92884
 ok
-CORNER angle: 3.14 path: 107 steps count: -161
-ok
 M400
-ok
 ok
 G1 X117.5 Y147.1 E46.63404
 ok
-CORNER angle: 1.05 path: -213 steps count: -374
-ok
 M400
-ok
 ok
 M140 S0
 ok
-ok
 G91 ;Relative positioning
-ok
 ok
 G1 E-2 F2700 ;Retract a bit
 ok
-ok
 M400
-ok
 ok
 G1 E-2 Z0.2 F2400 ;Retract and raise Z
 ok
-ok
 M400
-ok
 ok
 G1 X5 Y5 F3000 ;Wipe out
 ok
-ok
 M400
-ok
 ok
 G1 Z10 ;Raise Z more
 ok
-ok
 M400
-ok
+CORNER angle: -2.24 path: 320 steps count: 960
 ok
 G90 ;Absolute positioning
 ok
-CORNER angle: 4.04 path: 305 steps count: -69
-ok
 G1 X0 Y235 ;Present print
 ok
-ok
 M400
-ok
+UNCOIL angle: -2.24 path: 320 steps count: 0
 ok
 M106 S0 ;Turn-off fan
 ok
-CORNER angle: 1.59 path: -250 steps count: -319
-ok
 M104 S0 ;Turn-off hotend
-ok
 ok
 M140 S0 ;Turn-off bed
 ok
-ok
 M84 X Y E ;Disable all steppers but Z
-ok
 ok
 M82 ;absolute extrusion mode
 ok
-ok
 M104 S0
-ok
 ok

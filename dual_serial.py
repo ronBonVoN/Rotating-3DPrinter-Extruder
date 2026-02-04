@@ -31,13 +31,10 @@ def send_gcode(ender, arduino, gcode):
             continue
 
         ender.write((command + "\n").encode())
-
-        if 'X' and 'Y' in command:
-            arduino.write((command + "\n").encode())
+        arduino.write((command + "\n").encode())
 
         print(command)
         log_queue.put(command + "\n")
-        log_queue.put("ok\n")
 
         while not stop_event.is_set():
             if ender.in_waiting > 0:

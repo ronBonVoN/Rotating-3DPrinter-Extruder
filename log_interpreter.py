@@ -28,25 +28,29 @@ def active_plot(lines):
     line_plot, = ax.plot([], [], '-', color='blue')
 
     for i in range(len(lines)): 
-        if "X" in lines[i] and "Y" in lines[i]:
-            x = float(re.search(r"X(\d+\.?\d*)", lines[i]).group(1))
-            y = float(re.search(r"Y(\d+\.?\d*)", lines[i]).group(1))
-            
-            if "T" in lines[i]: 
-                fillet_dist = float(re.search(r"T(\d+\.?\d*)", lines[i]).group(1))  
+        X_match = re.search(r"X(\d+\.?\d*)", lines[i])
+        Y_match = re.search(r"Y(\d+\.?\d*)", lines[i])
+        T_match = re.search(r"T(\d+\.?\d*)", lines[i])
+        angle_match = re.search(r"angle: (\d+\.?\d*)", lines[i])
+
+        if X_match and Y_match:
+            x = float(X_match.group(1))
+            y = float(Y_match.group(1))
+        
+            if T_match: 
+                fillet_dist = float(T_match.group(1))
                 angle = math.atan2(y - y_data[-1], x - x_data[-1])  
                 x_data.append(x_data[-1] + fillet_dist*math.cos(angle))
                 y_data.append(y_data[-1] + fillet_dist*math.sin(angle))
 
             x_data.append(x)
             y_data.append(y)
-
             line_plot.set_data(x_data, y_data)
 
-        elif "angle: " in lines[i]:
-            rad_data.append(float(re.search(r"angle: (\d+\.?\d*)", lines[i]).group(1)))
-            rad = rad_data[-1]
-            
+        elif angle_match:
+            rad = float(angle_match.group(1))  
+            rad_data.append(rad)
+
             if "CORNER" in lines[i] and "FILLET" in lines[i+1]:
                 x = x_data[-2]
                 y = y_data[-2]
