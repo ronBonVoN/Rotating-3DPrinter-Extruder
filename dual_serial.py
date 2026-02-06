@@ -2,82 +2,97 @@ import serial
 import time
 import threading
 import queue
-import sys
 
 ARDUINO_COM = "COM14"
 ENDER_COM = "COM15"
 ARDUINO_BAUD = 115200
 ENDER_BAUD = 115200
-
-gcode_file_name = "CE3E3V2_print_test0_polygons edited.gcode"
-log_file = "log_serial.txt"
+LOG_FILE_NAME = "log_serial.txt"
 
 stop_event = threading.Event()
-log_queue = queue.Queue()
+log = queue.Queue()
+cmd_info = queue.Queue(maxsize=1)
 
+def format_arduino_command(arduino_commands, i): 
+    return f"A{arduino_commands[i][0]} P{arduino_commands[i][1]}"
 
-def load_gcode():
-    try:
-        with open(gcode_file_name, "r") as f:
-            return [line.strip() for line in f.readlines()]
-    except FileNotFoundError:
-        print(f"{gcode_file_name} not found")
-        sys.exit(1)
-
-
-def send_gcode(ender, arduino, gcode):
-    for command in gcode:
-        if command == "" or command.startswith(";"):
+def send_gcode(ender, gcode):
+    for i in range(len(gcode)):
+        if gcode[i] == "" or gcode[i].startswith(";"):
             continue
+        
+        if "X" in gcode[i] and "Y" in gcode[i]:
+            try:
+                cmd_info.get_nowait()
+            except queue.Empty:
+                pass
+            cmd_info.put((i, time.perf_counter()))
 
-        ender.write((command + "\n").encode())
-        arduino.write((command + "\n").encode())
-
-        print(command)
-        log_queue.put(command + "\n")
+        ender.write((gcode[i] + "\n").encode())
+        log.put(gcode[i])
 
         while not stop_event.is_set():
             if ender.in_waiting > 0:
                 response = ender.readline().decode("utf-8", errors="ignore").strip()
                 if "ok" in response:
-                    print("ok")
-                    log_queue.put("ok\n")
+                    log.put("ok")
                     break
             time.sleep(0.01)
-
     stop_event.set()
 
-def read_arduino(arduino):
+def send_arduino_commands(arduino, arduino_commands):
     while not stop_event.is_set():
-        if arduino.in_waiting > 0:
-            motor = arduino.readline().decode("utf-8", errors="ignore").strip()
-            print(motor)
-            log_queue.put(motor + "\n")
-        time.sleep(0.01)
+        try:
+            i, travel_start = cmd_info.get(timeout=0.1)
+        except queue.Empty:
+            continue
 
+        if arduino_commands[i][2] > 0:
+            travel_time = arduino_commands[i][2] - (time.perf_counter() - travel_start)
+            if travel_time > 0:
+                time.sleep(travel_time)
+
+        command = format_arduino_command(arduino_commands, i)
+        arduino.write((command + "\n").encode())
+        log.put(command)
+
+        while not stop_event.is_set():
+            if arduino.in_waiting > 0:
+                response = arduino.readline().decode("utf-8", errors="ignore").strip()
+                log.put(response)
+                break
+            time.sleep(0.01)
 
 def write_to_log():
-    with open(log_file, "a") as f:
-        while not stop_event.is_set() or not log_queue.empty():
+    with open(LOG_FILE_NAME, "a") as f:
+        while True:
+            if stop_event.is_set() and log.empty():
+                break
             try:
-                f.write(log_queue.get(timeout=0.1))
+                message = log.get(timeout=0.1)
+                print(message)
+                f.write(message + "\n")
                 f.flush()
             except queue.Empty:
-                pass
+                continue
 
+def run_threads(gcode, arduino_commands):
+    try:
+        open(LOG_FILE_NAME, "w").close()
+    except OSError:
+        print(f"failed to create log file {LOG_FILE_NAME}")
+        return
 
-def main():
-    open(log_file, "w").close()
-
-    gcode = load_gcode()
-
-    arduino = serial.Serial(ARDUINO_COM, ARDUINO_BAUD, timeout=0.1)
-    ender = serial.Serial(ENDER_COM, ENDER_BAUD, timeout=0.1)
+    try:
+        arduino = serial.Serial(ARDUINO_COM, ARDUINO_BAUD, timeout=0.1)
+        ender = serial.Serial(ENDER_COM, ENDER_BAUD, timeout=0.1)
+    except serial.SerialException:
+        print("failed to open serial ports.")
+        return
 
     time.sleep(2)
-
-    t1 = threading.Thread(target=send_gcode, args=(ender, arduino, gcode))
-    t2 = threading.Thread(target=read_arduino, args=(arduino,))
+    t1 = threading.Thread(target=send_gcode, args=(ender, gcode))
+    t2 = threading.Thread(target=send_arduino_commands, args=(arduino, arduino_commands))
     t3 = threading.Thread(target=write_to_log)
 
     try:
@@ -90,7 +105,7 @@ def main():
         t3.join()
     except KeyboardInterrupt:
         print("forced close...")
-        log_queue.put("forced close.\n")
+        log.put("forced close.\n")
         stop_event.set()
 
         t1.join()
@@ -101,7 +116,3 @@ def main():
         arduino.close()
         ender.close()
         print("closed.")
-
-
-if __name__ == "__main__":
-    main()

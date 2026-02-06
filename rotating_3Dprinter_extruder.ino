@@ -2,79 +2,64 @@
 
 #define PUL 2 //step pin
 #define DIR 8 //direction pin
-#define MAX_ROTATION 1.25 //1 is full rotation
-#define MIN_STEP_PERIOD 2.0 //ms float
+#define MAX_ROTATION 1 //1 is full rotation
+#define MIN_STEP_PERIOD 2 //ms
 #define ROTATION_STEPS 400 //steps for 2PI rotation
 #define PULLEY_RATIO 1.6 //32:20
 
-int rotation_limit = round(MAX_ROTATION*PULLEY_RATIO*ROTATION_STEPS); //limit of rotation in single direction
-int steps_count = 0;      //steps tracking
+const int rotation_limit = round(MAX_ROTATION*PULLEY_RATIO*ROTATION_STEPS); //limit of rotation in single direction
+const float rotation_ratio = ROTATION_STEPS/(2*PI)*PULLEY_RATIO; 
+int steps_count = 0; //steps tracking
+int path = 0;        //steps to take from prev angle to new angle
+int step_period;     //rotation rate 
 
-String cmd;             //3D printer command 
-float x1 = 0.0, y1=0.0; //previous coordinates
-float x2, y2;           //new coordinates
-float angle1 = 0.0;     //previous angle
-float angle2;           //new angle
-int path = 0;           //steps to take from prev angle to new angle
+String cmd;          //rotation command 
+float angle1 = 0.0;  //previous angle
+float angle2;        //new angle
+float dtheta;        //change in angle 
 
-float v;  //nozzel velocity
-float fT; //travel distance before fillet
-float fR; //fillet radius
-float fA; //fillet sweep (angle)
-float fC; //fillet direction (cross product)
-unsigned long travel_start; //start time of travel move (for tracking time)
-
-void check_command(); 
-void rotate(int steps, float step_period);
+void rotate(int steps, int step_period);
 float get_pos(char cor);
-void rotate_optimal_path(float &angle1, float angle2); 
-void check_rotation_limit(); 
-void print_status(String status_type); 
 
 void setup() {
   pinMode(PUL, OUTPUT);
   pinMode(DIR, OUTPUT); 
   Serial.begin(115200);
-  print_status("STARTUP");
 }
 
 void loop() { 
-  check_command(); 
+  if (Serial.available()) cmd = Serial.readStringUntil('\n');
+  else return; 
 
-  x2 = get_pos('X'); y2 = get_pos('Y');    
-  if (isnan(x2) && isnan(y2)) return; 
-  else if (x1 == x2 && y1 == y2) return; 
-  else {
-    angle2 = atan2(y2-y1, x2-x1);
-    rotate_optimal_path(angle1, angle2, MIN_STEP_PERIOD, "CORNER"); 
-    x1 = x2; 
-    y1 = y2; 
-  }
+  if (isnan(get_pos('A')) && isnan(get_pos('P'))) return; 
 
-  v = get_pos('F'); fT = get_pos('T'); fR = get_pos('R'); fA = get_pos('A'); fC = get_pos('C'); 
-  if (isnan(v) && isnan(fT) && isnan(fR) && isnan(fA) && isnan(fC)) return; 
-  else {
-    if (fC < 0) angle2 = angle1 - fA; 
-    else angle2 = angle1 + fA; 
-    while (v*(millis() - travel_start)/1000.0/60.0 < fT); 
-    rotate_optimal_path(angle1, angle2, fR/v/60.0*1000.0, "FILLET"); 
-  }
-}
+  angle2 = get_pos('A'); 
+  dtheta = dtheta = atan2(sin(angle2 - angle1), cos(angle2 - angle1));
+  path = round(dtheta*rotation_ratio);
+  angle1 = angle2; 
 
-void check_command() {
-  if (Serial.available()) {
-    cmd = Serial.readStringUntil('\n');
-    travel_start = millis(); 
-  }
-}
-
-void rotate(int steps, float step_period) {
+  step_period = round(get_pos('P')/rotation_ratio);
   if (step_period < MIN_STEP_PERIOD) step_period = MIN_STEP_PERIOD; 
-  int pull_delay = round(step_period); 
-  
+  rotate(path, step_period);
+
+  steps_count += path;  
+  if (abs(steps_count) >= rotation_limit) {
+    rotate(-steps_count, MIN_STEP_PERIOD); 
+    steps_count=0; 
+  }
+
+  Serial.print("angle:");
+  Serial.print(angle1);
+  Serial.print(" steps_count:"); 
+  Serial.print(steps_count); 
+  Serial.print(" step_period:");
+  Serial.println(step_period);
+}
+
+void rotate(int steps, int step_period) {
+  int pull_delay = round(step_period/2); 
   digitalWrite(DIR, steps > 0 ? LOW : HIGH);
   for (int i=0; i<abs(steps); i++) {
-    check_command(); 
     digitalWrite(PUL, HIGH); 
     delay(pull_delay);
     digitalWrite(PUL, LOW); 
@@ -85,43 +70,9 @@ void rotate(int steps, float step_period) {
 float get_pos(char cor) {
   int start_idx = cmd.indexOf(cor);
   int end_idx = cmd.indexOf(' ', start_idx); 
-  if (start_idx <= -1 || end_idx <= -1) {
-    return NAN; 
-  }
-  else {
-    return cmd.substring(start_idx + 1, end_idx).toFloat();
-  }
-}
-
-void rotate_optimal_path(float &angle1, float angle2, float step_period, String status_type) {
-  float dtheta = atan2(sin(angle2 - angle2), cos(angle2 - angle1));
-  path = round(dtheta*ROTATION_STEPS/(2*PI)*PULLEY_RATIO);
-  
-  if (path != 0) {
-    angle1 = angle2; 
-    rotate(path, step_period); 
-    steps_count += path;
-    print_status(status_type); 
-    check_rotation_limit(); 
-  }
-}
-
-void check_rotation_limit() {
-  if (abs(steps_count) >= rotation_limit) {
-  rotate(-steps_count, MIN_STEP_PERIOD); 
-  steps_count=0; 
-  print_status("UNCOIL");
-  }
-}
-
-void print_status(String status_type) {
-  Serial.print(status_type); 
-  Serial.print(" angle: ");
-  Serial.print(angle1); //state tracking
-  Serial.print(" path: ");
-  Serial.print(path);
-  Serial.print(" steps count: "); 
-  Serial.println(steps_count); 
+  if (end_idx == -1) end_idx = cmd.length(); 
+  if (start_idx <= -1 || end_idx <= -1) return NAN; 
+  else return cmd.substring(start_idx + 1, end_idx).toFloat();
 }
 
 
