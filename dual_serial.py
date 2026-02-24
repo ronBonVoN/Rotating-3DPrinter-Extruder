@@ -11,22 +11,19 @@ LOG_FILE_NAME = "log_serial.txt"
 
 stop_event = threading.Event()
 log = queue.Queue()
-cmd_info = queue.Queue(maxsize=1)
-
-def format_arduino_command(arduino_commands, i): 
-    return f"A{arduino_commands[i][0]} P{arduino_commands[i][1]}"
+wait_index = queue.Queue(maxsize=1)
+arduino_index = queue.Queue(maxsize=1)
 
 def send_gcode(ender, gcode):
     for i in range(len(gcode)):
         if gcode[i] == "" or gcode[i].startswith(";"):
             continue
         
-        if "X" in gcode[i] and "Y" in gcode[i]:
-            try:
-                cmd_info.get_nowait()
-            except queue.Empty:
-                pass
-            cmd_info.put((i, time.perf_counter()))
+        try:
+            wait_index.get_nowait()
+        except queue.Empty:
+            pass
+        wait_index.put(i)
 
         ender.write((gcode[i] + "\n").encode())
         log.put(gcode[i])
@@ -40,19 +37,55 @@ def send_gcode(ender, gcode):
             time.sleep(0.01)
     stop_event.set()
 
+def arduino_wait(wait_times, gcode):
+    while not stop_event.is_set():
+        try:
+            i = wait_index.get(timeout=0.01)
+        except queue.Empty:
+            continue 
+        
+        if "G1" in gcode[i] and "X" in gcode[i] and "Y" in gcode[i]:
+            try:
+                arduino_index.get_nowait()
+            except queue.Empty:
+                pass
+            arduino_index.put(i)
+
+        if len(gcode) < i+1: 
+            continue
+        
+        wait_time = wait_times[i+1] 
+        if wait_time <= 0: 
+            continue
+        
+        if "G1" not in gcode[i+1] or "X" not in gcode[i+1] or "Y" not in gcode[i+1]:
+            continue
+        
+        start = time.perf_counter()
+        while not stop_event.is_set():
+            if time.perf_counter() - start >= wait_time: 
+                try:
+                    arduino_index.get_nowait()
+                except queue.Empty:
+                    pass
+                arduino_index.put(i+1)
+                break
+            try:
+                i = wait_index.get(timeout=0.01)
+            except queue.Empty:
+                continue
+            if "G1" in gcode[i] and "X" in gcode[i] and "Y" in gcode[i]:
+                wait_index.put(i)
+                break
+
 def send_arduino_commands(arduino, arduino_commands):
     while not stop_event.is_set():
         try:
-            i, travel_start = cmd_info.get(timeout=0.1)
+            i = arduino_index.get(timeout=0.01)
         except queue.Empty:
             continue
 
-        if arduino_commands[i][2] > 0:
-            travel_time = arduino_commands[i][2] - (time.perf_counter() - travel_start)
-            if travel_time > 0:
-                time.sleep(travel_time)
-
-        command = format_arduino_command(arduino_commands, i)
+        command = arduino_commands[i]
         arduino.write((command + "\n").encode())
         log.put(command)
 
@@ -61,7 +94,7 @@ def send_arduino_commands(arduino, arduino_commands):
                 response = arduino.readline().decode("utf-8", errors="ignore").strip()
                 log.put(response)
                 break
-            time.sleep(0.01)
+            time.sleep(0.01)        
 
 def write_to_log():
     with open(LOG_FILE_NAME, "a") as f:
@@ -76,41 +109,44 @@ def write_to_log():
             except queue.Empty:
                 continue
 
-def run_threads(gcode, arduino_commands):
+def run_threads(gcode, arduino_commands, wait_times):
     try:
         open(LOG_FILE_NAME, "w").close()
-    except OSError:
-        print(f"failed to create log file {LOG_FILE_NAME}")
+    except OSError as e:
+        print(f"failed to create log file {LOG_FILE_NAME}: {e}")
         return
 
     try:
         arduino = serial.Serial(ARDUINO_COM, ARDUINO_BAUD, timeout=0.1)
         ender = serial.Serial(ENDER_COM, ENDER_BAUD, timeout=0.1)
-    except serial.SerialException:
-        print("failed to open serial ports.")
+    except serial.SerialException as e:
+        print(f"failed to open serial ports: {e}")
         return
-
     time.sleep(2)
-    t1 = threading.Thread(target=send_gcode, args=(ender, gcode))
-    t2 = threading.Thread(target=send_arduino_commands, args=(arduino, arduino_commands))
-    t3 = threading.Thread(target=write_to_log)
+
+    t1 = threading.Thread(target=arduino_wait, args=(wait_times, gcode,))
+    t2 = threading.Thread(target=send_gcode, args=(ender, gcode,))
+    t3 = threading.Thread(target=send_arduino_commands, args=(arduino, arduino_commands,))
+    t4 = threading.Thread(target=write_to_log)
 
     try:
         t1.start()
         t2.start()
         t3.start()
+        t4.start()
 
         t1.join()
         t2.join()
         t3.join()
+        t4.join()
     except KeyboardInterrupt:
-        print("forced close...")
         log.put("forced close.\n")
         stop_event.set()
 
         t1.join()
         t2.join()
         t3.join()
+        t4.join()
     finally:
         print("closing serial connections...")
         arduino.close()

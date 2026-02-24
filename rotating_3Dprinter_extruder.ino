@@ -1,14 +1,15 @@
 #include <math.h>
 
-#define PUL 2 //step pin
-#define DIR 8 //direction pin
-#define MAX_ROTATION 1 //1 is full rotation
-#define MIN_STEP_PERIOD 2 //ms
+#define PUL 3 //step pin
+#define DIR 9 //direction pin
+#define MAX_ROTATION 1.5 //1 is full rotation
+#define MIN_STEP_PERIOD 1 //ms
 #define ROTATION_STEPS 400 //steps for 2PI rotation
 #define PULLEY_RATIO 1.6 //32:20
 
 const int rotation_limit = round(MAX_ROTATION*PULLEY_RATIO*ROTATION_STEPS); //limit of rotation in single direction
 const float rotation_ratio = ROTATION_STEPS/(2*PI)*PULLEY_RATIO; 
+int backtrack_rotation = round(floor(MAX_ROTATION)*PULLEY_RATIO*ROTATION_STEPS);
 int steps_count = 0; //steps tracking
 int path = 0;        //steps to take from prev angle to new angle
 int step_period;     //rotation rate 
@@ -18,7 +19,7 @@ float angle1 = 0.0;  //previous angle
 float angle2;        //new angle
 float dtheta;        //change in angle 
 
-void rotate(int steps, int step_period);
+void rotate(int steps, int step_period = MIN_STEP_PERIOD);
 float get_pos(char cor);
 
 void setup() {
@@ -34,7 +35,7 @@ void loop() {
   if (isnan(get_pos('A')) && isnan(get_pos('P'))) return; 
 
   angle2 = get_pos('A'); 
-  dtheta = dtheta = atan2(sin(angle2 - angle1), cos(angle2 - angle1));
+  dtheta = atan2(sin(angle2 - angle1), cos(angle2 - angle1));
   path = round(dtheta*rotation_ratio);
   angle1 = angle2; 
 
@@ -44,8 +45,9 @@ void loop() {
 
   steps_count += path;  
   if (abs(steps_count) >= rotation_limit) {
-    rotate(-steps_count, MIN_STEP_PERIOD); 
-    steps_count=0; 
+    backtrack_rotation = (steps_count > 0 ? -1 : 1)*abs(backtrack_rotation); 
+    rotate(backtrack_rotation); 
+    steps_count += backtrack_rotation;
   }
 
   Serial.print("angle:");
@@ -56,14 +58,13 @@ void loop() {
   Serial.println(step_period);
 }
 
-void rotate(int steps, int step_period) {
-  int pull_delay = round(step_period/2); 
-  digitalWrite(DIR, steps > 0 ? LOW : HIGH);
+void rotate(int steps, int step_period = MIN_STEP_PERIOD) {
+  digitalWrite(DIR, steps > 0 ? HIGH : LOW);
   for (int i=0; i<abs(steps); i++) {
     digitalWrite(PUL, HIGH); 
-    delay(pull_delay);
+    delay(step_period);
     digitalWrite(PUL, LOW); 
-    delay(pull_delay); 
+    delay(step_period); 
   }
 }
 

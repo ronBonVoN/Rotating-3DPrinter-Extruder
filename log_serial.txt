@@ -1,14 +1,14 @@
-M140 S65
+M140 S70
 ok
 M105
 ok
-M190 S65
+M190 S70
 ok
-M104 S205
+M104 S210
 ok
 M105
 ok
-M109 S205
+M109 S210
 ok
 M82 ;absolute extrusion mode
 ok
@@ -20,289 +20,8497 @@ G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed
 ok
 M400
 ok
-A1.5658 P0
 G1 X0.1 Y20 Z0.3 F5000.0 ; Move to start position
+A1.5658 P0 W0
 ok
 M400
-angle:1.57 steps_count:159 step_period:2
+angle:1.57 steps_count:159 step_period:1
 ok
 G1 X0.1 Y200.0 Z0.3 F1500.0 E15 ; Draw the first line
-A1.5708 P0
+A1.5708 P0 W0
 ok
 M400
-angle:1.57 steps_count:160 step_period:2
+angle:1.57 steps_count:160 step_period:1
 ok
 G1 X0.4 Y200.0 Z0.3 F5000.0 ; Move to side a little
-A0.0 P0
+A0.0 P0 W0
 ok
 M400
 ok
 G1 X0.4 Y20 Z0.3 F1500.0 E30 ; Draw the second line
 ok
 M400
-angle:0.00 steps_count:0 step_period:2
-A-1.5708 P320
+angle:0.00 steps_count:0 step_period:1
+A-1.5708 P200 W2.04
+angle:-1.57 steps_count:-160 step_period:2
 ok
 G92 E0 ; Reset Extruder
 ok
 G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed
 ok
 M400
-angle:-1.57 steps_count:-160 step_period:3
 ok
-A0.0 P0
 G1 X5 Y20 Z0.3 F5000.0 ; Move over to prevent blob squish
+A0.0 P0 W0
+ok
+M400
+angle:0.00 steps_count:0 step_period:1
+ok
+G92 E0
+ok
+G92 E0
+ok
+G1 F2700 E-5
+ok
+M400
+ok
+M107
+ok
+G0 F6000 X109 Y199 Z0.2
+ok
+M400
+ok
+G1 F2700 E0
+ok
+M400
+A0.0 P250 W0.1556
+angle:0.00 steps_count:0 step_period:2
+ok
+G1 F1200 X126 Y199 E0.56542
+A0.0 P250 W0.1556
 ok
 M400
 angle:0.00 steps_count:0 step_period:2
 ok
-G92 E0
-ok
-G92 E0
-ok
-M107
-ok
-G0 F6000 X77.7 Y157.3 Z0.2
+G1 X126 Y175.858 E1.33513
+A-1.5708 P0 W0
 ok
 M400
-A1.0838 P80
-angle:1.08 steps_count:110 step_period:2
+angle:-1.57 steps_count:-160 step_period:1
 ok
-G1 F1200 X157.3 Y157.3 E2.64751
+G1 X126 Y175.089 E1.36071
+A-1.5708 P0 W0
 ok
 M400
-A0.0 P400
-angle:0.00 steps_count:0 step_period:3
+angle:-1.57 steps_count:-160 step_period:1
 ok
-G1 X157.3 Y77.7 E5.29501
-A-1.5708 P0
+G1 X124.701 Y167.971 E1.60136
+A-1.7513 P0 W0
+ok
+M400
+angle:-1.75 steps_count:-178 step_period:1
+ok
+G1 X123.754 Y160.654 E1.84676
+A-1.6995 P0 W0
+ok
+M400
+angle:-1.70 steps_count:-173 step_period:1
+ok
+G1 X123.188 Y153.323 E2.09131
+A-1.6478 P0 W0
+ok
+M400
+angle:-1.65 steps_count:-168 step_period:1
+ok
+G1 X123 Y146.027 E2.33406
+A-1.5966 P0 W0
+ok
+M400
+angle:-1.60 steps_count:-163 step_period:1
+ok
+G1 X123 Y88.973 E4.23168
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X123.19 Y81.624 E4.47619
+A-1.5449 P0 W0
+ok
+M400
+angle:-1.54 steps_count:-157 step_period:1
+ok
+G1 X123.754 Y74.346 E4.71898
+A-1.4935 P0 W0
+ok
+M400
+angle:-1.49 steps_count:-152 step_period:1
+ok
+G1 X124.701 Y67.027 E4.96444
+A-1.4421 P0 W0
+ok
+M400
+angle:-1.44 steps_count:-147 step_period:1
+ok
+G1 X125.999 Y59.907 E5.20516
+A-1.3905 P0 W0
+ok
+M400
+angle:-1.39 steps_count:-142 step_period:1
+ok
+G1 X126 Y36 E6.00031
+A-1.5708 P250 W0.6954
 ok
 M400
 angle:-1.57 steps_count:-160 step_period:2
+A3.1416 P250 W0.35
+angle:3.14 steps_count:-320 step_period:2
 ok
-G1 X77.7 Y77.7 E7.94252
-A3.1416 P0
+G1 X109 Y36 E6.56573
+A3.1416 P250 W0.35
 ok
 M400
 angle:3.14 steps_count:-320 step_period:2
 ok
-G1 X77.7 Y157.3 E10.59003
-A1.5708 P0
+G1 X109.001 Y59.911 E7.36102
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X110.299 Y67.028 E7.60163
+A1.3904 P0 W0
+ok
+M400
+angle:1.39 steps_count:-498 step_period:1
+ok
+G1 X111.246 Y74.345 E7.84703
+A1.4421 P0 W0
+ok
+M400
+angle:1.44 steps_count:-493 step_period:1
+ok
+G1 X111.81 Y81.625 E8.08989
+A1.4935 P0 W0
+ok
+M400
+angle:1.49 steps_count:-488 step_period:1
+ok
+G1 X112 Y88.973 E8.33436
+A1.5449 P0 W0
+ok
+M400
+angle:1.54 steps_count:-483 step_period:1
+ok
+G1 X112 Y146.027 E10.23199
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X111.812 Y153.324 E10.47477
+A1.5966 P0 W0
+ok
+M400
+angle:1.60 steps_count:-477 step_period:1
+ok
+G1 X111.245 Y160.664 E10.71962
+A1.6479 P0 W0
+ok
+M400
+angle:1.65 steps_count:-472 step_period:1
+ok
+G1 X110.299 Y167.972 E10.96472
+A1.6995 P0 W0
+ok
+M400
+angle:1.70 steps_count:-467 step_period:1
+ok
+G1 X109 Y175.093 E11.20547
+A1.7512 P0 W0
+ok
+M400
+angle:1.75 steps_count:-462 step_period:1
+ok
+G1 X109 Y199 E12.00062
+A1.5708 P250 W0.6954
 ok
 M400
 angle:1.57 steps_count:-480 step_period:2
 ok
-G0 F6000 X77.3 Y157.7
-A2.3562 P0
+G1 F2700 E7.00062
 ok
 M400
 ok
-G1 F1200 X77.3 Y77.3 E13.26414
+G0 F6000 X125.828 Y198.828
 ok
 M400
-angle:2.36 steps_count:-400 step_period:2
-A-1.5708 P400
 ok
-G1 X157.7 Y77.3 E15.93826
+G0 X125.839 Y175.105
 ok
 M400
-angle:-1.57 steps_count:-160 step_period:3
-A0.0 P0
+ok
+G0 X124.797 Y167.931
+ok
+M400
+ok
+G1 F2700 E12.00062
+ok
+M400
+ok
+G0 F6000 X125.094 Y167.894
+ok
+M400
+ok
+G1 F1200 X126.4 Y175.053 E12.24266
+A1.3904 P0 W0
+ok
+M400
+angle:1.39 steps_count:-498 step_period:1
+ok
+G1 X126.4 Y175.858 E12.26943
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X126.4 Y199.4 E13.05244
+A1.5708 P250 W0.6771
+ok
+M400
+angle:1.57 steps_count:-480 step_period:2
+A3.1416 P250 W0.39
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X108.6 Y199.4 E13.64447
+A3.1416 P250 W0.39
+ok
+M400
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X108.6 Y175.057 E14.45413
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X109.906 Y167.896 E14.69623
+A-1.3904 P0 W0
+ok
+M400
+angle:-1.39 steps_count:-142 step_period:1
+ok
+G1 X110.844 Y160.654 E14.93911
+A-1.442 P0 W0
+ok
+M400
+angle:-1.44 steps_count:-147 step_period:1
+ok
+G1 X111.411 Y153.345 E15.18294
+A-1.4934 P0 W0
+ok
+M400
+angle:-1.49 steps_count:-152 step_period:1
+ok
+G1 X111.6 Y146.017 E15.42675
+A-1.545 P0 W0
+ok
+M400
+angle:-1.54 steps_count:-157 step_period:1
+ok
+G1 X111.6 Y88.983 E17.32371
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X111.411 Y81.656 E17.56749
+A-1.5966 P0 W0
+ok
+M400
+angle:-1.60 steps_count:-163 step_period:1
+ok
+G1 X110.847 Y74.376 E17.81035
+A-1.6481 P0 W0
+ok
+M400
+angle:-1.65 steps_count:-168 step_period:1
+ok
+G1 X109.906 Y67.105 E18.0542
+A-1.6995 P0 W0
+ok
+M400
+angle:-1.70 steps_count:-173 step_period:1
+ok
+G1 X108.601 Y59.947 E18.2962
+A-1.7511 P0 W0
+ok
+M400
+angle:-1.75 steps_count:-178 step_period:1
+ok
+G1 X108.6 Y35.6 E19.10598
+A-1.5708 P250 W0.7174
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:2
+A0.0 P250 W0.39
 angle:0.00 steps_count:0 step_period:2
 ok
-G1 X157.7 Y157.7 E18.61237
-A1.5708 P0
+G1 X126.4 Y35.6 E19.69801
+A0.0 P250 W0.39
+ok
+M400
+angle:0.00 steps_count:0 step_period:2
+ok
+G1 X126.399 Y59.943 E20.50767
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X125.094 Y67.104 E20.74976
+A1.7511 P0 W0
+ok
+M400
+angle:1.75 steps_count:178 step_period:1
+ok
+G1 X124.156 Y74.346 E20.99265
+A1.6996 P0 W0
+ok
+M400
+angle:1.70 steps_count:173 step_period:1
+ok
+G1 X123.589 Y81.655 E21.23648
+A1.6482 P0 W0
+ok
+M400
+angle:1.65 steps_count:168 step_period:1
+ok
+G1 X123.4 Y88.983 E21.48029
+A1.5966 P0 W0
+ok
+M400
+angle:1.60 steps_count:163 step_period:1
+ok
+G1 X123.4 Y146.017 E23.37724
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X123.589 Y153.343 E23.62099
+A1.545 P0 W0
+angle:1.54 steps_count:157 step_period:1
+ok
+M400
+ok
+G1 X124.156 Y160.654 E23.86488
+A1.4934 P0 W0
+ok
+M400
+angle:1.49 steps_count:152 step_period:1
+ok
+G1 X125.094 Y167.894 E24.1077
+A1.442 P0 W0
+ok
+M400
+angle:1.44 steps_count:147 step_period:1
+ok
+G1 F2700 E19.1077
+ok
+M400
+ok
+G0 F6000 X124.797 Y167.931
+ok
+M400
+ok
+G0 X126.198 Y175.072
+ok
+M400
+ok
+G0 X126.082 Y199.082
+ok
+M400
+ok
+G0 X108.47 Y199.53
+ok
+M400
+ok
+G1 F2700 E24.1077
+ok
+M400
+ok
+G0 F6000 X108.2 Y199.8
+ok
+M400
+ok
+G1 F1200 X126.8 Y199.8 E24.72634
+A0.0 P250 W0.086
+ok
+M400
+angle:0.00 steps_count:0 step_period:2
+ok
+G1 X126.8 Y175.858 E25.52265
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X126.8 Y175.017 E25.55063
+A-1.5708 P0 W0
+angle:-1.57 steps_count:-160 step_period:1
+ok
+M400
+ok
+G1 X125.491 Y167.842 E25.79321
+A-1.7513 P0 W0
+ok
+M400
+angle:-1.75 steps_count:-178 step_period:1
+ok
+G1 X124.552 Y160.592 E26.03636
+A-1.6996 P0 W0
+ok
+M400
+angle:-1.70 steps_count:-173 step_period:1
+ok
+G1 X123.988 Y153.302 E26.27955
+A-1.648 P0 W0
+ok
+M400
+angle:-1.65 steps_count:-168 step_period:1
+ok
+G1 X123.8 Y146.007 E26.52226
+A-1.5966 P0 W0
+ok
+M400
+angle:-1.60 steps_count:-163 step_period:1
+ok
+G1 X123.8 Y88.993 E28.41855
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X123.988 Y81.686 E28.66167
+A-1.5451 P0 W0
+ok
+M400
+angle:-1.55 steps_count:-157 step_period:1
+ok
+G1 X124.553 Y74.398 E28.90479
+A-1.4934 P0 W0
+ok
+M400
+angle:-1.49 steps_count:-152 step_period:1
+ok
+G1 X125.493 Y67.146 E29.14801
+A-1.4419 P0 W0
+ok
+M400
+angle:-1.44 steps_count:-147 step_period:1
+ok
+G1 X126.799 Y59.979 E29.39031
+A-1.3905 P0 W0
+ok
+M400
+angle:-1.39 steps_count:-142 step_period:1
+ok
+G1 X126.8 Y35.2 E30.21447
+A-1.5708 P250 W0.739
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:2
+A3.1416 P250 W0.43
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X108.2 Y35.2 E30.83311
+A3.1416 P250 W0.43
+ok
+M400
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X108.201 Y59.983 E31.65739
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X109.509 Y67.157 E31.89993
+A1.3905 P0 W0
+ok
+M400
+angle:1.39 steps_count:-498 step_period:1
+ok
+G1 X110.448 Y74.407 E32.14308
+A1.442 P0 W0
+ok
+M400
+angle:1.44 steps_count:-493 step_period:1
+ok
+G1 X111.012 Y81.697 E32.38627
+A1.4936 P0 W0
+ok
+M400
+angle:1.49 steps_count:-488 step_period:1
+ok
+G1 X111.2 Y88.993 E32.62902
+A1.545 P0 W0
+ok
+M400
+angle:1.54 steps_count:-483 step_period:1
+ok
+G1 X111.2 Y146.007 E34.52531
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X111.012 Y153.314 E34.76843
+A1.5965 P0 W0
+ok
+M400
+angle:1.60 steps_count:-477 step_period:1
+ok
+G1 X110.447 Y160.602 E35.01155
+A1.6482 P0 W0
+ok
+M400
+angle:1.65 steps_count:-472 step_period:1
+ok
+G1 X109.507 Y167.854 E35.25477
+A1.6997 P0 W0
+ok
+M400
+angle:1.70 steps_count:-467 step_period:1
+ok
+G1 X108.2 Y175.021 E35.49708
+A1.7512 P0 W0
+ok
+M400
+angle:1.75 steps_count:-462 step_period:1
+ok
+G1 X108.2 Y199.8 E36.32123
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G0 F6000 X108.47 Y199.53
+ok
+M400
+ok
+G0 X109.1 Y198.64
+ok
+M400
+ok
+G0 X109.36 Y198.64
+ok
+M400
+ok
+G1 F1200 X125.64 Y198.64 E36.86271
+A0.0 P250 W0.0628
+ok
+M400
+angle:0.00 steps_count:-640 step_period:2
+ok
+G1 X125.64 Y175.858 E37.62044
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-800 step_period:1
+ok
+G1 X125.64 Y175.122 E37.64492
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-800 step_period:1
+ok
+G1 X124.341 Y168.004 E37.88558
+A-1.7513 P0 W0
+ok
+M400
+angle:-1.75 steps_count:-818 step_period:1
+ok
+G1 X123.401 Y160.741 E38.12916
+A-1.6995 P0 W0
+ok
+M400
+angle:-1.70 steps_count:-813 step_period:1
+ok
+G1 X122.831 Y153.391 E38.37435
+A-1.6482 P0 W0
+ok
+M400
+angle:-1.65 steps_count:-808 step_period:1
+ok
+G1 X122.64 Y146.04 E38.61893
+A-1.5968 P0 W0
+ok
+M400
+angle:-1.60 steps_count:-803 step_period:1
+ok
+G1 X122.64 Y88.961 E40.51739
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-800 step_period:1
+ok
+G1 X122.828 Y81.657 E40.7604
+A-1.5451 P0 W0
+ok
+M400
+angle:-1.55 steps_count:-797 step_period:1
+ok
+G1 X123.402 Y74.247 E41.0076
+A-1.4935 P0 W0
+ok
+M400
+angle:-1.49 steps_count:-792 step_period:1
+ok
+G1 X124.343 Y66.983 E41.25122
+A-1.442 P0 W0
+ok
+M400
+angle:-1.44 steps_count:-787 step_period:1
+ok
+G1 X125.639 Y59.872 E41.49163
+A-1.3905 P0 W0
+ok
+M400
+angle:-1.39 steps_count:-782 step_period:1
+ok
+G1 X125.639 Y36.361 E42.2736
+A-1.5708 P250 W0.6756
+ok
+M400
+angle:-1.57 steps_count:-800 step_period:2
+A3.1416 P250 W0.3139
+ok
+G1 X109.361 Y36.361 E42.81501
+ok
+M400
+ok
+G1 X109.361 Y59.879 E43.59722
+ok
+M400
+angle:3.14 steps_count:-320 step_period:2
+A1.5708 P0 W0
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X110.659 Y66.995 E43.83781
+A1.3904 P0 W0
+ok
+M400
+angle:1.39 steps_count:-498 step_period:1
+ok
+G1 X111.599 Y74.258 E44.08139
+A1.4421 P0 W0
+ok
+M400
+angle:1.44 steps_count:-493 step_period:1
+ok
+G1 X112.169 Y81.606 E44.32652
+A1.4934 P0 W0
+ok
+M400
+angle:1.49 steps_count:-488 step_period:1
+ok
+G1 X112.36 Y88.961 E44.57123
+A1.5448 P0 W0
+ok
+M400
+angle:1.54 steps_count:-483 step_period:1
+ok
+G1 X112.36 Y146.04 E46.46969
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X112.172 Y153.343 E46.71267
+A1.5965 P0 W0
+ok
+M400
+angle:1.60 steps_count:-477 step_period:1
+ok
+G1 X111.598 Y160.752 E46.95983
+A1.6481 P0 W0
+ok
+M400
+angle:1.65 steps_count:-472 step_period:1
+ok
+G1 X110.657 Y168.017 E47.20348
+A1.6996 P0 W0
+ok
+M400
+angle:1.70 steps_count:-467 step_period:1
+ok
+G1 X109.36 Y175.128 E47.4439
+A1.7512 P0 W0
+ok
+M400
+angle:1.75 steps_count:-462 step_period:1
+ok
+G1 X109.36 Y198.64 E48.22591
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G0 F6000 X109.559 Y198.372
+ok
+M400
+ok
+G1 F1200 X109.626 Y198.438 E48.22904
+A0.7779 P0 W0
+ok
+M400
+ok
+G0 F6000 X110.191 Y198.438
+ok
+M400
+angle:0.78 steps_count:-561 step_period:1
+ok
+G1 F1200 X109.559 Y197.806 E48.25877
+A-2.3562 P0 W0
+ok
+M400
+ok
+G0 F6000 X109.559 Y197.241
+ok
+M400
+ok
+G1 F1200 X110.757 Y198.438 E48.31509
+ok
+M400
+ok
+G0 F6000 X111.323 Y198.438
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+A0.785 P0 W0
+ok
+G1 F1200 X109.559 Y196.675 E48.39804
+ok
+M400
+ok
+G0 F6000 X109.559 Y196.109
+ok
+M400
+ok
+G1 F1200 X111.889 Y198.438 E48.50761
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+A0.7852 P0 W0
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X112.454 Y198.438
+ok
+M400
+ok
+G1 F1200 X109.559 Y195.544 E48.64376
+A-2.3564 P0 W0
+ok
+M400
+ok
+G0 F6000 X109.559 Y194.978
+ok
+M400
+ok
+G1 F1200 X113.02 Y198.438 E48.80653
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+A0.7853 P0 W0
+ok
+G0 F6000 X113.586 Y198.438
+ok
+M400
+ok
+G1 F1200 X109.559 Y194.412 E48.99593
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+A-2.3563 P0 W0
+ok
+G0 F6000 X109.559 Y193.846
+ok
+M400
+ok
+G1 F1200 X114.151 Y198.438 E49.21192
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+A0.7854 P0 W0
+ok
+G0 F6000 X114.717 Y198.438
+ok
+M400
+ok
+G1 F1200 X109.559 Y193.281 E49.45451
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+A-2.3563 P0 W0
+ok
+G0 F6000 X109.559 Y192.715
+ok
+M400
+ok
+G1 F1200 X115.283 Y198.438 E49.72373
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+A0.7853 P0 W0
+ok
+G0 F6000 X115.848 Y198.438
+ok
+M400
+ok
+G1 F1200 X109.559 Y192.149 E50.01955
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+A-2.3562 P0 W0
+ok
+G0 F6000 X109.559 Y191.584
+ok
+M400
+ok
+G1 F1200 X116.414 Y198.438 E50.34196
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+A0.7853 P0 W0
+ok
+G0 F6000 X116.98 Y198.438
+ok
+M400
+ok
+G1 F1200 X109.559 Y191.018 E50.691
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+A-2.3563 P250 W0.0049
+ok
+G0 F6000 X109.559 Y190.452
+ok
+M400
+ok
+G1 F1200 X117.545 Y198.438 E51.06664
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:2
+A0.7854 P0 W0
+ok
+G0 F6000 X118.111 Y198.438
+ok
+M400
+ok
+G1 F1200 X109.559 Y189.887 E51.46887
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+A-2.3563 P0 W0
+ok
+G0 F6000 X109.559 Y189.321
+ok
+M400
+ok
+G1 F1200 X118.677 Y198.438 E51.89773
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+A0.7853 P0 W0
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X119.242 Y198.438
+ok
+M400
+ok
+G1 F1200 X109.559 Y188.755 E52.35319
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X109.559 Y188.19
+ok
+M400
+ok
+G1 F1200 X119.808 Y198.438 E52.83525
+A0.7853 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X120.374 Y198.438
+ok
+M400
+ok
+G1 F1200 X109.559 Y187.624 E53.34393
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X109.559 Y187.058
+ok
+M400
+ok
+G1 F1200 X120.94 Y198.438 E53.87923
+A0.7854 P0 W0
+ok
+M400
+ok
+G0 F6000 X121.505 Y198.438
+ok
+M400
+ok
+G1 F1200 X109.559 Y186.493 E54.44111
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+A-2.3562 P0 W0
+ok
+G0 F6000 X109.559 Y185.927
+ok
+M400
+ok
+G1 F1200 X122.071 Y198.438 E55.02961
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+A0.7854 P0 W0
+ok
+G0 F6000 X122.637 Y198.438
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G1 F1200 X109.559 Y185.361 E55.64474
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y184.795
+ok
+M400
+ok
+G1 F1200 X123.202 Y198.438 E56.28647
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.768 Y198.438
+ok
+M400
+ok
+G1 F1200 X109.559 Y184.23 E56.95479
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y183.664
+ok
+M400
+ok
+G1 F1200 X124.334 Y198.438 E57.64974
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.899 Y198.438
+ok
+M400
+ok
+G1 F1200 X109.559 Y183.098 E58.37128
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y182.533
+ok
+M400
+ok
+G1 F1200 X125.44 Y198.413 E59.11825
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y197.847
+ok
+M400
+ok
+G1 F1200 X109.559 Y181.967 E59.86522
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y181.401
+ok
+M400
+ok
+G1 F1200 X125.44 Y197.282 E60.61222
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y196.716
+ok
+M400
+ok
+G1 F1200 X109.559 Y180.836 E61.35919
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y180.27
+ok
+M400
+ok
+G1 F1200 X125.44 Y196.15 E62.10616
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y195.585
+ok
+M400
+ok
+G1 F1200 X109.559 Y179.704 E62.85315
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y179.139
+ok
+M400
+ok
+G1 F1200 X125.44 Y195.019 E63.60012
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y194.453
+ok
+M400
+ok
+G1 F1200 X109.559 Y178.573 E64.34709
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y178.007
+ok
+M400
+ok
+G1 F1200 X125.44 Y193.887 E65.09406
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y193.322
+ok
+M400
+ok
+G1 F1200 X109.559 Y177.442 E65.84103
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y176.876
+ok
+M400
+ok
+G1 F1200 X125.44 Y192.756 E66.588
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y192.19
+ok
+M400
+ok
+G1 F1200 X109.559 Y176.31 E67.33497
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y175.745
+ok
+M400
+ok
+G1 F1200 X125.44 Y191.625 E68.08194
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y191.059
+ok
+M400
+ok
+G1 F1200 X109.559 Y175.179 E68.82891
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.641 Y174.695
+ok
+M400
+ok
+G1 F1200 X125.44 Y190.493 E69.57202
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y189.928
+ok
+M400
+ok
+G1 F1200 X109.728 Y174.216 E70.31107
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.815 Y173.738
+ok
+M400
+ok
+G1 F1200 X125.44 Y189.362 E71.046
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y188.796
+ok
+M400
+ok
+G1 F1200 X109.903 Y173.26 E71.77679
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.99 Y172.781
+ok
+M400
+ok
+G1 F1200 X125.44 Y188.231 E72.50351
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y187.665
+ok
+M400
+ok
+G1 F1200 X110.078 Y172.303 E73.22609
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X110.165 Y171.824
+ok
+M400
+ok
+G1 F1200 X125.44 Y187.099 E73.94458
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y186.534
+ok
+M400
+ok
+G1 F1200 X110.252 Y171.346 E74.65897
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X110.339 Y170.868
+ok
+M400
+ok
+G1 F1200 X125.44 Y185.968 E75.36926
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y185.402
+ok
+M400
+ok
+G1 F1200 X110.426 Y170.389 E76.07544
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X110.514 Y169.911
+ok
+M400
+ok
+G1 F1200 X125.44 Y184.837 E76.77752
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y184.271
+ok
+M400
+ok
+G1 F1200 X110.601 Y169.432 E77.4755
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X110.689 Y168.954
+ok
+M400
+ok
+G1 F1200 X125.44 Y183.705 E78.16934
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y183.139
+ok
+M400
+ok
+G1 F1200 X110.776 Y168.475 E78.85909
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X110.861 Y167.995
+ok
+M400
+ok
+G1 F1200 X125.44 Y182.574 E79.54484
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y182.008
+ok
+M400
+ok
+A-2.3562 P0 W0
+G1 F1200 X110.926 Y167.495 E80.22751
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X110.991 Y166.993
+ok
+M400
+ok
+G1 F1200 X125.44 Y181.442 E80.90715
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y180.877
+ok
+M400
+ok
+G1 F1200 X111.056 Y166.493 E81.58373
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.12 Y165.991
+ok
+M400
+ok
+G1 F1200 X125.44 Y180.311 E82.2573
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y179.745
+ok
+M400
+ok
+G1 F1200 X111.185 Y165.491 E82.92778
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.25 Y164.99
+ok
+M400
+ok
+G1 F1200 X125.44 Y179.18 E83.59524
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y178.614
+ok
+M400
+ok
+G1 F1200 X111.314 Y164.489 E84.25966
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.379 Y163.988
+ok
+M400
+ok
+G1 F1200 X125.44 Y178.048 E84.92102
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y177.483
+ok
+M400
+ok
+G1 F1200 X111.444 Y163.487 E85.57935
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.509 Y162.986
+ok
+M400
+ok
+G1 F1200 X125.44 Y176.917 E86.23462
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y176.351
+ok
+M400
+ok
+G1 F1200 X111.573 Y162.485 E86.88686
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.638 Y161.984
+ok
+M400
+ok
+G1 F1200 X125.44 Y175.786 E87.53606
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.44 Y175.22
+ok
+M400
+ok
+G1 F1200 X111.703 Y161.484 E88.18219
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.768 Y160.982
+ok
+M400
+ok
+G1 F1200 X125.331 Y174.546 E88.82017
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.205 Y173.854
+ok
+M400
+ok
+G1 F1200 X111.819 Y160.468 E89.44981
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.86 Y159.943
+ok
+M400
+ok
+G1 F1200 X125.079 Y173.162 E90.07159
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.953 Y172.471
+ok
+M400
+ok
+G1 F1200 X111.901 Y159.418 E90.68554
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.941 Y158.893
+ok
+M400
+ok
+G1 F1200 X124.826 Y171.778 E91.29161
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.7 Y171.086
+ok
+M400
+ok
+G1 F1200 X111.982 Y158.368 E91.88983
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.022 Y157.843
+ok
+M400
+ok
+G1 F1200 X124.574 Y170.395 E92.48023
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.447 Y169.702
+ok
+M400
+ok
+G1 F1200 X112.063 Y157.318 E93.06274
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.104 Y156.793
+ok
+M400
+ok
+G1 F1200 X124.322 Y169.011 E93.63744
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.195 Y168.318
+ok
+M400
+ok
+G1 F1200 X112.145 Y156.268 E94.20423
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.185 Y155.743
+ok
+M400
+ok
+G1 F1200 X124.095 Y167.652 E94.76442
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.01 Y167.003
+ok
+M400
+ok
+G1 F1200 X112.226 Y155.218 E95.31872
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.266 Y154.693
+ok
+M400
+ok
+G1 F1200 X123.926 Y166.353 E95.86717
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.841 Y165.702
+ok
+M400
+ok
+G1 F1200 X112.307 Y154.168 E96.4097
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.347 Y153.642
+ok
+M400
+ok
+G1 F1200 X123.757 Y165.052 E96.94639
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.673 Y164.403
+ok
+M400
+ok
+G1 F1200 X112.377 Y153.107 E97.47772
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.391 Y152.555
+ok
+M400
+ok
+G1 F1200 X123.589 Y163.753 E98.00444
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.505 Y163.103
+ok
+M400
+ok
+G1 F1200 X112.405 Y152.003 E98.52655
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.42 Y151.452
+ok
+M400
+ok
+G1 F1200 X123.421 Y162.453 E99.044
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.337 Y161.803
+ok
+M400
+ok
+G1 F1200 X112.434 Y150.9 E99.55685
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.448 Y150.349
+ok
+M400
+ok
+G1 F1200 X123.252 Y161.153 E100.06503
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.183 Y160.518
+ok
+M400
+ok
+G1 F1200 X112.463 Y149.798 E100.56927
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.477 Y149.246
+ok
+M400
+ok
+G1 F1200 X123.136 Y159.905 E101.07064
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.088 Y159.292
+ok
+M400
+ok
+G1 F1200 X112.491 Y148.695 E101.56909
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.505 Y148.143
+ok
+M400
+ok
+G1 F1200 X123.04 Y158.679 E102.06464
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.993 Y158.065
+ok
+M400
+ok
+G1 F1200 X112.519 Y147.592 E102.55729
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.533 Y147.04
+ok
+M400
+ok
+G1 F1200 X122.946 Y157.452 E103.04706
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.897 Y156.839
+ok
+M400
+ok
+G1 F1200 X112.548 Y146.489 E103.53387
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y145.934
+ok
+M400
+ok
+G1 F1200 X122.85 Y156.226 E104.01795
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.803 Y155.612
+ok
+M400
+ok
+G1 F1200 X112.559 Y145.369 E104.49977
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y144.803
+ok
+M400
+ok
+G1 F1200 X122.755 Y154.999 E104.97936
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.707 Y154.386
+ok
+M400
+ok
+G1 F1200 X112.559 Y144.237 E105.45671
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y143.672
+ok
+M400
+ok
+G1 F1200 X122.66 Y153.773 E105.93183
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.626 Y153.173
+ok
+M400
+ok
+G1 F1200 X112.559 Y143.106 E106.40535
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y142.54
+ok
+M400
+ok
+G1 F1200 X122.61 Y152.592 E106.87814
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.596 Y152.011
+ok
+M400
+ok
+G1 F1200 X112.559 Y141.975 E107.35023
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y141.409
+ok
+M400
+ok
+G1 F1200 X122.58 Y151.43 E107.82159
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.565 Y150.849
+ok
+M400
+ok
+G1 F1200 X112.559 Y140.843 E108.29224
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y140.277
+ok
+M400
+ok
+G1 F1200 X122.55 Y150.268 E108.76219
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.535 Y149.688
+ok
+M400
+ok
+G1 F1200 X112.559 Y139.712 E109.23143
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y139.146
+ok
+M400
+ok
+G1 F1200 X122.52 Y149.107 E109.69996
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.504 Y148.526
+ok
+M400
+ok
+G1 F1200 X112.559 Y138.58 E110.16777
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y138.015
+ok
+M400
+ok
+G1 F1200 X122.489 Y147.945 E110.63484
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.474 Y147.364
+ok
+M400
+ok
+G1 F1200 X112.559 Y137.449 E111.10121
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y136.883
+ok
+M400
+ok
+G1 F1200 X122.459 Y146.784 E111.5669
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.444 Y146.202
+ok
+M400
+ok
+G1 F1200 X112.559 Y136.318 E112.03184
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y135.752
+ok
+M400
+ok
+G1 F1200 X122.439 Y145.632 E112.49657
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y145.067
+ok
+M400
+ok
+G1 F1200 X112.559 Y135.186 E112.96131
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y134.621
+ok
+M400
+ok
+G1 F1200 X122.439 Y144.501 E113.42604
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y143.935
+ok
+M400
+ok
+G1 F1200 X112.559 Y134.055 E113.89076
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y133.489
+ok
+M400
+ok
+G1 F1200 X122.439 Y143.37 E114.35551
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y142.804
+ok
+M400
+ok
+G1 F1200 X112.559 Y132.924 E114.82024
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y132.358
+ok
+M400
+ok
+G1 F1200 X122.439 Y142.238 E115.28496
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y141.673
+ok
+M400
+ok
+G1 F1200 X112.559 Y131.792 E115.74971
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y131.226
+ok
+M400
+ok
+G1 F1200 X122.439 Y141.107 E116.21446
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y140.541
+ok
+M400
+ok
+G1 F1200 X112.559 Y130.661 E116.67918
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y130.095
+ok
+M400
+ok
+G1 F1200 X122.439 Y139.976 E117.14393
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y139.41
+ok
+M400
+ok
+G1 F1200 X112.559 Y129.529 E117.60868
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y128.964
+ok
+M400
+ok
+G1 F1200 X122.439 Y138.844 E118.07341
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y138.278
+ok
+M400
+ok
+G1 F1200 X112.559 Y128.398 E118.53813
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y127.832
+ok
+M400
+ok
+G1 F1200 X122.439 Y137.713 E119.00288
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y137.147
+ok
+M400
+ok
+G1 F1200 X112.559 Y127.267 E119.4676
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y126.701
+ok
+M400
+ok
+G1 F1200 X122.439 Y136.581 E119.93233
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y136.016
+ok
+M400
+ok
+G1 F1200 X112.559 Y126.135 E120.39708
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y125.57
+ok
+M400
+ok
+G1 F1200 X122.439 Y135.45 E120.8618
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y134.884
+ok
+M400
+ok
+G1 F1200 X112.559 Y125.004 E121.32653
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y124.438
+ok
+M400
+ok
+G1 F1200 X122.439 Y134.319 E121.79128
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y133.753
+ok
+M400
+ok
+G1 F1200 X112.559 Y123.873 E122.256
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y123.307
+ok
+M400
+ok
+G1 F1200 X122.439 Y133.187 E122.72073
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y132.622
+ok
+M400
+ok
+G1 F1200 X112.559 Y122.741 E123.18547
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y122.176
+ok
+M400
+ok
+G1 F1200 X122.439 Y132.056 E123.6502
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y131.49
+ok
+M400
+ok
+G1 F1200 X112.559 Y121.61 E124.11492
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y121.044
+ok
+M400
+ok
+G1 F1200 X122.439 Y130.925 E124.57967
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y130.359
+ok
+M400
+ok
+G1 F1200 X112.559 Y120.478 E125.04442
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y119.913
+ok
+M400
+ok
+G1 F1200 X122.439 Y129.793 E125.50915
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y129.228
+ok
+M400
+ok
+G1 F1200 X112.559 Y119.347 E125.97389
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y118.781
+ok
+M400
+ok
+G1 F1200 X122.439 Y128.662 E126.43864
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y128.096
+ok
+M400
+ok
+G1 F1200 X112.559 Y118.216 E126.90337
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y117.65
+ok
+M400
+ok
+G1 F1200 X122.439 Y127.53 E127.36809
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y126.965
+ok
+M400
+ok
+G1 F1200 X112.559 Y117.084 E127.83284
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y116.519
+ok
+M400
+ok
+G1 F1200 X122.439 Y126.399 E128.29757
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y125.833
+ok
+M400
+ok
+G1 F1200 X112.559 Y115.953 E128.76229
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y115.387
+ok
+M400
+ok
+G1 F1200 X122.439 Y125.268 E129.22704
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y124.702
+ok
+M400
+ok
+G1 F1200 X112.559 Y114.822 E129.69176
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y114.256
+ok
+M400
+ok
+G1 F1200 X122.439 Y124.136 E130.15649
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y123.571
+ok
+M400
+ok
+G1 F1200 X112.559 Y113.69 E130.62124
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y113.125
+ok
+M400
+ok
+G1 F1200 X122.439 Y123.005 E131.08596
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y122.439
+ok
+M400
+ok
+G1 F1200 X112.559 Y112.559 E131.55069
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y111.993
+ok
+M400
+ok
+G1 F1200 X122.439 Y121.874 E132.01543
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y121.308
+ok
+M400
+ok
+G1 F1200 X112.559 Y111.428 E132.48016
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y110.862
+ok
+M400
+ok
+G1 F1200 X122.439 Y120.742 E132.94488
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y120.177
+ok
+M400
+ok
+G1 F1200 X112.559 Y110.296 E133.40963
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y109.73
+ok
+M400
+ok
+G1 F1200 X122.439 Y119.611 E133.87438
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y119.045
+ok
+M400
+ok
+G1 F1200 X112.559 Y109.165 E134.33911
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y108.599
+ok
+M400
+ok
+G1 F1200 X122.439 Y118.479 E134.80383
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y117.914
+ok
+M400
+ok
+G1 F1200 X112.559 Y108.033 E135.26858
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y107.468
+ok
+M400
+ok
+G1 F1200 X122.439 Y117.348 E135.7333
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y116.782
+ok
+M400
+ok
+G1 F1200 X112.559 Y106.902 E136.19803
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y106.336
+ok
+M400
+ok
+G1 F1200 X122.439 Y116.217 E136.66278
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y115.651
+ok
+M400
+ok
+G1 F1200 X112.559 Y105.771 E137.1275
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y105.205
+ok
+M400
+ok
+G1 F1200 X122.439 Y115.085 E137.59223
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y114.52
+ok
+M400
+ok
+G1 F1200 X112.559 Y104.639 E138.05698
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y104.074
+ok
+M400
+ok
+G1 F1200 X122.439 Y113.954 E138.5217
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y113.388
+ok
+M400
+ok
+G1 F1200 X112.559 Y103.508 E138.98643
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y102.942
+ok
+M400
+ok
+G1 F1200 X122.439 Y112.823 E139.45117
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y112.257
+ok
+M400
+ok
+G1 F1200 X112.559 Y102.377 E139.9159
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y101.811
+ok
+M400
+ok
+G1 F1200 X122.439 Y111.691 E140.38062
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y111.126
+ok
+M400
+ok
+G1 F1200 X112.559 Y101.245 E140.84537
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y100.679
+ok
+M400
+ok
+G1 F1200 X122.439 Y110.56 E141.31012
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y109.994
+ok
+M400
+ok
+A-2.3562 P0 W0
+G1 F1200 X112.559 Y100.114 E141.77485
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y99.548
+ok
+M400
+ok
+G1 F1200 X122.439 Y109.429 E142.23959
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y108.863
+ok
+M400
+ok
+G1 F1200 X112.559 Y98.982 E142.70434
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y98.417
+ok
+M400
+ok
+G1 F1200 X122.439 Y108.297 E143.16907
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y107.731
+ok
+M400
+ok
+G1 F1200 X112.559 Y97.851 E143.63379
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y97.285
+ok
+M400
+ok
+G1 F1200 X122.439 Y107.166 E144.09854
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y106.6
+ok
+M400
+ok
+G1 F1200 X112.559 Y96.72 E144.56327
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y96.154
+ok
+M400
+ok
+G1 F1200 X122.439 Y106.034 E145.02799
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y105.469
+ok
+M400
+ok
+G1 F1200 X112.559 Y95.588 E145.49274
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y95.023
+ok
+M400
+ok
+G1 F1200 X122.439 Y104.903 E145.95746
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y104.337
+ok
+M400
+ok
+G1 F1200 X112.559 Y94.457 E146.42219
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y93.891
+ok
+M400
+ok
+G1 F1200 X122.439 Y103.772 E146.88694
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y103.206
+ok
+M400
+ok
+G1 F1200 X112.559 Y93.326 E147.35166
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y92.76
+ok
+M400
+ok
+G1 F1200 X122.439 Y102.64 E147.81639
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y102.075
+ok
+M400
+ok
+G1 F1200 X112.559 Y92.194 E148.28114
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y91.629
+ok
+M400
+ok
+G1 F1200 X122.439 Y101.509 E148.74586
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y100.943
+ok
+M400
+ok
+G1 F1200 X112.559 Y91.063 E149.21059
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.559 Y90.497
+ok
+M400
+ok
+G1 F1200 X122.439 Y100.378 E149.67533
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y99.812
+ok
+M400
+ok
+G1 F1200 X112.559 Y89.931 E150.14008
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.559 Y89.366
+ok
+M400
+ok
+G1 F1200 X122.439 Y99.246 E150.60481
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y98.68
+ok
+M400
+ok
+G1 F1200 X112.555 Y88.796 E151.06972
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.539 Y88.215
+ok
+M400
+ok
+G1 F1200 X122.439 Y98.115 E151.53539
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y97.549
+ok
+M400
+ok
+G1 F1200 X112.524 Y87.634 E152.00176
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.509 Y87.053
+ok
+M400
+ok
+G1 F1200 X122.439 Y96.983 E152.46883
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y96.418
+ok
+M400
+ok
+G1 F1200 X112.494 Y86.472 E152.93664
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.479 Y85.892
+ok
+M400
+ok
+G1 F1200 X122.439 Y95.852 E153.40513
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y95.286
+ok
+M400
+ok
+G1 F1200 X112.463 Y85.311 E153.87434
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.449 Y84.73
+ok
+M400
+ok
+G1 F1200 X122.439 Y94.721 E154.34427
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y94.155
+ok
+M400
+ok
+G1 F1200 X112.433 Y84.149 E154.81492
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.418 Y83.568
+ok
+M400
+ok
+G1 F1200 X122.439 Y93.589 E155.28628
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y93.024
+ok
+M400
+ok
+G1 F1200 X112.403 Y82.987 E155.75836
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.388 Y82.406
+ok
+M400
+ok
+G1 F1200 X122.439 Y92.458 E156.23115
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y91.892
+ok
+M400
+ok
+G1 F1200 X112.373 Y81.826 E156.70463
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.339 Y81.226
+ok
+M400
+ok
+G1 F1200 X122.439 Y91.327 E157.17972
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y90.761
+ok
+M400
+ok
+A-2.3562 P0 W0
+G1 F1200 X112.291 Y80.613 E157.65706
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.244 Y79.999
+ok
+M400
+ok
+G1 F1200 X122.439 Y90.195 E158.13662
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.439 Y89.63
+ok
+M400
+ok
+G1 F1200 X112.196 Y79.386 E158.61844
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X112.148 Y78.773
+ok
+M400
+ok
+G1 F1200 X122.439 Y89.064 E159.1025
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.451 Y88.509
+ok
+M400
+ok
+G1 F1200 X112.101 Y78.16 E159.58931
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.053 Y77.546
+ok
+M400
+ok
+G1 F1200 X122.465 Y87.958 E160.07906
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.479 Y87.406
+ok
+M400
+ok
+G1 F1200 X112.005 Y76.933 E160.5717
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.958 Y76.32
+ok
+M400
+ok
+G1 F1200 X122.493 Y86.855 E161.06723
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.507 Y86.303
+ok
+M400
+ok
+G1 F1200 X111.91 Y75.707 E161.56566
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.862 Y75.093
+ok
+M400
+ok
+G1 F1200 X122.521 Y85.752 E162.06703
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.535 Y85.2
+ok
+M400
+ok
+G1 F1200 X111.815 Y74.48 E162.57126
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.746 Y73.845
+ok
+M400
+ok
+G1 F1200 X122.55 Y84.649 E163.07945
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.564 Y84.098
+ok
+M400
+ok
+G1 F1200 X111.662 Y73.196 E163.59225
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.578 Y72.546
+ok
+M400
+ok
+G1 F1200 X122.579 Y83.546 E164.10968
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.593 Y82.995
+ok
+M400
+ok
+G1 F1200 X111.494 Y71.896 E164.63174
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.409 Y71.245
+ok
+M400
+ok
+G1 F1200 X122.607 Y82.443 E165.15846
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.621 Y81.892
+ok
+M400
+ok
+G1 F1200 X111.325 Y70.596 E165.68979
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.241 Y69.946
+ok
+M400
+ok
+G1 F1200 X122.651 Y81.356 E166.22648
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.691 Y80.83
+ok
+M400
+ok
+G1 F1200 X111.157 Y69.296 E166.769
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.073 Y68.646
+ok
+M400
+ok
+G1 F1200 X122.732 Y80.306 E167.31743
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.772 Y79.78
+ok
+M400
+ok
+G1 F1200 X110.988 Y67.996 E167.87171
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X110.904 Y67.346
+ok
+M400
+ok
+G1 F1200 X122.813 Y79.256 E168.4319
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.854 Y78.73
+ok
+M400
+ok
+G1 F1200 X110.803 Y66.68 E168.99872
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X110.677 Y65.988
+ok
+M400
+ok
+G1 F1200 X122.895 Y78.206 E169.57342
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X122.935 Y77.68
+ok
+M400
+ok
+G1 F1200 X110.551 Y65.297 E170.1559
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X110.425 Y64.604
+ok
+M400
+ok
+G1 F1200 X122.976 Y77.155 E170.74626
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.016 Y76.63
+ok
+M400
+ok
+G1 F1200 X110.299 Y63.913 E171.34443
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X110.172 Y63.221
+ok
+M400
+ok
+G1 F1200 X123.057 Y76.105 E171.95047
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.098 Y75.58
+ok
+M400
+ok
+G1 F1200 X110.047 Y62.529 E172.56435
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.92 Y61.837
+ok
+M400
+ok
+G1 F1200 X123.139 Y75.055 E173.18611
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.179 Y74.53
+ok
+M400
+ok
+G1 F1200 X109.794 Y61.145 E173.8157
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.668 Y60.454
+ok
+M400
+ok
+G1 F1200 X123.231 Y74.016 E174.45364
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.296 Y73.515
+ok
+M400
+ok
+G1 F1200 X109.559 Y59.779 E175.09976
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y59.213
+ok
+M400
+ok
+G1 F1200 X123.36 Y73.014 E175.74892
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.425 Y72.513
+ok
+M400
+ok
+G1 F1200 X109.559 Y58.648 E176.40111
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y58.082
+ok
+M400
+ok
+G1 F1200 X123.49 Y72.013 E177.05638
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.554 Y71.511
+ok
+M400
+ok
+G1 F1200 X109.559 Y57.516 E177.71466
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y56.951
+ok
+M400
+ok
+G1 F1200 X123.619 Y71.011 E178.376
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.684 Y70.509
+ok
+M400
+ok
+G1 F1200 X109.559 Y56.385 E179.04037
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y55.819
+ok
+M400
+ok
+G1 F1200 X123.749 Y70.009 E179.70783
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.814 Y69.508
+ok
+M400
+ok
+G1 F1200 X109.559 Y55.254 E180.37832
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y54.688
+ok
+M400
+ok
+G1 F1200 X123.878 Y69.007 E181.05184
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X123.943 Y68.506
+ok
+M400
+ok
+G1 F1200 X109.559 Y54.122 E181.72842
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y53.556
+ok
+M400
+ok
+G1 F1200 X124.008 Y68.005 E182.40805
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.073 Y67.504
+ok
+M400
+ok
+G1 F1200 X109.559 Y52.991 E183.09073
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y52.425
+ok
+M400
+ok
+G1 F1200 X124.138 Y67.004 E183.77648
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.223 Y66.523
+ok
+M400
+ok
+G1 F1200 X109.559 Y51.859 E184.46623
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y51.294
+ok
+M400
+ok
+G1 F1200 X124.31 Y66.045 E185.16007
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.397 Y65.566
+ok
+M400
+ok
+G1 F1200 X109.559 Y50.728 E185.858
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y50.162
+ok
+M400
+ok
+G1 F1200 X124.485 Y65.088 E186.56008
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.572 Y64.609
+ok
+M400
+ok
+G1 F1200 X109.559 Y49.597 E187.26622
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y49.031
+ok
+M400
+ok
+G1 F1200 X124.659 Y64.131 E187.97647
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.746 Y63.652
+ok
+M400
+ok
+G1 F1200 X109.559 Y48.465 E188.69082
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y47.9
+ok
+M400
+ok
+G1 F1200 X124.834 Y63.174 E189.40929
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X124.921 Y62.695
+ok
+M400
+ok
+G1 F1200 X109.559 Y47.334 E190.13185
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y46.768
+ok
+M400
+ok
+G1 F1200 X125.007 Y62.216 E190.85847
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.094 Y61.738
+ok
+M400
+ok
+G1 F1200 X109.559 Y46.203 E191.58919
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y45.637
+ok
+M400
+ok
+G1 F1200 X125.181 Y61.259 E192.324
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.269 Y60.781
+ok
+M400
+ok
+G1 F1200 X109.559 Y45.071 E193.06295
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y44.506
+ok
+M400
+ok
+G1 F1200 X125.356 Y60.302 E193.80597
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y59.819
+ok
+M400
+ok
+G1 F1200 X109.559 Y43.94 E194.55287
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y43.374
+ok
+M400
+ok
+G1 F1200 X125.438 Y59.253 E195.29977
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y58.687
+ok
+M400
+ok
+G1 F1200 X109.559 Y42.808 E196.04667
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y42.243
+ok
+M400
+ok
+G1 F1200 X125.438 Y58.122 E196.79357
+ok
+M400
+ok
+G0 F6000 X125.438 Y57.556
+ok
+M400
+ok
+G1 F1200 X109.559 Y41.677 E197.54047
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y41.111
+ok
+M400
+ok
+G1 F1200 X125.438 Y56.99 E198.28737
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y56.424
+ok
+M400
+ok
+G1 F1200 X109.559 Y40.546 E199.03425
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y39.98
+ok
+M400
+ok
+G1 F1200 X125.438 Y55.859 E199.78115
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y55.293
+ok
+M400
+ok
+G1 F1200 X109.559 Y39.414 E200.52805
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y38.849
+ok
+M400
+ok
+G1 F1200 X125.438 Y54.727 E201.27492
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y54.162
+ok
+M400
+ok
+G1 F1200 X109.559 Y38.283 E202.02182
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y37.717
+ok
+M400
+ok
+G1 F1200 X125.438 Y53.596 E202.76872
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y53.03
+ok
+M400
+ok
+G1 F1200 X109.559 Y37.152 E203.5156
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X109.559 Y36.586
+ok
+M400
+ok
+G1 F1200 X125.438 Y52.465 E204.2625
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y51.899
+ok
+M400
+ok
+G1 F1200 X110.1 Y36.56 E204.98397
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X110.665 Y36.56
+ok
+M400
+ok
+G1 F1200 X125.438 Y51.333 E205.67885
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y50.768
+ok
+M400
+ok
+G1 F1200 X111.231 Y36.56 E206.34713
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X111.797 Y36.56
+ok
+M400
+ok
+G1 F1200 X125.438 Y50.202 E206.98878
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y49.636
+ok
+M400
+ok
+G1 F1200 X112.362 Y36.56 E207.60384
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X112.928 Y36.56
+ok
+M400
+ok
+G1 F1200 X125.438 Y49.071 E208.19229
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y48.505
+ok
+M400
+ok
+G1 F1200 X113.494 Y36.56 E208.75412
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X114.059 Y36.56
+ok
+M400
+ok
+G1 F1200 X125.438 Y47.939 E209.28936
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y47.374
+ok
+M400
+ok
+G1 F1200 X114.625 Y36.56 E209.79799
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X115.191 Y36.56
+ok
+M400
+ok
+G1 F1200 X125.438 Y46.808 E210.28
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y46.242
+ok
+M400
+ok
+G1 F1200 X115.756 Y36.56 E210.73541
+A-2.3562 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+ok
+G0 F6000 X116.322 Y36.56
+ok
+M400
+ok
+G1 F1200 X125.438 Y45.676 E211.1642
+A0.7854 P0 W0
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y45.111
+ok
+M400
+ok
+G1 F1200 X116.888 Y36.56 E211.56639
+A-2.3561 P0 W0
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+ok
+G0 F6000 X117.453 Y36.56
+ok
+M400
+A0.7854 P250 W0.0129
+ok
+G1 F1200 X125.438 Y44.545 E211.94198
+ok
+M400
+ok
+G0 F6000 X125.438 Y43.979
+ok
+M400
+ok
+G1 F1200 X118.019 Y36.56 E212.29095
+ok
+M400
+angle:0.79 steps_count:-560 step_period:2
+A-2.3562 P250 W0.0049
+ok
+G0 F6000 X118.585 Y36.56
+ok
+M400
+ok
+G1 F1200 X125.438 Y43.414 E212.61332
+ok
+M400
+ok
+G0 F6000 X125.438 Y42.848
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:2
+A0.7855 P0 W0
+ok
+G1 F1200 X119.151 Y36.56 E212.90906
+ok
+M400
+ok
+G0 F6000 X119.716 Y36.56
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+A-2.3561 P0 W0
+ok
+G1 F1200 X125.438 Y42.282 E213.17821
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+A0.7854 P0 W0
+ok
+G0 F6000 X125.438 Y41.717
+ok
+M400
+ok
+G1 F1200 X120.282 Y36.56 E213.42075
+ok
+M400
+angle:0.79 steps_count:80 step_period:1
+A-2.3561 P0 W0
+ok
+G0 F6000 X120.848 Y36.56
+ok
+M400
+ok
+G1 F1200 X125.438 Y41.151 E213.63667
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+A0.7855 P0 W0
+ok
+G0 F6000 X125.438 Y40.585
+ok
+M400
+ok
+G1 F1200 X121.413 Y36.56 E213.826
+ok
+M400
+ok
+G0 F6000 X121.979 Y36.56
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+A-2.3562 P0 W0
+ok
+G1 F1200 X125.438 Y40.02 E213.98872
+ok
+M400
+ok
+G0 F6000 X125.438 Y39.454
+ok
+M400
+angle:-2.36 steps_count:-240 step_period:1
+A0.7855 P0 W0
+ok
+G1 F1200 X122.545 Y36.56 E214.12482
+ok
+M400
+ok
+G0 F6000 X123.11 Y36.56
+ok
+M400
+ok
+G1 F1200 X125.438 Y38.888 E214.23433
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+A0.7854 P0 W0
+angle:0.79 steps_count:-560 step_period:1
+ok
+G0 F6000 X125.438 Y38.323
+ok
+M400
+ok
+G1 F1200 X123.676 Y36.56 E214.31723
+A-2.3559 P0 W0
+ok
+M400
+ok
+G0 F6000 X124.242 Y36.56
+ok
+M400
+ok
+G1 F1200 X125.438 Y37.757 E214.37351
+ok
+M400
+angle:-2.36 steps_count:-880 step_period:1
+A0.7858 P0 W0
+ok
+G0 F6000 X125.438 Y37.191
+ok
+M400
+ok
+G1 F1200 X124.807 Y36.56 E214.40319
+ok
+M400
+ok
+G0 F6000 X125.373 Y36.56
+ok
+M400
+ok
+G1 F1200 X125.438 Y36.626 E214.40627
+ok
+M400
+ok
+G1 F2700 E209.40627
+ok
+M400
+ok
+G0 F300 X125.438 Y36.626 Z0.4
+ok
+M400
+ok
+G0 F6000 X125.9 Y36.626
+ok
+M400
+ok
+G0 X125.838 Y59.892
+ok
+M400
+ok
+G0 X123.917 Y74.337
+ok
+M400
+angle:0.79 steps_count:-560 step_period:1
+A0.793 P0 W0
+angle:0.79 steps_count:-559 step_period:1
+ok
+G0 X123.35 Y81.659
+ok
+M400
+ok
+G0 X123.161 Y88.99
+ok
+M400
+ok
+G0 X123.161 Y146.01
+ok
+M400
+ok
+G0 X123.35 Y153.341
+ok
+M400
+ok
+G0 X123.809 Y159.271
+ok
+M400
+ok
+G0 X124.701 Y167.971
+ok
+M400
+ok
+M106 S85
+ok
+G1 F2700 E214.40627
+ok
+M400
+ok
+G1 F1350 X126 Y175.089 E214.64693
+A1.3903 P0 W0
+ok
+M400
+angle:1.39 steps_count:-498 step_period:1
+ok
+G1 X126 Y175.858 E214.6725
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X126 Y199 E215.44221
+A1.5708 P222 W0.5841
+ok
+M400
+angle:1.57 steps_count:-480 step_period:2
+A3.1416 P222 W0.3111
+angle:3.14 steps_count:-320 step_period:2
+ok
+A3.1416 P222 W0.3111
+G1 X109 Y199 E216.00763
+ok
+M400
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X109 Y175.093 E216.80278
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X110.299 Y167.972 E217.04353
+A-1.3904 P0 W0
+ok
+M400
+angle:-1.39 steps_count:-142 step_period:1
+ok
+G1 X111.245 Y160.664 E217.28863
+A-1.4421 P0 W0
+ok
+M400
+angle:-1.44 steps_count:-147 step_period:1
+ok
+G1 X111.812 Y153.324 E217.53348
+A-1.4937 P0 W0
+ok
+M400
+angle:-1.49 steps_count:-152 step_period:1
+ok
+G1 X112 Y146.027 E217.77626
+A-1.545 P0 W0
+ok
+M400
+angle:-1.54 steps_count:-157 step_period:1
+ok
+G1 X112 Y88.973 E219.67389
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X111.81 Y81.625 E219.91836
+A-1.5966 P0 W0
+ok
+M400
+angle:-1.60 steps_count:-163 step_period:1
+ok
+G1 X111.246 Y74.345 E220.16122
+A-1.6481 P0 W0
+ok
+M400
+angle:-1.65 steps_count:-168 step_period:1
+ok
+G1 X110.299 Y67.028 E220.40662
+A-1.6995 P0 W0
+ok
+M400
+angle:-1.70 steps_count:-173 step_period:1
+ok
+G1 X109.001 Y59.911 E220.64724
+A-1.7512 P0 W0
+ok
+M400
+angle:-1.75 steps_count:-178 step_period:1
+ok
+G1 X109 Y36 E221.44252
+A-1.5708 P222 W0.6183
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:2
+A0.0 P222 W0.3111
+angle:0.00 steps_count:0 step_period:2
+ok
+G1 X126 Y36 E222.00794
+A0.0 P222 W0.3111
+ok
+M400
+angle:0.00 steps_count:0 step_period:2
+ok
+G1 X125.999 Y59.907 E222.80309
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X124.701 Y67.027 E223.04381
+A1.7511 P0 W0
+ok
+M400
+angle:1.75 steps_count:178 step_period:1
+ok
+G1 X123.754 Y74.346 E223.28927
+A1.6995 P0 W0
+ok
+M400
+angle:1.70 steps_count:173 step_period:1
+ok
+G1 X123.19 Y81.624 E223.53206
+A1.6481 P0 W0
+ok
+M400
+angle:1.65 steps_count:168 step_period:1
+ok
+G1 X123 Y88.973 E223.77657
+A1.5966 P0 W0
+ok
+M400
+angle:1.60 steps_count:163 step_period:1
+ok
+G1 X123 Y146.027 E225.67419
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X123.188 Y153.323 E225.91694
+A1.545 P0 W0
+ok
+M400
+angle:1.54 steps_count:157 step_period:1
+ok
+G1 X123.754 Y160.654 E226.1615
+A1.4937 P0 W0
+ok
+M400
+angle:1.49 steps_count:152 step_period:1
+ok
+G1 X124.701 Y167.971 E226.40689
+A1.4421 P0 W0
+ok
+M400
+angle:1.44 steps_count:147 step_period:1
+ok
+G1 F2700 E221.40689
+ok
+M400
+ok
+G0 F7500 X125.839 Y175.105
+ok
+M400
+ok
+G0 X125.828 Y198.828
+ok
+M400
+ok
+G0 X108.87 Y199.13
+ok
+M400
+ok
+G1 F2700 E226.40689
+ok
+M400
+ok
+G0 F7500 X108.6 Y199.4
+ok
+M400
+A0.0 P222 W0.0624
+ok
+G1 F1350 X126.4 Y199.4 E226.99892
+ok
+M400
+angle:0.00 steps_count:0 step_period:2
+A0.0 P222 W0.0624
+angle:0.00 steps_count:0 step_period:2
+ok
+G1 X126.4 Y175.858 E227.78193
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X126.4 Y175.053 E227.8087
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X125.094 Y167.894 E228.05074
+A-1.7512 P0 W0
+ok
+M400
+angle:-1.75 steps_count:-178 step_period:1
+ok
+G1 X124.156 Y160.654 E228.29356
+A-1.6996 P0 W0
+ok
+M400
+angle:-1.70 steps_count:-173 step_period:1
+ok
+G1 X123.589 Y153.343 E228.53745
+A-1.6482 P0 W0
+ok
+M400
+angle:-1.65 steps_count:-168 step_period:1
+ok
+G1 X123.4 Y146.017 E228.7812
+A-1.5966 P0 W0
+ok
+M400
+angle:-1.60 steps_count:-163 step_period:1
+ok
+G1 X123.4 Y88.983 E230.67816
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X123.589 Y81.655 E230.92197
+A-1.545 P0 W0
+ok
+M400
+angle:-1.54 steps_count:-157 step_period:1
+ok
+G1 X124.156 Y74.346 E231.1658
+A-1.4934 P0 W0
+ok
+M400
+angle:-1.49 steps_count:-152 step_period:1
+ok
+G1 X125.094 Y67.104 E231.40868
+A-1.442 P0 W0
+ok
+M400
+angle:-1.44 steps_count:-147 step_period:1
+ok
+G1 X126.399 Y59.943 E231.65078
+A-1.3905 P0 W0
+ok
+M400
+angle:-1.39 steps_count:-142 step_period:1
+ok
+G1 X126.4 Y35.6 E232.46043
+A-1.5708 P222 W0.6375
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:2
+A3.1416 P222 W0.3467
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X108.6 Y35.6 E233.05246
+A3.1416 P222 W0.3467
+ok
+M400
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X108.601 Y59.947 E233.86224
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X109.906 Y67.105 E234.10425
+A1.3905 P0 W0
+ok
+M400
+angle:1.39 steps_count:-498 step_period:1
+ok
+G1 X110.847 Y74.376 E234.3481
+A1.4421 P0 W0
+ok
+M400
+angle:1.44 steps_count:-493 step_period:1
+ok
+G1 X111.411 Y81.656 E234.59096
+A1.4935 P0 W0
+ok
+M400
+angle:1.49 steps_count:-488 step_period:1
+ok
+G1 X111.6 Y88.983 E234.83473
+A1.545 P0 W0
+ok
+M400
+angle:1.54 steps_count:-483 step_period:1
+ok
+G1 X111.6 Y146.017 E236.73169
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X111.411 Y153.345 E236.9755
+A1.5966 P0 W0
+ok
+M400
+angle:1.60 steps_count:-477 step_period:1
+ok
+G1 X110.844 Y160.654 E237.21933
+A1.6482 P0 W0
+ok
+M400
+angle:1.65 steps_count:-472 step_period:1
+ok
+G1 X109.906 Y167.896 E237.46221
+A1.6996 P0 W0
+ok
+M400
+angle:1.70 steps_count:-467 step_period:1
+ok
+G1 X108.6 Y175.057 E237.70432
+A1.7512 P0 W0
+ok
+M400
+angle:1.75 steps_count:-462 step_period:1
+ok
+G1 X108.6 Y199.4 E238.51397
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 F2700 E233.51397
+ok
+M400
+ok
+G0 F7500 X108.87 Y199.13
+ok
+M400
+ok
+G0 X125.828 Y198.828
+ok
+M400
+ok
+G0 X125.839 Y175.105
+ok
+M400
+ok
+G0 X124.797 Y167.931
+ok
+M400
+ok
+G1 F2700 E238.51397
+ok
+M400
+ok
+G0 F7500 X125.491 Y167.842
+ok
+M400
+ok
+G1 F1350 X126.8 Y175.017 E238.75655
+A1.3903 P0 W0
+ok
+M400
+angle:1.39 steps_count:-498 step_period:1
+ok
+G1 X126.8 Y175.858 E238.78452
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X126.8 Y199.8 E239.58084
+A1.5708 P222 W0.6196
+ok
+M400
+angle:1.57 steps_count:-480 step_period:2
+A3.1416 P222 W0.3822
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X108.2 Y199.8 E240.19948
+A3.1416 P222 W0.3822
+ok
+M400
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X108.2 Y175.021 E241.02363
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X109.507 Y167.854 E241.26593
+A-1.3904 P0 W0
+ok
+M400
+angle:-1.39 steps_count:-142 step_period:1
+ok
+G1 X110.447 Y160.602 E241.50916
+A-1.4419 P0 W0
+ok
+M400
+angle:-1.44 steps_count:-147 step_period:1
+ok
+G1 X111.012 Y153.314 E241.75228
+A-1.4934 P0 W0
+ok
+M400
+angle:-1.49 steps_count:-152 step_period:1
+ok
+G1 X111.2 Y146.007 E241.99539
+A-1.5451 P0 W0
+ok
+M400
+angle:-1.55 steps_count:-157 step_period:1
+ok
+G1 X111.2 Y88.993 E243.89169
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X111.012 Y81.697 E244.13443
+A-1.5966 P0 W0
+ok
+M400
+angle:-1.60 steps_count:-163 step_period:1
+ok
+G1 X110.448 Y74.407 E244.37763
+A-1.648 P0 W0
+ok
+M400
+angle:-1.65 steps_count:-168 step_period:1
+ok
+G1 X109.509 Y67.157 E244.62078
+A-1.6996 P0 W0
+ok
+M400
+angle:-1.70 steps_count:-173 step_period:1
+ok
+G1 X108.201 Y59.983 E244.86332
+A-1.7511 P0 W0
+ok
+M400
+angle:-1.75 steps_count:-178 step_period:1
+ok
+G1 X108.2 Y35.2 E245.6876
+A-1.5708 P222 W0.657
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:2
+A0.0 P222 W0.3822
+angle:0.00 steps_count:0 step_period:2
+ok
+G1 X126.8 Y35.2 E246.30624
+A0.0 P222 W0.3822
+ok
+M400
+angle:0.00 steps_count:0 step_period:2
+ok
+G1 X126.799 Y59.979 E247.13039
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X125.493 Y67.146 E247.3727
+A1.751 P0 W0
+ok
+M400
+angle:1.75 steps_count:178 step_period:1
+ok
+G1 X124.553 Y74.398 E247.61592
+A1.6997 P0 W0
+ok
+M400
+angle:1.70 steps_count:173 step_period:1
+ok
+G1 X123.988 Y81.686 E247.85904
+A1.6482 P0 W0
+ok
+M400
+angle:1.65 steps_count:168 step_period:1
+ok
+G1 X123.8 Y88.993 E248.10215
+A1.5965 P0 W0
+ok
+M400
+angle:1.60 steps_count:163 step_period:1
+ok
+G1 X123.8 Y146.007 E249.99845
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X123.988 Y153.302 E250.24116
+A1.545 P0 W0
+ok
+M400
+angle:1.54 steps_count:157 step_period:1
+ok
+G1 X124.552 Y160.592 E250.48435
+A1.4936 P0 W0
+ok
+M400
+angle:1.49 steps_count:152 step_period:1
+ok
+G1 X125.491 Y167.842 E250.7275
+A1.442 P0 W0
+ok
+M400
+angle:1.44 steps_count:147 step_period:1
+ok
+G0 F7500 X124.797 Y167.931
+ok
+M400
+ok
+G0 X124.341 Y168.004
+ok
+M400
+ok
+G1 F1350 X125.64 Y175.122 E250.96816
+A1.3903 P0 W0
+ok
+M400
+angle:1.39 steps_count:142 step_period:1
+ok
+G1 X125.64 Y175.858 E250.99264
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X125.64 Y198.64 E251.75037
+A1.5708 P222 W0.5681
 ok
 M400
 angle:1.57 steps_count:160 step_period:2
+A3.1416 P222 W0.2791
+angle:3.14 steps_count:320 step_period:2
 ok
-G1 X77.3 Y157.7 E21.28649
-A3.1416 P0
+G1 X109.36 Y198.64 E252.29185
+A3.1416 P222 W0.2791
+angle:3.14 steps_count:320 step_period:2
+ok
+M400
+ok
+G1 X109.36 Y175.128 E253.07386
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:480 step_period:1
+ok
+G1 X110.657 Y168.017 E253.31427
+A-1.3904 P0 W0
+ok
+M400
+angle:-1.39 steps_count:498 step_period:1
+ok
+G1 X111.598 Y160.752 E253.55793
+A-1.442 P0 W0
+ok
+M400
+angle:-1.44 steps_count:493 step_period:1
+ok
+G1 X112.172 Y153.343 E253.80509
+A-1.4935 P0 W0
+ok
+M400
+angle:-1.49 steps_count:488 step_period:1
+ok
+G1 X112.36 Y146.04 E254.04807
+A-1.5451 P0 W0
+ok
+M400
+angle:-1.55 steps_count:483 step_period:1
+ok
+G1 X112.36 Y88.961 E255.94652
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:480 step_period:1
+ok
+G1 X112.169 Y81.606 E256.19123
+A-1.5968 P0 W0
+ok
+M400
+angle:-1.60 steps_count:477 step_period:1
+ok
+G1 X111.599 Y74.258 E256.43636
+A-1.6482 P0 W0
+ok
+M400
+angle:-1.65 steps_count:472 step_period:1
+ok
+G1 X110.659 Y66.995 E256.67995
+A-1.6995 P0 W0
+ok
+M400
+angle:-1.70 steps_count:467 step_period:1
+ok
+G1 X109.361 Y59.879 E256.92053
+A-1.7512 P0 W0
+ok
+M400
+angle:-1.75 steps_count:462 step_period:1
+ok
+G1 X109.361 Y36.361 E257.70274
+A-1.5708 P222 W0.6008
+ok
+M400
+angle:-1.57 steps_count:480 step_period:2
+A0.0 P222 W0.279
+angle:0.00 steps_count:640 step_period:2
+ok
+G1 X125.639 Y36.361 E258.24415
+A0.0 P222 W0.279
+ok
+M400
+angle:0.00 steps_count:640 step_period:2
+ok
+A1.5708 P0 W0
+G1 X125.639 Y59.872 E259.02613
+ok
+M400
+angle:1.57 steps_count:800 step_period:1
+ok
+G1 X124.343 Y66.983 E259.26654
+A1.7511 P0 W0
+ok
+M400
+angle:1.75 steps_count:818 step_period:1
+ok
+G1 X123.402 Y74.247 E259.51016
+A1.6996 P0 W0
+ok
+M400
+angle:1.70 steps_count:813 step_period:1
+ok
+G1 X122.828 Y81.657 E259.75736
+A1.6481 P0 W0
+ok
+M400
+angle:1.65 steps_count:808 step_period:1
+ok
+G1 X122.64 Y88.961 E260.00037
+A1.5965 P0 W0
+ok
+M400
+angle:1.60 steps_count:803 step_period:1
+ok
+G1 X122.64 Y146.04 E261.89882
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:800 step_period:1
+ok
+G1 X122.831 Y153.391 E262.1434
+A1.5448 P0 W0
+ok
+M400
+angle:1.54 steps_count:797 step_period:1
+ok
+G1 X123.401 Y160.741 E262.3886
+A1.4934 P0 W0
+ok
+M400
+angle:1.49 steps_count:792 step_period:1
+ok
+G1 X124.341 Y168.004 E262.63218
+A1.4421 P0 W0
+ok
+M400
+angle:1.44 steps_count:787 step_period:1
+ok
+G1 F2700 E257.63218
+ok
+M400
+ok
+G0 F7500 X124.597 Y167.957
+ok
+M400
+ok
+G0 X125.839 Y175.105
+ok
+M400
+ok
+G0 X125.9 Y198.132
+ok
+M400
+ok
+G1 F2700 E262.63218
+ok
+M400
+ok
+G0 F7500 X125.44 Y198.132
+ok
+M400
+ok
+G1 F1350 X125.133 Y198.438 E262.6466
+A2.3578 P0 W0
+ok
+M400
+ok
+G0 F7500 X124.567 Y198.438
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+ok
+G1 F1350 X125.44 Y197.566 E262.68764
+A-0.7848 P0 W0
+ok
+M400
+ok
+G0 F7500 X125.44 Y197
+ok
+M400
+ok
+G1 F1350 X124.001 Y198.438 E262.7553
+ok
+M400
+ok
+G0 F7500 X123.436 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y196.434 E262.84956
+ok
+M400
+ok
+G0 F7500 X125.44 Y195.869
+ok
+M400
+ok
+G1 F1350 X122.87 Y198.438 E262.97042
+ok
+M400
+ok
+G0 F7500 X122.304 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y195.303 E263.11791
+ok
+M400
+angle:-0.78 steps_count:560 step_period:1
+A-0.7852 P0 W0
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y194.737
+ok
+M400
+ok
+G1 F1350 X121.739 Y198.438 E263.29199
+A2.3562 P0 W0
+ok
+M400
+ok
+G0 F7500 X121.173 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y194.172 E263.49267
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+A-0.7853 P0 W0
+ok
+G0 F7500 X125.44 Y193.606
+ok
+M400
+ok
+G1 F1350 X120.607 Y198.438 E263.71998
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+A2.3563 P0 W0
+ok
+G0 F7500 X120.041 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y193.04 E263.97391
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+A-0.7853 P0 W0
+ok
+G0 F7500 X125.44 Y192.475
+ok
+M400
+ok
+G1 F1350 X119.476 Y198.438 E264.25441
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+A2.3563 P0 W0
+ok
+G0 F7500 X118.91 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y191.909 E264.56154
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+A-0.7853 P0 W0
+ok
+G0 F7500 X125.44 Y191.343
+ok
+M400
+ok
+G1 F1350 X118.344 Y198.438 E264.89529
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+A2.3563 P222 W0.0003
+ok
+G0 F7500 X117.779 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y190.778 E265.25562
+ok
+M400
+ok
+G0 F7500 X125.44 Y190.212
+ok
+M400
+angle:2.36 steps_count:240 step_period:2
+A-0.7853 P222 W0.0067
+ok
+G1 F1350 X117.213 Y198.438 E265.64257
+ok
+M400
+ok
+G0 F7500 X116.647 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y189.646 E266.05614
+ok
+M400
+angle:-0.79 steps_count:560 step_period:2
+A-0.7853 P0 W0
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y189.081
+ok
+M400
+ok
+G1 F1350 X116.082 Y198.438 E266.49629
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+ok
+G0 F7500 X115.516 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y188.515 E266.96306
+A-0.7853 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y187.949
+ok
+M400
+ok
+G1 F1350 X114.95 Y198.438 E267.45645
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+ok
+G0 F7500 X114.385 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y187.384 E267.97642
+A-0.7854 P0 W0
+ok
+M400
+ok
+G0 F7500 X125.44 Y186.818
+ok
+M400
+ok
+G1 F1350 X113.819 Y198.438 E268.52301
+ok
+M400
+ok
+G0 F7500 X113.253 Y198.438
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+A2.3562 P0 W0
+ok
+G1 F1350 X125.44 Y186.252 E269.09623
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+A-0.7854 P0 W0
+ok
+G0 F7500 X125.44 Y185.686
+ok
+M400
+ok
+G1 F1350 X112.688 Y198.438 E269.69605
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+A2.3562 P0 W0
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.122 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y185.121 E270.32246
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y184.555
+ok
+M400
+ok
+G1 F1350 X111.556 Y198.438 E270.9755
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X110.991 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y183.989 E271.65513
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y183.424
+ok
+M400
+ok
+G1 F1350 X110.425 Y198.438 E272.36137
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.859 Y198.438
+ok
+M400
+ok
+G1 F1350 X125.44 Y182.858 E273.09423
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y182.292
+ok
+M400
+ok
+G1 F1350 X109.559 Y198.173 E273.84122
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y197.607
+ok
+M400
+ok
+G1 F1350 X125.44 Y181.727 E274.58819
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y181.161
+ok
+M400
+ok
+G1 F1350 X109.559 Y197.041 E275.33516
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y196.475
+ok
+M400
+ok
+G1 F1350 X125.44 Y180.595 E276.08213
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y180.03
+ok
+M400
+ok
+G1 F1350 X109.559 Y195.91 E276.8291
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y195.344
+ok
+M400
+ok
+G1 F1350 X125.44 Y179.464 E277.57607
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y178.898
+ok
+M400
+ok
+G1 F1350 X109.559 Y194.778 E278.32304
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y194.213
+ok
+M400
+ok
+G1 F1350 X125.44 Y178.333 E279.07001
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y177.767
+ok
+M400
+ok
+G1 F1350 X109.559 Y193.647 E279.81698
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y193.081
+ok
+M400
+ok
+G1 F1350 X125.44 Y177.201 E280.56395
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y176.635
+ok
+M400
+ok
+G1 F1350 X109.559 Y192.516 E281.31095
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y191.95
+ok
+M400
+ok
+G1 F1350 X125.44 Y176.07 E282.05792
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.44 Y175.504
+ok
+M400
+ok
+G1 F1350 X109.559 Y191.384 E282.80489
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y190.819
+ok
+M400
+ok
+G1 F1350 X125.408 Y174.97 E283.55037
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.321 Y174.492
+ok
+M400
+ok
+G1 F1350 X109.559 Y190.253 E284.29175
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y189.687
+ok
+M400
+ok
+G1 F1350 X125.234 Y174.013 E285.02903
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.146 Y173.535
+ok
+M400
+ok
+G1 F1350 X109.559 Y189.122 E285.76219
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y188.556
+ok
+M400
+ok
+G1 F1350 X125.059 Y173.056 E286.49126
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X124.971 Y172.578
+ok
+M400
+ok
+G1 F1350 X109.559 Y187.99 E287.2162
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y187.425
+ok
+M400
+ok
+G1 F1350 X124.884 Y172.099 E287.93706
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X124.797 Y171.621
+ok
+M400
+ok
+G1 F1350 X109.559 Y186.859 E288.65381
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y186.293
+ok
+M400
+ok
+G1 F1350 X124.71 Y171.143 E289.36644
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X124.623 Y170.664
+ok
+M400
+ok
+G1 F1350 X109.559 Y185.727 E290.07499
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y185.162
+ok
+M400
+ok
+G1 F1350 X124.535 Y170.186 E290.77941
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X124.448 Y169.707
+ok
+M400
+ok
+G1 F1350 X109.559 Y184.596 E291.47974
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y184.03
+ok
+M400
+ok
+G1 F1350 X124.36 Y169.229 E292.17594
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X124.274 Y168.751
+ok
+M400
+ok
+G1 F1350 X109.559 Y183.465 E292.86806
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y182.899
+ok
+M400
+ok
+G1 F1350 X124.186 Y168.273 E293.55605
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X124.111 Y167.782
+ok
+M400
+ok
+G1 F1350 X109.559 Y182.333 E294.24051
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y181.768
+ok
+M400
+ok
+G1 F1350 X124.046 Y167.281 E294.92193
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.981 Y166.781
+ok
+M400
+ok
+G1 F1350 X109.559 Y181.202 E295.60027
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y180.636
+ok
+M400
+ok
+G1 F1350 X123.916 Y166.28 E296.27556
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.851 Y165.779
+ok
+M400
+ok
+G1 F1350 X109.559 Y180.071 E296.94781
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y179.505
+ok
+M400
+ok
+G1 F1350 X123.786 Y165.278 E297.617
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.721 Y164.777
+ok
+M400
+ok
+G1 F1350 X109.559 Y178.939 E298.28314
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y178.374
+ok
+M400
+ok
+G1 F1350 X123.656 Y164.277 E298.94622
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.591 Y163.776
+ok
+M400
+ok
+G1 F1350 X109.559 Y177.808 E299.60624
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y177.242
+ok
+M400
+ok
+G1 F1350 X123.527 Y163.275 E300.26323
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.462 Y162.774
+ok
+M400
+ok
+G1 F1350 X109.559 Y176.676 E300.91716
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.559 Y176.111
+ok
+M400
+ok
+G1 F1350 X123.397 Y162.273 E301.56806
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.332 Y161.773
+ok
+M400
+ok
+G1 F1350 X109.559 Y175.545 E302.21588
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.597 Y174.942
+ok
+M400
+ok
+G1 F1350 X123.267 Y161.272 E302.85887
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.202 Y160.771
+ok
+M400
+ok
+G1 F1350 X109.723 Y174.25 E303.49288
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.849 Y173.558
+ok
+M400
+ok
+G1 F1350 X123.161 Y160.246 E304.11904
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.121 Y159.721
+ok
+M400
+ok
+G1 F1350 X109.975 Y172.867 E304.73739
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X110.102 Y172.174
+ok
+M400
+ok
+G1 F1350 X123.08 Y159.196 E305.34783
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.039 Y158.671
+ok
+M400
+ok
+G1 F1350 X110.228 Y171.483 E305.95044
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X110.354 Y170.791
+ok
+M400
+ok
+G1 F1350 X122.999 Y158.146 E306.54523
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.958 Y157.621
+ok
+M400
+ok
+G1 F1350 X110.48 Y170.099 E307.13215
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X110.607 Y169.407
+ok
+M400
+ok
+G1 F1350 X122.917 Y157.096 E307.7112
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.876 Y156.571
+ok
+M400
+ok
+G1 F1350 X110.732 Y168.715 E308.28242
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X110.858 Y168.024
+ok
+M400
+ok
+G1 F1350 X122.835 Y156.047 E308.84578
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.795 Y155.521
+ok
+M400
+ok
+G1 F1350 X110.942 Y167.374 E309.40331
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.026 Y166.725
+ok
+M400
+ok
+G1 F1350 X122.754 Y154.997 E309.95496
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.713 Y154.472
+ok
+M400
+ok
+G1 F1350 X111.11 Y166.075 E310.50073
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.194 Y165.425
+ok
+M400
+ok
+G1 F1350 X122.673 Y153.947 E311.04064
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.632 Y153.422
+ok
+M400
+ok
+G1 F1350 X111.278 Y164.775 E311.57467
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.362 Y164.126
+ok
+M400
+ok
+G1 F1350 X122.617 Y152.871 E312.10407
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.603 Y152.319
+ok
+M400
+ok
+G1 F1350 X111.446 Y163.476 E312.62887
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.53 Y162.826
+ok
+M400
+ok
+G1 F1350 X122.588 Y151.768 E313.149
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.574 Y151.217
+ok
+M400
+ok
+G1 F1350 X111.614 Y162.177 E313.66453
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.698 Y161.527
+ok
+M400
+ok
+G1 F1350 X122.559 Y150.666 E314.17539
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.545 Y150.114
+ok
+M400
+ok
+G1 F1350 X111.782 Y160.878 E314.68168
+A2.3561 P0 W0
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+ok
+G0 F7500 X111.836 Y160.257
+ok
+M400
+ok
+G1 F1350 X122.53 Y149.563 E315.18469
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.516 Y149.012
+ok
+M400
+ok
+G1 F1350 X111.884 Y159.644 E315.68478
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.931 Y159.031
+ok
+M400
+ok
+G1 F1350 X122.502 Y148.46 E316.18201
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.487 Y147.909
+ok
+M400
+ok
+G1 F1350 X111.978 Y158.418 E316.67632
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.026 Y157.805
+ok
+M400
+ok
+G1 F1350 X122.473 Y147.358 E317.16772
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.459 Y146.806
+ok
+M400
+ok
+G1 F1350 X112.074 Y157.191 E317.6562
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.121 Y156.578
+ok
+M400
+ok
+G1 F1350 X122.444 Y146.255 E318.14176
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y145.695
+ok
+M400
+ok
+G1 F1350 X112.169 Y155.965 E318.62483
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.216 Y155.352
+ok
+M400
+ok
+G1 F1350 X122.439 Y145.13 E319.10566
+A-0.7853 P0 W0
+ok
+M400
+angle:-0.79 steps_count:-80 step_period:1
+ok
+G0 F7500 X122.439 Y144.564
+ok
+M400
+ok
+G1 F1350 X112.263 Y154.739 E319.58429
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.311 Y154.126
+ok
+M400
+ok
+G1 F1350 X122.439 Y143.998 E320.06068
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y143.433
+ok
+M400
+ok
+G1 F1350 X112.358 Y153.513 E320.53483
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.383 Y152.923
+ok
+M400
+ok
+G1 F1350 X122.439 Y142.867 E321.00784
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y142.301
+ok
+M400
+ok
+G1 F1350 X112.398 Y152.342 E321.48014
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.413 Y151.762
+ok
+M400
+ok
+G1 F1350 X122.439 Y141.736 E321.95173
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y141.17
+ok
+M400
+ok
+G1 F1350 X112.427 Y151.181 E322.42264
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.442 Y150.601
+ok
+M400
+ok
+G1 F1350 X122.439 Y140.604 E322.89287
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y140.038
+ok
+M400
+ok
+G1 F1350 X112.457 Y150.02 E323.36239
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.473 Y149.439
+ok
+M400
+ok
+G1 F1350 X122.439 Y139.473 E323.83116
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y138.907
+ok
+M400
+ok
+G1 F1350 X112.487 Y148.858 E324.29925
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.502 Y148.278
+ok
+M400
+ok
+G1 F1350 X122.439 Y138.341 E324.76665
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y137.776
+ok
+M400
+ok
+G1 F1350 X112.517 Y147.697 E325.23333
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.532 Y147.117
+ok
+M400
+ok
+G1 F1350 X122.439 Y137.21 E325.69932
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y136.644
+ok
+M400
+ok
+G1 F1350 X112.548 Y146.535 E326.16457
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y145.958
+ok
+M400
+ok
+G1 F1350 X122.439 Y136.079 E326.62924
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y135.513
+ok
+M400
+ok
+G1 F1350 X112.56 Y145.392 E327.09392
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y144.826
+ok
+M400
+ok
+G1 F1350 X122.439 Y134.947 E327.5586
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y134.382
+ok
+M400
+ok
+G1 F1350 X112.56 Y144.261 E328.02328
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y143.695
+ok
+M400
+ok
+G1 F1350 X122.439 Y133.816 E328.48796
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y133.25
+ok
+M400
+ok
+G1 F1350 X112.56 Y143.129 E328.95263
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y142.564
+ok
+M400
+ok
+G1 F1350 X122.439 Y132.685 E329.41731
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y132.119
+ok
+M400
+ok
+G1 F1350 X112.56 Y141.998 E329.88199
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y141.432
+ok
+M400
+ok
+G1 F1350 X122.439 Y131.553 E330.34667
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y130.987
+ok
+M400
+ok
+G1 F1350 X112.56 Y140.866 E330.81135
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y140.301
+ok
+M400
+ok
+G1 F1350 X122.439 Y130.422 E331.27602
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y129.856
+ok
+M400
+ok
+G1 F1350 X112.56 Y139.735 E331.7407
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y139.169
+ok
+M400
+ok
+G1 F1350 X122.439 Y129.29 E332.20538
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y128.725
+ok
+M400
+ok
+G1 F1350 X112.56 Y138.604 E332.67006
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y138.038
+ok
+M400
+ok
+G1 F1350 X122.439 Y128.159 E333.13473
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y127.593
+ok
+M400
+ok
+G1 F1350 X112.56 Y137.472 E333.59941
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y136.907
+ok
+M400
+ok
+G1 F1350 X122.439 Y127.028 E334.06409
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y126.462
+ok
+M400
+ok
+G1 F1350 X112.56 Y136.341 E334.52877
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y135.775
+ok
+M400
+ok
+G1 F1350 X122.439 Y125.896 E334.99345
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y125.331
+ok
+M400
+ok
+G1 F1350 X112.56 Y135.21 E335.45812
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y134.644
+ok
+M400
+ok
+G1 F1350 X122.439 Y124.765 E335.9228
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y124.199
+ok
+M400
+ok
+G1 F1350 X112.56 Y134.078 E336.38748
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y133.513
+ok
+M400
+ok
+G1 F1350 X122.439 Y123.634 E336.85216
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y123.068
+ok
+M400
+ok
+G1 F1350 X112.56 Y132.947 E337.31684
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y132.381
+ok
+M400
+ok
+G1 F1350 X122.439 Y122.502 E337.78151
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y121.937
+ok
+M400
+ok
+G1 F1350 X112.56 Y131.816 E338.24619
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y131.25
+ok
+M400
+ok
+G1 F1350 X122.439 Y121.371 E338.71087
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y120.805
+ok
+M400
+ok
+G1 F1350 X112.56 Y130.684 E339.17555
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y130.118
+ok
+M400
+ok
+G1 F1350 X122.439 Y120.239 E339.64023
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y119.674
+ok
+M400
+ok
+G1 F1350 X112.56 Y129.553 E340.1049
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y128.987
+ok
+M400
+ok
+G1 F1350 X122.439 Y119.108 E340.56958
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y118.542
+ok
+M400
+ok
+G1 F1350 X112.56 Y128.421 E341.03426
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y127.856
+ok
+M400
+ok
+G1 F1350 X122.439 Y117.977 E341.49894
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y117.411
+ok
+M400
+ok
+G1 F1350 X112.56 Y127.29 E341.96361
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y126.724
+ok
+M400
+ok
+G1 F1350 X122.439 Y116.845 E342.42829
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y116.28
+ok
+M400
+ok
+G1 F1350 X112.56 Y126.159 E342.89297
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y125.593
+ok
+M400
+ok
+G1 F1350 X122.439 Y115.714 E343.35765
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y115.148
+ok
+M400
+ok
+G1 F1350 X112.56 Y125.027 E343.82233
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y124.462
+ok
+M400
+ok
+G1 F1350 X122.439 Y114.583 E344.287
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y114.017
+ok
+M400
+ok
+G1 F1350 X112.56 Y123.896 E344.75168
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y123.33
+ok
+M400
+ok
+G1 F1350 X122.439 Y113.451 E345.21636
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y112.886
+ok
+M400
+ok
+G1 F1350 X112.56 Y122.765 E345.68104
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y122.199
+ok
+M400
+ok
+G1 F1350 X122.439 Y112.32 E346.14572
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y111.754
+ok
+M400
+ok
+G1 F1350 X112.56 Y121.633 E346.61039
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y121.067
+ok
+M400
+ok
+G1 F1350 X122.439 Y111.189 E347.07505
+A-0.7853 P0 W0
+ok
+M400
+angle:-0.79 steps_count:-80 step_period:1
+ok
+G0 F7500 X122.439 Y110.623
+ok
+M400
+ok
+G1 F1350 X112.56 Y120.502 E347.53973
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y119.936
+ok
+M400
+ok
+G1 F1350 X122.439 Y110.057 E348.0044
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y109.491
+ok
+M400
+ok
+G1 F1350 X112.56 Y119.37 E348.46908
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y118.805
+ok
+M400
+ok
+G1 F1350 X122.439 Y108.926 E348.93376
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y108.36
+ok
+M400
+ok
+G1 F1350 X112.56 Y118.239 E349.39844
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y117.673
+ok
+M400
+ok
+G1 F1350 X122.439 Y107.794 E349.86311
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y107.229
+ok
+M400
+ok
+G1 F1350 X112.56 Y117.108 E350.32779
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y116.542
+ok
+M400
+ok
+G1 F1350 X122.439 Y106.663 E350.79247
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y106.097
+ok
+M400
+ok
+G1 F1350 X112.56 Y115.976 E351.25715
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y115.411
+ok
+M400
+ok
+G1 F1350 X122.439 Y105.532 E351.72183
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y104.966
+ok
+M400
+ok
+G1 F1350 X112.56 Y114.845 E352.1865
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y114.279
+ok
+M400
+ok
+G1 F1350 X122.439 Y104.4 E352.65118
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y103.835
+ok
+M400
+ok
+G1 F1350 X112.56 Y113.714 E353.11586
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y113.148
+ok
+M400
+ok
+G1 F1350 X122.439 Y103.269 E353.58054
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y102.703
+ok
+M400
+ok
+G1 F1350 X112.56 Y112.582 E354.04522
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y112.017
+ok
+M400
+ok
+G1 F1350 X122.439 Y102.138 E354.50989
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y101.572
+ok
+M400
+ok
+G1 F1350 X112.56 Y111.451 E354.97457
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y110.885
+ok
+M400
+ok
+G1 F1350 X122.439 Y101.006 E355.43925
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y100.44
+ok
+M400
+ok
+G1 F1350 X112.56 Y110.319 E355.90393
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y109.754
+ok
+M400
+ok
+G1 F1350 X122.439 Y99.875 E356.3686
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y99.309
+ok
+M400
+ok
+G1 F1350 X112.56 Y109.188 E356.83328
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y108.622
+ok
+M400
+ok
+G1 F1350 X122.439 Y98.743 E357.29796
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y98.178
+ok
+M400
+ok
+G1 F1350 X112.56 Y108.057 E357.76264
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y107.491
+ok
+M400
+ok
+G1 F1350 X122.439 Y97.612 E358.22732
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y97.046
+ok
+M400
+ok
+G1 F1350 X112.56 Y106.925 E358.69199
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y106.36
+ok
+M400
+ok
+G1 F1350 X122.439 Y96.481 E359.15667
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y95.915
+ok
+M400
+ok
+G1 F1350 X112.56 Y105.794 E359.62135
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y105.228
+ok
+M400
+ok
+G1 F1350 X122.439 Y95.349 E360.08603
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y94.784
+ok
+M400
+ok
+G1 F1350 X112.56 Y104.663 E360.55071
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y104.097
+ok
+M400
+ok
+G1 F1350 X122.439 Y94.218 E361.01538
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y93.652
+ok
+M400
+ok
+G1 F1350 X112.56 Y103.531 E361.48006
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y102.966
+ok
+M400
+ok
+A-0.7854 P0 W0
+G1 F1350 X122.439 Y93.087 E361.94474
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y92.521
+ok
+M400
+ok
+G1 F1350 X112.56 Y102.4 E362.40942
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y101.834
+ok
+M400
+ok
+G1 F1350 X122.439 Y91.955 E362.8741
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y91.39
+ok
+M400
+ok
+G1 F1350 X112.56 Y101.269 E363.33877
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y100.703
+ok
+M400
+ok
+G1 F1350 X122.439 Y90.824 E363.80345
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y90.258
+ok
+M400
+ok
+G1 F1350 X112.56 Y100.137 E364.26813
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y99.571
+ok
+M400
+ok
+G1 F1350 X122.439 Y89.692 E364.73281
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.439 Y89.127
+ok
+M400
+ok
+G1 F1350 X112.56 Y99.006 E365.19748
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y98.44
+ok
+M400
+ok
+G1 F1350 X122.448 Y88.551 E365.66261
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.463 Y87.971
+ok
+M400
+ok
+G1 F1350 X112.56 Y97.874 E366.12842
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y97.309
+ok
+M400
+ok
+G1 F1350 X122.479 Y87.389 E366.595
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.494 Y86.809
+ok
+M400
+ok
+G1 F1350 X112.56 Y96.743 E367.06226
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y96.177
+ok
+M400
+ok
+G1 F1350 X122.509 Y86.228 E367.53023
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.523 Y85.648
+ok
+M400
+ok
+G1 F1350 X112.56 Y95.612 E367.99889
+A2.3561 P0 W0
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+ok
+G0 F7500 X112.56 Y95.046
+ok
+M400
+ok
+G1 F1350 X122.538 Y85.067 E368.46824
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.553 Y84.487
+ok
+M400
+ok
+G1 F1350 X112.56 Y94.48 E368.93828
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y93.915
+ok
+M400
+ok
+G1 F1350 X122.569 Y83.905 E369.4091
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.584 Y83.325
+ok
+M400
+ok
+G1 F1350 X112.56 Y93.349 E369.8806
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.56 Y92.783
+ok
+M400
+ok
+G1 F1350 X122.598 Y82.744 E370.35278
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.613 Y82.164
+ok
+M400
+ok
+G1 F1350 X112.56 Y92.218 E370.82567
+A2.3561 P0 W0
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+ok
+G0 F7500 X112.56 Y91.652
+ok
+M400
+ok
+G1 F1350 X122.633 Y81.578 E371.29949
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.68 Y80.965
+ok
+M400
+ok
+G1 F1350 X112.56 Y91.086 E371.77553
+A2.3561 P0 W0
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+ok
+G0 F7500 X112.56 Y90.52
+ok
+M400
+ok
+G1 F1350 X122.728 Y80.352 E372.2538
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.775 Y79.739
+ok
+M400
+ok
+G1 F1350 X112.56 Y89.955 E372.73431
+A2.3561 P0 W0
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+ok
+G0 F7500 X112.56 Y89.389
+ok
+M400
+ok
+G1 F1350 X122.823 Y79.126 E373.21705
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.87 Y78.513
+ok
+M400
+ok
+G1 F1350 X112.556 Y88.827 E373.70219
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.541 Y88.276
+ok
+M400
+ok
+G1 F1350 X122.917 Y77.9 E374.19024
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.965 Y77.287
+ok
+M400
+ok
+G1 F1350 X112.527 Y87.725 E374.68121
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.513 Y87.173
+ok
+M400
+ok
+G1 F1350 X123.012 Y76.674 E375.17505
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.06 Y76.06
+ok
+M400
+ok
+G1 F1350 X112.498 Y86.622 E375.67186
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.484 Y86.071
+ok
+M400
+ok
+G1 F1350 X123.107 Y75.447 E376.17155
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.155 Y74.834
+ok
+M400
+ok
+G1 F1350 X112.47 Y85.519 E376.67414
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.455 Y84.968
+ok
+M400
+ok
+G1 F1350 X123.204 Y74.22 E377.17972
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.288 Y73.57
+ok
+M400
+ok
+G1 F1350 X112.441 Y84.417 E377.68993
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.427 Y83.865
+ok
+M400
+ok
+G1 F1350 X123.371 Y72.921 E378.2047
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.455 Y72.271
+ok
+M400
+ok
+G1 F1350 X112.412 Y83.314 E378.72413
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.398 Y82.763
+ok
+M400
+ok
+G1 F1350 X123.54 Y71.621 E379.24822
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.624 Y70.971
+ok
+M400
+ok
+G1 F1350 X112.384 Y82.211 E379.77691
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.369 Y81.66
+ok
+M400
+ok
+G1 F1350 X123.708 Y70.321 E380.31026
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.792 Y69.671
+ok
+M400
+ok
+G1 F1350 X112.332 Y81.132 E380.84933
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.292 Y80.606
+ok
+M400
+ok
+G1 F1350 X123.876 Y69.022 E381.39421
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X123.96 Y68.372
+ok
+M400
+ok
+G1 F1350 X112.251 Y80.081 E381.94496
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.21 Y79.557
+ok
+M400
+ok
+G1 F1350 X124.044 Y67.723 E382.5016
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X124.128 Y67.073
+ok
+M400
+ok
+G1 F1350 X112.169 Y79.031 E383.06409
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.128 Y78.507
+ok
+M400
+ok
+G1 F1350 X124.247 Y66.388 E383.63413
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X124.373 Y65.696
+ok
+M400
+ok
+G1 F1350 X112.088 Y77.981 E384.21198
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X112.047 Y77.457
+ok
+M400
+ok
+G1 F1350 X124.499 Y65.005 E384.79768
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X124.625 Y64.313
+ok
+M400
+ok
+G1 F1350 X112.006 Y76.932 E385.39124
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.966 Y76.407
+ok
+M400
+ok
+G1 F1350 X124.751 Y63.621 E385.99263
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X124.877 Y62.93
+ok
+M400
+ok
+G1 F1350 X111.925 Y75.882 E386.60185
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.884 Y75.357
+ok
+M400
+ok
+G1 F1350 X125.003 Y62.238 E387.21893
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.129 Y61.546
+ok
+M400
+ok
+G1 F1350 X111.843 Y74.832 E387.84386
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.802 Y74.307
+ok
+M400
+ok
+G1 F1350 X125.255 Y60.855 E388.47663
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.381 Y60.163
+ok
+M400
+ok
+G1 F1350 X111.741 Y73.802 E389.11819
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.676 Y73.302
+ok
+M400
+ok
+G1 F1350 X125.437 Y59.541 E389.76546
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y58.975
+ok
+M400
+ok
+G1 F1350 X111.611 Y72.801 E390.4158
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.547 Y72.3
+ok
+M400
+ok
+G1 F1350 X125.437 Y58.409 E391.06916
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y57.844
+ok
+M400
+ok
+G1 F1350 X111.482 Y71.799 E391.72556
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.417 Y71.298
+ok
+M400
+ok
+G1 F1350 X125.437 Y57.278 E392.38502
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y56.712
+ok
+M400
+ok
+G1 F1350 X111.352 Y70.798 E393.04756
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.287 Y70.297
+ok
+M400
+ok
+G1 F1350 X125.437 Y56.147 E393.71313
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y55.581
+ok
+M400
+ok
+G1 F1350 X111.222 Y69.796 E394.38176
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.157 Y69.295
+ok
+M400
+ok
+G1 F1350 X125.437 Y55.015 E395.05345
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y54.45
+ok
+M400
+ok
+G1 F1350 X111.092 Y68.795 E395.72819
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X111.027 Y68.294
+ok
+M400
+ok
+G1 F1350 X125.437 Y53.884 E396.406
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y53.318
+ok
+M400
+ok
+G1 F1350 X110.962 Y67.793 E397.08686
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X110.898 Y67.292
+ok
+M400
+ok
+G1 F1350 X125.437 Y52.752 E397.77075
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y52.187
+ok
+M400
+ok
+G1 F1350 X110.826 Y66.798 E398.45801
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X110.739 Y66.32
+ok
+M400
+ok
+G1 F1350 X125.437 Y51.621 E399.14938
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y51.055
+ok
+M400
+ok
+G1 F1350 X110.651 Y65.842 E399.84489
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X110.564 Y65.363
+ok
+M400
+ok
+G1 F1350 X125.437 Y50.49 E400.54447
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y49.924
+ok
+M400
+ok
+G1 F1350 X110.476 Y64.885 E401.24819
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X110.389 Y64.406
+ok
+M400
+ok
+G1 F1350 X125.437 Y49.358 E401.956
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y48.793
+ok
+M400
+ok
+G1 F1350 X110.303 Y63.928 E402.66788
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X110.215 Y63.45
+ok
+M400
+ok
+G1 F1350 X125.437 Y48.227 E403.3839
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y47.661
+ok
+M400
+ok
+G1 F1350 X110.128 Y62.971 E404.10401
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X110.04 Y62.493
+ok
+M400
+ok
+G1 F1350 X125.437 Y47.096 E404.82824
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y46.53
+ok
+M400
+ok
+G1 F1350 X109.953 Y62.014 E405.55656
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.866 Y61.535
+ok
+M400
+ok
+G1 F1350 X125.437 Y45.964 E406.28897
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y45.399
+ok
+M400
+ok
+G1 F1350 X109.779 Y61.057 E407.02548
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.692 Y60.579
+ok
+M400
+ok
+G1 F1350 X125.437 Y44.833 E407.7661
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y44.267
+ok
+M400
+ok
+G1 F1350 X109.605 Y60.1 E408.51081
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y59.579
+ok
+M400
+ok
+G1 F1350 X125.437 Y43.702 E409.25762
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y43.136
+ok
+M400
+ok
+G1 F1350 X109.56 Y59.013 E410.00442
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y58.448
+ok
+M400
+ok
+G1 F1350 X125.437 Y42.57 E410.75125
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y42.004
+ok
+M400
+ok
+G1 F1350 X109.56 Y57.882 E411.49808
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y57.316
+ok
+M400
+ok
+G1 F1350 X125.437 Y41.439 E412.24488
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y40.873
+ok
+M400
+ok
+G1 F1350 X109.56 Y56.75 E412.99169
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y56.185
+ok
+M400
+ok
+G1 F1350 X125.437 Y40.307 E413.73852
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y39.742
+ok
+M400
+ok
+G1 F1350 X109.56 Y55.619 E414.48532
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y55.053
+ok
+M400
+ok
+G1 F1350 X125.437 Y39.176 E415.23213
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y38.61
+ok
+M400
+ok
+G1 F1350 X109.56 Y54.488 E415.97896
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y53.922
+ok
+M400
+ok
+G1 F1350 X125.437 Y38.045 E416.72576
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.437 Y37.479
+ok
+M400
+ok
+G1 F1350 X109.56 Y53.356 E417.47257
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y52.791
+ok
+M400
+ok
+G1 F1350 X125.437 Y36.913 E418.2194
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X125.225 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y52.225 E418.95623
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y51.659
+ok
+M400
+ok
+A-0.7854 P0 W0
+G1 F1350 X124.659 Y36.56 E419.66644
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X124.093 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y51.094 E420.35005
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y50.528
+ok
+M400
+ok
+G1 F1350 X123.528 Y36.56 E421.00707
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X122.962 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y49.962 E421.63745
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y49.397
+ok
+M400
+ok
+G1 F1350 X122.396 Y36.56 E422.24124
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X121.83 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y48.831 E422.81841
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y48.265
+ok
+M400
+ok
+G1 F1350 X121.265 Y36.56 E423.36898
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X120.699 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y47.7 E423.89295
+A2.3561 P0 W0
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+ok
+G0 F7500 X109.56 Y47.134
+ok
+M400
+ok
+G1 F1350 X120.133 Y36.56 E424.39029
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X119.568 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y46.568 E424.86104
+A2.3562 P0 W0
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y46.002
+ok
+M400
+ok
+G1 F1350 X119.002 Y36.56 E425.30516
+A-0.7854 P0 W0
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X118.436 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y45.437 E425.72268
+A2.3561 P0 W0
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+ok
+G0 F7500 X109.56 Y44.871
+ok
+M400
+A-0.7854 P222 W0.014
+ok
+G1 F1350 X117.871 Y36.56 E426.11361
+ok
+M400
+ok
+G0 F7500 X117.305 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y44.305 E426.47791
+ok
+M400
+angle:-0.79 steps_count:560 step_period:2
+A2.3562 P222 W0.0076
+ok
+G0 F7500 X109.56 Y43.74
+ok
+M400
+ok
+G1 F1350 X116.739 Y36.56 E426.81561
+ok
+M400
+ok
+G0 F7500 X116.174 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y43.174 E427.12671
+ok
+M400
+angle:2.36 steps_count:240 step_period:2
+A2.3562 P0 W0
+angle:2.36 steps_count:240 step_period:1
+ok
+G0 F7500 X109.56 Y42.608
+ok
+M400
+ok
+G1 F1350 X115.608 Y36.56 E427.41119
+A-0.7854 P0 W0
+ok
+M400
+ok
+G0 F7500 X115.042 Y36.56
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G1 F1350 X109.56 Y42.043 E427.66907
+A2.3561 P0 W0
+ok
+M400
+ok
+G0 F7500 X109.56 Y41.477
+ok
+M400
+ok
+G1 F1350 X114.477 Y36.56 E427.90035
+angle:2.36 steps_count:880 step_period:1
+A-0.7854 P0 W0
+ok
+M400
+ok
+G0 F7500 X113.911 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y40.911 E428.10501
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+A2.3562 P0 W0
+ok
+G0 F7500 X109.56 Y40.346
+ok
+M400
+ok
+G1 F1350 X113.345 Y36.56 E428.28307
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+A-0.7855 P0 W0
+ok
+G0 F7500 X112.779 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y39.78 E428.4345
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+A2.356 P0 W0
+ok
+G0 F7500 X109.56 Y39.214
+ok
+M400
+ok
+G1 F1350 X112.214 Y36.56 E428.55934
+ok
+M400
+ok
+G0 F7500 X111.648 Y36.56
+ok
+M400
+angle:2.36 steps_count:880 step_period:1
+A-0.7854 P0 W0
+ok
+G1 F1350 X109.56 Y38.649 E428.65758
+ok
+M400
+ok
+G0 F7500 X109.56 Y38.083
+ok
+M400
+ok
+G1 F1350 X111.082 Y36.56 E428.72919
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+A-0.7857 P0 W0
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 F7500 X110.517 Y36.56
+ok
+M400
+ok
+G1 F1350 X109.56 Y37.517 E428.7742
+A2.3562 P0 W0
+ok
+M400
+ok
+G0 F7500 X109.56 Y36.951
+ok
+M400
+ok
+G1 F1350 X109.951 Y36.56 E428.7926
+ok
+M400
+ok
+G1 F2700 E423.7926
+ok
+M400
+angle:2.36 steps_count:240 step_period:1
+A-0.7854 P0 W0
+ok
+G0 F300 X109.951 Y36.56 Z0.6
+ok
+M400
+ok
+G0 F7500 X109.951 Y36.1
+ok
+M400
+ok
+G0 X109.172 Y36.172
+ok
+M400
+angle:-0.79 steps_count:560 step_period:1
+ok
+G0 X109.162 Y59.896
+ok
+M400
+ok
+G0 X111.083 Y74.337
+ok
+M400
+ok
+G0 X111.65 Y81.659
+ok
+M400
+ok
+G0 X111.839 Y88.99
+ok
+M400
+ok
+G0 X111.839 Y146.01
+ok
+M400
+ok
+G0 X111.65 Y153.341
+ok
+M400
+ok
+G0 X111.083 Y160.663
+ok
+M400
+ok
+G0 X110.14 Y167.947
+ok
+M400
+ok
+G0 X109.149 Y173.192
+ok
+M400
+ok
+G0 X109 Y199
+ok
+M400
+ok
+M106 S170
+ok
+G1 F2700 E428.7926
+ok
+M400
+A0.0 P200 W0.1556
+ok
+G1 F1500 X126 Y199 E429.35802
+ok
+M400
+angle:0.00 steps_count:640 step_period:2
+A0.0 P200 W0.1556
+angle:0.00 steps_count:640 step_period:2
+ok
+G1 X126 Y175.858 E430.12772
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:480 step_period:1
+ok
+G1 X126 Y175.089 E430.1533
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:480 step_period:1
+ok
+G1 X124.701 Y167.971 E430.39396
+A-1.7513 P0 W0
+ok
+M400
+angle:-1.75 steps_count:462 step_period:1
+ok
+G1 X123.754 Y160.654 E430.63935
+A-1.6995 P0 W0
+ok
+M400
+angle:-1.70 steps_count:467 step_period:1
+ok
+G1 X123.188 Y153.323 E430.88391
+A-1.6478 P0 W0
+ok
+M400
+angle:-1.65 steps_count:472 step_period:1
+ok
+G1 X123 Y146.027 E431.12665
+A-1.5966 P0 W0
+ok
+M400
+angle:-1.60 steps_count:477 step_period:1
+ok
+G1 X123 Y88.973 E433.02428
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:480 step_period:1
+ok
+G1 X123.19 Y81.624 E433.26879
+A-1.5449 P0 W0
+ok
+M400
+angle:-1.54 steps_count:483 step_period:1
+ok
+G1 X123.754 Y74.346 E433.51158
+A-1.4935 P0 W0
+ok
+M400
+angle:-1.49 steps_count:488 step_period:1
+ok
+G1 X124.701 Y67.027 E433.75704
+A-1.4421 P0 W0
+ok
+M400
+angle:-1.44 steps_count:493 step_period:1
+ok
+G1 X125.999 Y59.907 E433.99776
+A-1.3905 P0 W0
+ok
+M400
+angle:-1.39 steps_count:498 step_period:1
+ok
+G1 X126 Y36 E434.79291
+A-1.5708 P200 W0.5563
+ok
+M400
+angle:-1.57 steps_count:480 step_period:2
+A3.1416 P200 W0.28
+angle:3.14 steps_count:320 step_period:2
+ok
+G1 X109 Y36 E435.35833
+A3.1416 P200 W0.28
 ok
 M400
 angle:3.14 steps_count:320 step_period:2
 ok
-G0 F6000 X98.621 Y150.2
+G1 X109.001 Y59.911 E436.15361
+A1.5708 P0 W0
 ok
 M400
-A-0.3382 P80
+angle:1.57 steps_count:160 step_period:1
 ok
-G1 F1200 X79.741 Y117.5 E22.54236
-ok
-M400
-angle:-0.34 steps_count:606 step_period:2
-A-2.0944 P400
-angle:-2.09 steps_count:427 step_period:3
-ok
-G1 X98.621 Y84.8 E23.79823
-A-1.0472 P0
+G1 X110.299 Y67.028 E436.39423
+A1.3904 P0 W0
 ok
 M400
-angle:-1.05 steps_count:534 step_period:2
+angle:1.39 steps_count:142 step_period:1
 ok
-G1 X136.379 Y84.8 E25.05406
-A0.0 P0
+G1 X111.246 Y74.345 E436.63962
+A1.4421 P0 W0
+ok
+M400
+angle:1.44 steps_count:147 step_period:1
+ok
+G1 X111.81 Y81.625 E436.88248
+A1.4935 P0 W0
+ok
+M400
+angle:1.49 steps_count:152 step_period:1
+ok
+G1 X112 Y88.973 E437.12696
+A1.5449 P0 W0
+ok
+M400
+angle:1.54 steps_count:157 step_period:1
+ok
+G1 X112 Y146.027 E439.02458
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X111.812 Y153.324 E439.26736
+A1.5966 P0 W0
+ok
+M400
+angle:1.60 steps_count:163 step_period:1
+ok
+G1 X111.245 Y160.664 E439.51222
+A1.6479 P0 W0
+ok
+M400
+angle:1.65 steps_count:168 step_period:1
+ok
+G1 X110.299 Y167.972 E439.75731
+A1.6995 P0 W0
+ok
+M400
+angle:1.70 steps_count:173 step_period:1
+ok
+G1 X109 Y175.093 E439.99807
+A1.7512 P0 W0
+ok
+M400
+angle:1.75 steps_count:178 step_period:1
+ok
+G1 X109 Y199 E440.79322
+A1.5708 P200 W0.5563
+ok
+M400
+angle:1.57 steps_count:160 step_period:2
+ok
+G1 F2700 E435.79322
+ok
+M400
+ok
+G0 F9000 X125.828 Y198.828
+ok
+M400
+ok
+G0 X125.839 Y175.105
+ok
+M400
+ok
+G0 X124.797 Y167.931
+ok
+M400
+ok
+G1 F2700 E440.79322
+ok
+M400
+ok
+G0 F9000 X125.094 Y167.894
+ok
+M400
+ok
+G1 F1500 X126.4 Y175.053 E441.03525
+A1.3904 P0 W0
+ok
+M400
+angle:1.39 steps_count:142 step_period:1
+ok
+G1 X126.4 Y175.858 E441.06203
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X126.4 Y199.4 E441.84504
+A1.5708 P200 W0.5417
+ok
+M400
+angle:1.57 steps_count:160 step_period:2
+A3.1416 P200 W0.312
+angle:3.14 steps_count:320 step_period:2
+ok
+G1 X108.6 Y199.4 E442.43707
+A3.1416 P200 W0.312
+ok
+M400
+angle:3.14 steps_count:320 step_period:2
+ok
+G1 X108.6 Y175.057 E443.24672
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:480 step_period:1
+ok
+G1 X109.906 Y167.896 E443.48883
+A-1.3904 P0 W0
+ok
+M400
+angle:-1.39 steps_count:498 step_period:1
+ok
+G1 X110.844 Y160.654 E443.73171
+A-1.442 P0 W0
+ok
+M400
+angle:-1.44 steps_count:493 step_period:1
+ok
+G1 X111.411 Y153.345 E443.97554
+A-1.4934 P0 W0
+ok
+M400
+angle:-1.49 steps_count:488 step_period:1
+ok
+G1 X111.6 Y146.017 E444.21935
+A-1.545 P0 W0
+ok
+M400
+angle:-1.54 steps_count:483 step_period:1
+ok
+G1 X111.6 Y88.983 E446.11631
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:480 step_period:1
+ok
+G1 X111.411 Y81.656 E446.36008
+A-1.5966 P0 W0
+ok
+M400
+angle:-1.60 steps_count:477 step_period:1
+ok
+G1 X110.847 Y74.376 E446.60294
+A-1.6481 P0 W0
+ok
+M400
+angle:-1.65 steps_count:472 step_period:1
+ok
+G1 X109.906 Y67.105 E446.84679
+A-1.6995 P0 W0
+ok
+M400
+angle:-1.70 steps_count:467 step_period:1
+ok
+G1 X108.601 Y59.947 E447.08879
+A-1.7511 P0 W0
+ok
+M400
+angle:-1.75 steps_count:462 step_period:1
+ok
+G1 X108.6 Y35.6 E447.89858
+A-1.5708 P200 W0.5739
+ok
+M400
+angle:-1.57 steps_count:480 step_period:2
+A0.0 P200 W0.312
+angle:0.00 steps_count:640 step_period:2
+ok
+G1 X126.4 Y35.6 E448.49061
+A0.0 P200 W0.312
+ok
+M400
+angle:0.00 steps_count:640 step_period:2
+ok
+G1 X126.399 Y59.943 E449.30026
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:800 step_period:1
+ok
+G1 X125.094 Y67.104 E449.54236
+A1.7511 P0 W0
+ok
+M400
+angle:1.75 steps_count:818 step_period:1
+ok
+G1 X124.156 Y74.346 E449.78524
+A1.6996 P0 W0
+ok
+M400
+angle:1.70 steps_count:813 step_period:1
+ok
+G1 X123.589 Y81.655 E450.02907
+A1.6482 P0 W0
+ok
+M400
+angle:1.65 steps_count:808 step_period:1
+ok
+G1 X123.4 Y88.983 E450.27288
+A1.5966 P0 W0
+ok
+M400
+angle:1.60 steps_count:803 step_period:1
+ok
+G1 X123.4 Y146.017 E452.16984
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:800 step_period:1
+ok
+G1 X123.589 Y153.343 E452.41359
+A1.545 P0 W0
+ok
+M400
+angle:1.54 steps_count:797 step_period:1
+ok
+G1 X124.156 Y160.654 E452.65748
+A1.4934 P0 W0
+ok
+M400
+angle:1.49 steps_count:792 step_period:1
+ok
+G1 X125.094 Y167.894 E452.9003
+A1.442 P0 W0
+ok
+M400
+angle:1.44 steps_count:787 step_period:1
+ok
+G1 F2700 E447.9003
+ok
+M400
+ok
+G0 F9000 X124.797 Y167.931
+ok
+M400
+ok
+G0 X126.198 Y175.072
+ok
+M400
+ok
+G0 X126.082 Y199.082
+ok
+M400
+ok
+G0 X108.47 Y199.53
+ok
+M400
+ok
+G1 F2700 E452.9003
+ok
+M400
+ok
+G0 F9000 X108.2 Y199.8
+ok
+M400
+ok
+G1 F1500 X126.8 Y199.8 E453.51893
+A0.0 P200 W0.0573
+ok
+M400
+angle:0.00 steps_count:640 step_period:2
+ok
+G1 X126.8 Y175.858 E454.31525
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:480 step_period:1
+ok
+G1 X126.8 Y175.017 E454.34322
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:480 step_period:1
+ok
+G1 X125.491 Y167.842 E454.5858
+A-1.7513 P0 W0
+ok
+M400
+angle:-1.75 steps_count:462 step_period:1
+ok
+G1 X124.552 Y160.592 E454.82895
+A-1.6996 P0 W0
+ok
+M400
+angle:-1.70 steps_count:467 step_period:1
+ok
+G1 X123.988 Y153.302 E455.07214
+A-1.648 P0 W0
+ok
+M400
+angle:-1.65 steps_count:472 step_period:1
+ok
+G1 X123.8 Y146.007 E455.31486
+A-1.5966 P0 W0
+ok
+M400
+angle:-1.60 steps_count:477 step_period:1
+ok
+G1 X123.8 Y88.993 E457.21115
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:480 step_period:1
+ok
+G1 X123.988 Y81.686 E457.45426
+A-1.5451 P0 W0
+ok
+M400
+angle:-1.55 steps_count:483 step_period:1
+ok
+G1 X124.553 Y74.398 E457.69739
+A-1.4934 P0 W0
+ok
+M400
+angle:-1.49 steps_count:488 step_period:1
+ok
+G1 X125.493 Y67.146 E457.94061
+A-1.4419 P0 W0
+ok
+M400
+angle:-1.44 steps_count:493 step_period:1
+ok
+G1 X126.799 Y59.979 E458.18291
+A-1.3905 P0 W0
+ok
+M400
+angle:-1.39 steps_count:498 step_period:1
+ok
+G1 X126.8 Y35.2 E459.00706
+A-1.5708 P200 W0.5912
+ok
+M400
+angle:-1.57 steps_count:480 step_period:2
+A3.1416 P200 W0.344
+angle:3.14 steps_count:320 step_period:2
+ok
+G1 X108.2 Y35.2 E459.6257
+A3.1416 P200 W0.344
+angle:3.14 steps_count:320 step_period:2
+ok
+M400
+ok
+G1 X108.201 Y59.983 E460.44999
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X109.509 Y67.157 E460.69253
+A1.3905 P0 W0
+ok
+M400
+angle:1.39 steps_count:142 step_period:1
+ok
+G1 X110.448 Y74.407 E460.93568
+A1.442 P0 W0
+ok
+M400
+angle:1.44 steps_count:147 step_period:1
+ok
+G1 X111.012 Y81.697 E461.17887
+A1.4936 P0 W0
+ok
+M400
+angle:1.49 steps_count:152 step_period:1
+ok
+G1 X111.2 Y88.993 E461.42162
+A1.545 P0 W0
+ok
+M400
+angle:1.54 steps_count:157 step_period:1
+ok
+G1 X111.2 Y146.007 E463.31791
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X111.012 Y153.314 E463.56102
+A1.5965 P0 W0
+ok
+M400
+angle:1.60 steps_count:163 step_period:1
+ok
+G1 X110.447 Y160.602 E463.80415
+A1.6482 P0 W0
+ok
+M400
+angle:1.65 steps_count:168 step_period:1
+ok
+G1 X109.507 Y167.854 E464.04737
+A1.6997 P0 W0
+ok
+M400
+angle:1.70 steps_count:173 step_period:1
+ok
+G1 X108.2 Y175.021 E464.28968
+A1.7512 P0 W0
+ok
+M400
+angle:1.75 steps_count:178 step_period:1
+ok
+G1 X108.2 Y199.8 E465.11383
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G0 F9000 X108.47 Y199.53
+ok
+M400
+ok
+G0 X109.1 Y198.64
+ok
+M400
+ok
+G0 X109.36 Y198.64
+ok
+M400
+ok
+G1 F1500 X125.64 Y198.64 E465.6553
+A0.0 P200 W0.0419
 ok
 M400
 angle:0.00 steps_count:0 step_period:2
 ok
-G1 X155.259 Y117.5 E26.30993
-A1.0472 P0
+G1 X125.64 Y175.858 E466.41304
+A-1.5708 P0 W0
 ok
 M400
-angle:1.05 steps_count:107 step_period:2
+angle:-1.57 steps_count:-160 step_period:1
 ok
-G1 X136.379 Y150.2 E27.5658
-A2.0944 P0
-ok
-M400
-angle:2.09 steps_count:214 step_period:2
-ok
-G1 X98.621 Y150.2 E28.82164
-A3.1416 P0
+G1 X125.64 Y175.122 E466.43752
+A-1.5708 P0 W0
 ok
 M400
-angle:3.14 steps_count:321 step_period:2
+angle:-1.57 steps_count:-160 step_period:1
 ok
-G0 F6000 X98.852 Y149.8
-A-1.0471 P0
+G1 X124.341 Y168.004 E466.67817
+A-1.7513 P0 W0
+ok
+M400
+angle:-1.75 steps_count:-178 step_period:1
+ok
+G1 X123.401 Y160.741 E466.92175
+A-1.6995 P0 W0
+ok
+M400
+angle:-1.70 steps_count:-173 step_period:1
+ok
+G1 X122.831 Y153.391 E467.16695
+A-1.6482 P0 W0
+ok
+M400
+angle:-1.65 steps_count:-168 step_period:1
+ok
+G1 X122.64 Y146.04 E467.41153
+A-1.5968 P0 W0
+ok
+M400
+angle:-1.60 steps_count:-163 step_period:1
+ok
+G1 X122.64 Y88.961 E469.30998
+A-1.5708 P0 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:1
+ok
+G1 X122.828 Y81.657 E469.553
+A-1.5451 P0 W0
+ok
+M400
+angle:-1.55 steps_count:-157 step_period:1
+ok
+G1 X123.402 Y74.247 E469.80019
+A-1.4935 P0 W0
+ok
+M400
+angle:-1.49 steps_count:-152 step_period:1
+ok
+G1 X124.343 Y66.983 E470.04381
+A-1.442 P0 W0
+ok
+M400
+angle:-1.44 steps_count:-147 step_period:1
+ok
+G1 X125.639 Y59.872 E470.28422
+A-1.3905 P0 W0
+ok
+M400
+angle:-1.39 steps_count:-142 step_period:1
+ok
+G1 X125.639 Y36.361 E471.0662
+A-1.5708 P200 W0.5404
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:2
+A3.1416 P200 W0.2511
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X109.361 Y36.361 E471.60761
+A3.1416 P200 W0.2511
+ok
+M400
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X109.361 Y59.879 E472.38982
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X110.659 Y66.995 E472.6304
+A1.3904 P0 W0
+ok
+M400
+angle:1.39 steps_count:-498 step_period:1
+ok
+G1 X111.599 Y74.258 E472.87399
+A1.4421 P0 W0
+ok
+M400
+angle:1.44 steps_count:-493 step_period:1
+ok
+G1 X112.169 Y81.606 E473.11912
+A1.4934 P0 W0
+ok
+M400
+angle:1.49 steps_count:-488 step_period:1
+ok
+G1 X112.36 Y88.961 E473.36383
+A1.5448 P0 W0
+ok
+M400
+angle:1.54 steps_count:-483 step_period:1
+ok
+G1 X112.36 Y146.04 E475.26228
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G1 X112.172 Y153.343 E475.50526
+A1.5965 P0 W0
+ok
+M400
+angle:1.60 steps_count:-477 step_period:1
+ok
+G1 X111.598 Y160.752 E475.75243
+A1.6481 P0 W0
+ok
+M400
+angle:1.65 steps_count:-472 step_period:1
+ok
+G1 X110.657 Y168.017 E475.99608
+A1.6996 P0 W0
+ok
+M400
+angle:1.70 steps_count:-467 step_period:1
+ok
+G1 X109.36 Y175.128 E476.23649
+A1.7512 P0 W0
+ok
+M400
+angle:1.75 steps_count:-462 step_period:1
+ok
+G1 X109.36 Y198.64 E477.01851
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G0 F9000 X109.559 Y198.372
 ok
 M400
 ok
-G1 F1200 X136.148 Y149.8 E30.06211
-ok
-M400
-angle:-1.05 steps_count:534 step_period:2
-A0.0 P400
-ok
-G1 X154.797 Y117.5 E31.30262
-ok
-M400
-angle:0.00 steps_count:0 step_period:3
-A-1.0472 P0
-angle:-1.05 steps_count:-107 step_period:2
-ok
-G1 X136.148 Y85.2 E32.54313
-A-2.0944 P0
-ok
-M400
-angle:-2.09 steps_count:-214 step_period:2
-ok
-G1 X98.852 Y85.2 E33.7836
-A3.1416 P0
-ok
-M400
-angle:3.14 steps_count:-321 step_period:2
-ok
-G1 X80.203 Y117.5 E35.0241
-A2.0944 P0
-ok
-M400
-angle:2.09 steps_count:-428 step_period:2
-ok
-G1 X98.852 Y149.8 E36.26461
-A1.0472 P0
-ok
-M400
-angle:1.05 steps_count:-535 step_period:2
-ok
-G0 F6000 X99.233 Y149.141
-A-1.0466 P0
+G1 F1500 X109.626 Y198.438 E477.02163
+A0.7779 P0 W0
 ok
 M400
 ok
-G0 X116.925 Y148.233
+G0 F9000 X110.191 Y198.438
 ok
 M400
-ok
-G0 X117.5 Y147.9
-ok
-M400
-ok
-G1 F1200 X91.173 Y102.3 E38.0159
-ok
-M400
-angle:-1.05 steps_count:0 step_period:2
-A-2.0944 P0
-angle:-2.09 steps_count:-107 step_period:2
-ok
-G1 X143.827 Y102.3 E39.76718
-A0.0 P0
-ok
-M400
-angle:0.00 steps_count:106 step_period:2
-ok
-G1 X117.5 Y147.9 E41.51846
-A2.0944 P0
-ok
-M400
-angle:2.09 steps_count:319 step_period:2
-ok
-G0 F6000 X117.5 Y147.1
-A-1.5708 P0
-ok
-M400
-ok
-G1 F1200 X143.134 Y102.7 E43.22366
-ok
-M400
-angle:-1.57 steps_count:586 step_period:2
-A-1.0472 P0
-angle:-1.05 steps_count:639 step_period:2
-ok
-G1 X91.866 Y102.7 E44.92884
-A3.1416 P0
-ok
-M400
-angle:3.14 steps_count:426 step_period:2
-ok
-G1 X117.5 Y147.1 E46.63404
-A1.0472 P0
-ok
-M400
-angle:1.05 steps_count:213 step_period:2
-ok
-M140 S0
-ok
-G91 ;Relative positioning
-ok
-G1 E-2 F2700 ;Retract a bit
-ok
-M400
-ok
-G1 E-2 Z0.2 F2400 ;Retract and raise Z
-ok
-M400
-ok
-G1 X5 Y5 F3000 ;Wipe out
-ok
-M400
-ok
-G1 Z10 ;Raise Z more
-ok
-M400
-ok
-G90 ;Absolute positioning
-ok
-G1 X0 Y235 ;Present print
-ok
-M400
-A-2.2405 P160
-angle:-2.24 steps_count:518 step_period:2
-A1.5925 P0
-angle:1.59 steps_count:268 step_period:2
-ok
-M106 S0 ;Turn-off fan
-ok
-M104 S0 ;Turn-off hotend
-ok
-M140 S0 ;Turn-off bed
-ok
-M84 X Y E ;Disable all steppers but Z
-A1.5925 P0
-ok
-M82 ;absolute extrusion mode
-angle:1.59 steps_count:268 step_period:2
-ok
-M104 S0
-ok

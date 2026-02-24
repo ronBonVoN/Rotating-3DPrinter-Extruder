@@ -2,7 +2,7 @@ import re
 import math
 import sys
 
-EXTENSION_PRACTICAL_WIDTH = 8
+EXTENSION_PRACTICAL_WIDTH = 10
 DEG_TOLERANCE = math.radians(2)
 
 def read_gcode(file_name):
@@ -55,13 +55,15 @@ def get_velocities(gcode):
         f_match = re.search(r'F(-?\d+\.?\d*)', line)
         if f_match:
             velocities.append(float(f_match.group(1))/60)
-        else:
+        elif len(velocities) == 0 or velocities[-1] == 0:
             velocities.append(0)
+        else:
+            velocities.append(velocities[-1])
     return velocities
 
-
-def add_fillets(points, velocities, width, deg_tolerance):
-    fillets = [[0,0] for _ in range(len(points))]
+def get_fillets(points, velocities, width, deg_tolerance):
+    step_periods = [0 for _ in range(len(points))]
+    wait_times = [0 for _ in range(len(points))]
 
     for i in range(len(points) - 2):
         x1, y1 = points[i]
@@ -85,28 +87,31 @@ def add_fillets(points, velocities, width, deg_tolerance):
         if corner_angle < deg_tolerance or abs(corner_angle - math.pi) < deg_tolerance:
             continue
 
-        start_dist = width / math.tan(corner_angle / 2)
+        start_dist = width #/ math.tan(corner_angle/2)
         travel_before_fillet = length1 - start_dist 
-        if velocities[i+1] <= 0:
+        if velocities[i] <= 0:
             continue  
-        time_before_fillet = travel_before_fillet/velocities[i+1]
-        step_period = round(width/velocities[i+1]*1000)
+        time_before_fillet = round(travel_before_fillet/velocities[i],4)
+        step_period = round(width/velocities[i+1]*1000/2)
 
-        fillets[i+1] = [step_period, time_before_fillet]
-    return fillets
+        step_periods[i+1] = step_period
+        wait_times[i+1] = time_before_fillet
+    return step_periods, wait_times
 
 def get_gcode(file_name): 
     gcode = read_gcode(file_name)
     edited_gcode = add_M400s(gcode)
     return edited_gcode
 
-def arduino_commands(gcode):
+def arduino_commands(gcode, print_output=False):
     points = get_points(gcode)
     angles = get_angles(points)
     velocities = get_velocities(gcode)
-    fillets = add_fillets(points, velocities, EXTENSION_PRACTICAL_WIDTH, DEG_TOLERANCE)
-    arduino_commands = [[angles[i], fillets[i][0], fillets[i][1]] for i in range(len(gcode))]
-    return arduino_commands
+    step_periods, wait_times = get_fillets(points, velocities, EXTENSION_PRACTICAL_WIDTH, DEG_TOLERANCE)
+    arduino_commands = [f"A{angles[i]} P{step_periods[i]} W{wait_times[i]}" for i in range(len(gcode))]
+    if (print_output):
+        [print(f"{arduino_commands[i]}") for i in range(len(gcode))]
+    return arduino_commands, wait_times
 
 
 
