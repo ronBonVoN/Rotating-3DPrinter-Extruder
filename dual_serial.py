@@ -43,22 +43,15 @@ def arduino_wait(wait_times, gcode):
             i = wait_index.get(timeout=0.01)
         except queue.Empty:
             continue 
-        
-        if "G1" in gcode[i] and "X" in gcode[i] and "Y" in gcode[i]:
-            try:
-                arduino_index.get_nowait()
-            except queue.Empty:
-                pass
-            arduino_index.put(i)
 
-        if len(gcode) < i+1: 
-            continue
+        try:
+            arduino_index.get_nowait()
+        except queue.Empty:
+            pass
+        arduino_index.put(i)
         
-        wait_time = wait_times[i+1] 
+        wait_time = wait_times[i] 
         if wait_time <= 0: 
-            continue
-        
-        if "G1" not in gcode[i+1] or "X" not in gcode[i+1] or "Y" not in gcode[i+1]:
             continue
         
         start = time.perf_counter()
@@ -68,15 +61,15 @@ def arduino_wait(wait_times, gcode):
                     arduino_index.get_nowait()
                 except queue.Empty:
                     pass
-                arduino_index.put(i+1)
+                if len(gcode) > i + 1:
+                    arduino_index.put(i+1)
                 break
             try:
-                i = wait_index.get(timeout=0.01)
+                j = wait_index.get(timeout=0.01)
+                wait_index.put(j)
+                break
             except queue.Empty:
                 continue
-            if "G1" in gcode[i] and "X" in gcode[i] and "Y" in gcode[i]:
-                wait_index.put(i)
-                break
 
 def send_arduino_commands(arduino, arduino_commands):
     while not stop_event.is_set():
@@ -124,7 +117,7 @@ def run_threads(gcode, arduino_commands, wait_times):
         return
     time.sleep(2)
 
-    t1 = threading.Thread(target=arduino_wait, args=(wait_times, gcode,))
+    t1 = threading.Thread(target=arduino_wait, args=(wait_times, gcode))
     t2 = threading.Thread(target=send_gcode, args=(ender, gcode,))
     t3 = threading.Thread(target=send_arduino_commands, args=(arduino, arduino_commands,))
     t4 = threading.Thread(target=write_to_log)

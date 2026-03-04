@@ -1,0 +1,294 @@
+M140 S65
+ok
+M105
+ok
+M190 S65
+ok
+M104 S205
+ok
+M105
+ok
+M109 S205
+ok
+M82 ;absolute extrusion mode
+ok
+G92 E0 ; Reset Extruder
+ok
+G28 ; Home all axes
+ok
+G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed
+ok
+M400
+ok
+G1 X0.1 Y20 Z0.3 F5000.0 ; Move to start position
+A1.5658 P0 W0
+ok
+M400
+angle:1.57 steps_count:159 step_period:1
+ok
+G1 X0.1 Y200.0 Z0.3 F1500.0 E15 ; Draw the first line
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:1
+ok
+G1 X0.4 Y200.0 Z0.3 F5000.0 ; Move to side a little
+A0.0 P0 W0
+ok
+M400
+ok
+G1 X0.4 Y20 Z0.3 F1500.0 E30 ; Draw the second line
+ok
+M400
+angle:0.00 steps_count:0 step_period:1
+A-1.5708 P200 W0
+angle:-1.57 steps_count:-160 step_period:2
+ok
+G92 E0 ; Reset Extruder
+ok
+G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed
+ok
+M400
+ok
+G1 X5 Y20 Z0.3 F5000.0 ; Move over to prevent blob squish
+A0.0 P0 W0
+ok
+M400
+ok
+G92 E0
+ok
+G92 E0
+angle:0.00 steps_count:0 step_period:1
+ok
+M107
+ok
+G0 F6000 X77.7 Y157.3 Z0.2
+ok
+M400
+ok
+G1 F1200 X157.3 Y157.3 E2.64751
+A0.0 P250 W0
+ok
+M400
+angle:0.00 steps_count:0 step_period:2
+ok
+G1 X157.3 Y77.7 E5.29501
+A-1.5708 P250 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:2
+ok
+G1 X77.7 Y77.7 E7.94252
+A3.1416 P250 W0
+ok
+M400
+angle:3.14 steps_count:-320 step_period:2
+ok
+G1 X77.7 Y157.3 E10.59003
+A1.5708 P0 W0
+ok
+M400
+angle:1.57 steps_count:-480 step_period:1
+ok
+G0 F6000 X77.3 Y157.7
+ok
+M400
+ok
+G1 F1200 X77.3 Y77.3 E13.26414
+A-1.5708 P250 W0
+ok
+M400
+angle:-1.57 steps_count:-160 step_period:2
+ok
+G1 X157.7 Y77.3 E15.93826
+A0.0 P250 W0
+ok
+M400
+angle:0.00 steps_count:0 step_period:2
+ok
+G1 X157.7 Y157.7 E18.61237
+A1.5708 P250 W0
+ok
+M400
+angle:1.57 steps_count:160 step_period:2
+ok
+G1 X77.3 Y157.7 E21.28649
+A3.1416 P250 W0
+ok
+M400
+angle:3.14 steps_count:320 step_period:2
+ok
+G0 F6000 X98.621 Y150.2
+ok
+M400
+ok
+G1 F1200 X79.741 Y117.5 E22.54236
+A-2.0944 P250 W0
+ok
+M400
+angle:-2.09 steps_count:427 step_period:2
+ok
+G1 X98.621 Y84.8 E23.79823
+A-1.0472 P250 W0
+ok
+M400
+angle:-1.05 steps_count:534 step_period:2
+ok
+G1 X136.379 Y84.8 E25.05406
+A0.0 P250 W0
+ok
+M400
+angle:0.00 steps_count:641 step_period:2
+ok
+G1 X155.259 Y117.5 E26.30993
+A1.0472 P250 W0
+ok
+M400
+angle:1.05 steps_count:748 step_period:2
+ok
+G1 X136.379 Y150.2 E27.5658
+A2.0944 P250 W0
+ok
+M400
+angle:2.09 steps_count:855 step_period:2
+ok
+G1 X98.621 Y150.2 E28.82164
+A3.1416 P0 W0
+ok
+M400
+angle:3.14 steps_count:322 step_period:1
+ok
+G0 F6000 X98.852 Y149.8
+ok
+M400
+ok
+G1 F1200 X136.148 Y149.8 E30.06211
+A0.0 P250 W0
+ok
+M400
+angle:0.00 steps_count:642 step_period:2
+ok
+G1 X154.797 Y117.5 E31.30262
+A-1.0472 P250 W0
+ok
+M400
+angle:-1.05 steps_count:535 step_period:2
+ok
+G1 X136.148 Y85.2 E32.54313
+A-2.0944 P250 W0
+ok
+M400
+angle:-2.09 steps_count:428 step_period:2
+ok
+G1 X98.852 Y85.2 E33.7836
+A3.1416 P250 W0
+ok
+M400
+angle:3.14 steps_count:321 step_period:2
+ok
+G1 X80.203 Y117.5 E35.0241
+A2.0944 P250 W0
+ok
+M400
+angle:2.09 steps_count:214 step_period:2
+ok
+G1 X98.852 Y149.8 E36.26461
+A1.0472 P0 W0
+ok
+M400
+angle:1.05 steps_count:107 step_period:1
+ok
+G0 F6000 X99.233 Y149.141
+ok
+M400
+ok
+G0 X116.925 Y148.233
+ok
+M400
+ok
+G0 X117.5 Y147.9
+ok
+M400
+ok
+G1 F1200 X91.173 Y102.3 E38.0159
+A-2.0944 P0 W0
+ok
+M400
+angle:-2.09 steps_count:427 step_period:1
+ok
+G1 X143.827 Y102.3 E39.76718
+A0.0 P250 W0
+ok
+M400
+angle:0.00 steps_count:640 step_period:2
+ok
+G1 X117.5 Y147.9 E41.51846
+A2.0944 P0 W0
+ok
+M400
+angle:2.09 steps_count:853 step_period:1
+ok
+G0 F6000 X117.5 Y147.1
+ok
+M400
+ok
+A-1.0472 P0 W0
+G1 F1200 X143.134 Y102.7 E43.22366
+ok
+M400
+angle:-1.05 steps_count:533 step_period:1
+ok
+G1 X91.866 Y102.7 E44.92884
+A3.1416 P250 W0
+ok
+M400
+angle:3.14 steps_count:320 step_period:2
+ok
+G1 X117.5 Y147.1 E46.63404
+A1.0472 P250 W0
+ok
+M400
+angle:1.05 steps_count:107 step_period:2
+ok
+M140 S0
+ok
+G91 ;Relative positioning
+ok
+G1 E-2 F2700 ;Retract a bit
+ok
+M400
+ok
+G1 E-2 Z0.2 F2400 ;Retract and raise Z
+ok
+M400
+ok
+G1 X5 Y5 F3000 ;Wipe out
+A-2.2405 P100 W0
+ok
+M400
+ok
+G1 Z10 ;Raise Z more
+ok
+M400
+angle:-2.24 steps_count:412 step_period:1
+ok
+G90 ;Absolute positioning
+ok
+G1 X0 Y235 ;Present print
+A1.5925 P0 W0
+ok
+M400
+angle:1.59 steps_count:162 step_period:1
+ok
+M106 S0 ;Turn-off fan
+ok
+M104 S0 ;Turn-off hotend
+ok
+M140 S0 ;Turn-off bed
+ok
+M84 X Y E ;Disable all steppers but Z
+ok
+M82 ;absolute extrusion mode
+ok
+M104 S0
+ok

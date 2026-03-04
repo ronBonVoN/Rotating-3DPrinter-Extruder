@@ -89,13 +89,23 @@ def get_fillets(points, velocities, width, deg_tolerance):
 
         start_dist = width #/ math.tan(corner_angle/2)
         travel_before_fillet = length1 - start_dist 
-        if velocities[i] <= 0:
+        if velocities[i] <= 0 or velocities[i+1] <= 0:
             continue  
         time_before_fillet = round(travel_before_fillet/velocities[i],4)
         step_period = round(width/velocities[i+1]*1000/2)
 
         step_periods[i+1] = step_period
-        wait_times[i+1] = time_before_fillet
+        wait_times[i] = time_before_fillet
+
+        travel_before_fillet = length1 - start_dist 
+        if velocities[j] <= 0:
+            continue  
+        time_before_fillet = round(travel_before_fillet/velocities[i+1],4)
+        step_period = round(width/velocities[j]*1000/2)
+
+        step_periods[j] = step_period
+        wait_times[j-1] = time_before_fillet
+        
     return step_periods, wait_times
 
 def get_gcode(file_name): 

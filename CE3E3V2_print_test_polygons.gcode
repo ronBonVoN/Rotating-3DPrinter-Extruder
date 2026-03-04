@@ -1,3 +1,8 @@
+;;;;;;;;;;;;;;;;;;;;
+M302 S0
+M221 S0
+;;;;;;;;;;;;;;;;;;;
+
 ;FLAVOR:Marlin
 ;TIME:73
 ;Filament used: 0.046634m
@@ -9,12 +14,16 @@
 ;MAXY:157.7
 ;MAXZ:0.2
 ;Generated with Cura_SteamEngine 5.2.1
-M140 S65
-M105
-M190 S65
-M104 S205
-M105
-M109 S205
+
+
+;M140 S65
+;M105
+;M190 S65
+;M104 S205
+;M105
+;M109 S205
+
+
 M82 ;absolute extrusion mode
 ; Ender 3 Custom Start G-code
 G92 E0 ; Reset Extruder

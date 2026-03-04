@@ -3,7 +3,7 @@ import numpy as np
 import re
 import sys
 
-FILE_NAME = "log_serial_polygons_for_debug.txt"
+FILE_NAME = "log_serial.txt"
 
 def read_file(file_name):
     try: 
