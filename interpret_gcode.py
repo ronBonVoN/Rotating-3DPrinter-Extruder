@@ -37,7 +37,7 @@ def get_points(gcode):
         
 def get_angles(points): 
     angles = [0.0]
-    for i in range(1, len(points)):
+    for i in range(1, len(points)):        
         x1, y1 = points[i-1]
         x2, y2 = points[i]
         dx = x2 - x1
@@ -61,11 +61,17 @@ def get_velocities(gcode):
             velocities.append(velocities[-1])
     return velocities
 
-def get_fillets(points, angles, velocities, width, deg_tolerance):
+def get_fillets(gcode, points, angles, velocities, width, deg_tolerance):
     step_periods = [0 for _ in range(len(points))]
     wait_times = [0 for _ in range(len(points))]
 
     for i in range(len(points) - 2):
+        if "G1" not in gcode[i+1]:
+            continue
+        
+        if velocities[i] <= 0:
+            continue  
+        
         angle1 = angles[i]
         angle2 = angles[i+1]
         if angles[i] == angles[i+1]:
@@ -74,7 +80,6 @@ def get_fillets(points, angles, velocities, width, deg_tolerance):
         x1, y1 = points[i]
         x2, y2 = points[i+1]
         length = math.hypot(x2 - x1, y2 - y1)
-        
         if length <= width:
             continue
         
@@ -82,9 +87,6 @@ def get_fillets(points, angles, velocities, width, deg_tolerance):
         if corner_angle < deg_tolerance or abs(corner_angle - math.pi) < deg_tolerance:
             continue
 
-        if velocities[i] <= 0:
-            continue  
-        
         wait_times[i] = round((length - width)/velocities[i],4)
         step_periods[i+1] = round(width/velocities[i]*1000/2)
         
@@ -99,7 +101,7 @@ def arduino_commands(gcode, print_output=False):
     points = get_points(gcode)
     angles = get_angles(points)
     velocities = get_velocities(gcode)
-    step_periods, wait_times = get_fillets(points, angles, velocities, EXTENSION_PRACTICAL_WIDTH, DEG_TOLERANCE)
+    step_periods, wait_times = get_fillets(gcode, points, angles, velocities, EXTENSION_PRACTICAL_WIDTH, DEG_TOLERANCE)
     arduino_commands = [f"A{angles[i]} P{step_periods[i]} W{wait_times[i]}" for i in range(len(gcode))]
     if (print_output):
         [print(f"{arduino_commands[i]}") for i in range(len(gcode))]

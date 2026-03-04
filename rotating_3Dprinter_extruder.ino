@@ -37,18 +37,18 @@ void loop() {
   angle2 = get_pos('A'); 
   dtheta = atan2(sin(angle2 - angle1), cos(angle2 - angle1));
   path = round(dtheta*rotation_ratio);
-  angle1 = angle2; 
-
-  step_period = round(get_pos('P')/rotation_ratio);
-  if (step_period < MIN_STEP_PERIOD) step_period = MIN_STEP_PERIOD; 
-  rotate(path, step_period);
-
-  steps_count += path;  
-  if (abs(steps_count) >= rotation_limit) {
+  
+  if (abs(steps_count + path) >= rotation_limit) {
     backtrack_rotation = (steps_count > 0 ? -1 : 1)*abs(backtrack_rotation); 
     rotate(backtrack_rotation); 
     steps_count += backtrack_rotation;
   }
+  
+  angle1 = angle2; 
+  step_period = round(get_pos('P')/rotation_ratio);
+  if (step_period < MIN_STEP_PERIOD) step_period = MIN_STEP_PERIOD; 
+  rotate(path, step_period);
+  steps_count += path;  
 
   Serial.print("angle:");
   Serial.print(angle1);
