@@ -61,50 +61,32 @@ def get_velocities(gcode):
             velocities.append(velocities[-1])
     return velocities
 
-def get_fillets(points, velocities, width, deg_tolerance):
+def get_fillets(points, angles, velocities, width, deg_tolerance):
     step_periods = [0 for _ in range(len(points))]
     wait_times = [0 for _ in range(len(points))]
 
     for i in range(len(points) - 2):
+        angle1 = angles[i]
+        angle2 = angles[i+1]
+        if angles[i] == angles[i+1]:
+            continue
+      
         x1, y1 = points[i]
         x2, y2 = points[i+1]
-        if x1 == x2 and y1 == y2:
+        length = math.hypot(x2 - x1, y2 - y1)
+        
+        if length <= width:
             continue
-
-        for j in range(i+2, (len(points)-2)):
-            x3, y3 = points[j]
-            if x2 != x3 and y2 != y3:
-                break
-
-        length1 = math.hypot(x2 - x1, y2 - y1)
-        length2 = math.hypot(x3 - x2, y3 - y2)
-        if length1 <= width or length2 <= width:
-            continue
-
-        dot = (x2 - x1)*(x3 - x2) + (y2 - y1)*(y3 - y2)
-        cross = (x2 - x1)*(y3 - y2) - (y2 - y1)*(x3 - x2)
-        corner_angle = abs(math.atan2(cross, dot))
+        
+        corner_angle = abs(math.atan2(math.sin(angle2 - angle1), math.cos(angle2 - angle1)))
         if corner_angle < deg_tolerance or abs(corner_angle - math.pi) < deg_tolerance:
             continue
 
-        start_dist = width #/ math.tan(corner_angle/2)
-        travel_before_fillet = length1 - start_dist 
-        if velocities[i] <= 0 or velocities[i+1] <= 0:
+        if velocities[i] <= 0:
             continue  
-        time_before_fillet = round(travel_before_fillet/velocities[i],4)
-        step_period = round(width/velocities[i+1]*1000/2)
-
-        step_periods[i+1] = step_period
-        wait_times[i] = time_before_fillet
-
-        travel_before_fillet = length1 - start_dist 
-        if velocities[j] <= 0:
-            continue  
-        time_before_fillet = round(travel_before_fillet/velocities[i+1],4)
-        step_period = round(width/velocities[j]*1000/2)
-
-        step_periods[j] = step_period
-        wait_times[j-1] = time_before_fillet
+        
+        wait_times[i] = round((length - width)/velocities[i],4)
+        step_periods[i+1] = round(width/velocities[i]*1000/2)
         
     return step_periods, wait_times
 
@@ -117,7 +99,7 @@ def arduino_commands(gcode, print_output=False):
     points = get_points(gcode)
     angles = get_angles(points)
     velocities = get_velocities(gcode)
-    step_periods, wait_times = get_fillets(points, velocities, EXTENSION_PRACTICAL_WIDTH, DEG_TOLERANCE)
+    step_periods, wait_times = get_fillets(points, angles, velocities, EXTENSION_PRACTICAL_WIDTH, DEG_TOLERANCE)
     arduino_commands = [f"A{angles[i]} P{step_periods[i]} W{wait_times[i]}" for i in range(len(gcode))]
     if (print_output):
         [print(f"{arduino_commands[i]}") for i in range(len(gcode))]
