@@ -1,7 +1,7 @@
 import dual_serial
 import interpret_gcode
 
-FILE_NAME = "CE3E3V2_print_test_polygons.gcode"
+FILE_NAME = "CE3E3V2_D638-22.gcode"
 
 def main(): 
     print("parsing gcode...")
@@ -12,3 +12,4 @@ def main():
 
 if __name__ == "__main__":
     main()  
+    

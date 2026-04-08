@@ -2,7 +2,7 @@
 
 #define PUL 3 //step pin
 #define DIR 9 //direction pin
-#define MAX_ROTATION 1.5 //1 is full rotation
+#define MAX_ROTATION 1.1 //1 is full rotation
 #define MIN_STEP_PERIOD 1 //ms
 #define ROTATION_STEPS 400 //steps for 2PI rotation
 #define PULLEY_RATIO 1.6 //32:20
