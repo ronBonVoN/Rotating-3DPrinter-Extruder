@@ -1,0 +1,14 @@
+Date: 
+Waited to heat up? 
+No
+Nozzel Temperature? 
+215C
+Bed Temperature? 
+60C
+Thickness? 
+0.28mm
+Layers? 
+25
+
+Notes: 
+- Skipped 30deg of teeth. 

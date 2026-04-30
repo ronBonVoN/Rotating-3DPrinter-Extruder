@@ -1,12 +1,12 @@
 import dual_serial
 import interpret_gcode
 
-FILE_NAME = "CE3E3V2_D638-22.gcode"
+FILE_NAME = "CE3E3V2_D638-22_THICK - Copy.gcode"
 
 def main(): 
     print("parsing gcode...")
     gcode = interpret_gcode.get_gcode(FILE_NAME)
-    arduino_commands, wait_times = interpret_gcode.arduino_commands(gcode, print_output=True)
+    arduino_commands, wait_times = interpret_gcode.arduino_commands(gcode, print_output=False)
     print("gcode parsing done, starting serial threads..")
     dual_serial.run_threads(gcode, arduino_commands, wait_times)
 
